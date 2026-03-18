@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "scala",
+      "request": "launch",
+      "name": "CatsEffect",
+      "mainClass": "com.rockthejvm.foundations.CatsEffect",
+      "buildTarget": "file:/home/pramalin/work/typelevel-project/?id=server",
+      "args": [],
+      "jvmOptions": [],
+      "env": {}
+    },
+    {
+      "type": "scala",
+      "request": "launch",
+      "name": "Main",
+      "mainClass": "com.rockthejvm.jobsboard.Main",
+      "buildTarget": "file:/home/pramalin/work/typelevel-project/?id=server",
+      "args": [],
+      "jvmOptions": [],
+      "env": {}
+    }
+  ]
+}
