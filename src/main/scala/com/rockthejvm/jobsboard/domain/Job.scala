@@ -17,10 +17,10 @@ object job {
     description: String,
     externalUrl: String,
     remote: Boolean,
+    location: String,
     salaryLo: Option[Int],
     salaryHi: Option[Int],
     currency: Option[String],
-    location: String,
     country: Option[Long],
     tags: Option[List[String]],
     image: Option[String],
@@ -30,6 +30,6 @@ object job {
 
   object JobInfo {
     val empty: JobInfo = 
-        JobInfo("", "", "", "", false, None, None, None, "", None, None, None, None, None)
+        JobInfo("", "", "", "", false, "", None, None, None, None, None, None, None, None)
   }
 }
