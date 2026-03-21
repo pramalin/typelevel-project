@@ -44,7 +44,7 @@ trait Jobs[F[_]] {
 class LiveJobs[F[_]: MonadCancelThrow] private (xa: Transactor[F]) extends Jobs[F] {
   override def create (ownerEmail: String, jobInfo: JobInfo): F[UUID] =
     sql"""
-      inseret into jobs(
+      insert into jobs(
         date,
         ownerEmail,
         company,
