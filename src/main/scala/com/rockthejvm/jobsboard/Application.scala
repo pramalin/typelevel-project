@@ -7,7 +7,7 @@ import org.http4s.ember.server.EmberServerBuilder
 import org.typelevel.log4cats.Logger
 import org.typelevel.log4cats.slf4j.Slf4jLogger
 
-import com.rockthejvm.jobsboard.http.HttpApi
+import com.rockthejvm.jobsboard.modules.*
 import com.rockthejvm.jobsboard.config.*
 import com.rockthejvm.jobsboard.config.syntax.*
 import pureconfig.ConfigSource
@@ -18,12 +18,17 @@ object Application extends IOApp.Simple {
   given logger: Logger[IO] = Slf4jLogger.getLogger[IO]
   
   override def run = ConfigSource.default.loadF[IO, EmberConfig].flatMap { config =>
-    EmberServerBuilder
-      .default[IO]
-      .withHost(config.host)
-      .withPort(config.port)
-      .withHttpApp(HttpApi[IO].endpoints.orNotFound)
-      .build
-      .use(_ => IO.println("Job boards ready") *> IO.never)
-    }
+    val appResource = for {
+      core <- Core[IO]
+      httpApi <- HttpApi[IO](core)
+      server  <- EmberServerBuilder
+                .default[IO]
+                .withHost(config.host)
+                .withPort(config.port)
+                .withHttpApp(httpApi.endpoints.orNotFound)
+                .build
+    } yield server
+
+    appResource.use(_ => IO.println("Rock the JVM!") *> IO.never)
+  }
 }
