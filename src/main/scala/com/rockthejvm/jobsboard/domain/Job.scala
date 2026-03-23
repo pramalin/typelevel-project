@@ -21,7 +21,7 @@ object job {
       salaryLo: Option[Int],
       salaryHi: Option[Int],
       currency: Option[String],
-      country: Option[Long],
+      country: Option[String],
       tags: Option[List[String]],
       image: Option[String],
       seniority: Option[String],

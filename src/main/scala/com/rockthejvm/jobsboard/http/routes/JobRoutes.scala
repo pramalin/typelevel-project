@@ -70,9 +70,6 @@ class JobRoutes[F[_]: Concurrent: Logger] private (jobs: Jobs[F]) extends Http4s
 
         case None => NotFound(FailureResponse(s"Cannot delete $id not found"))
       }
-
-      Ok(s"Job deleted at id $id")
-
   }
 
   val routes = Router(
