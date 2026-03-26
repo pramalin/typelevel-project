@@ -60,12 +60,12 @@ object job {
   }
 
   final case class JobFilter(
-    companies: List[String],
-    locations: List[String],
-    countries: List[String],
-    seniorities: List[String],
-    tags: List[String],
-    maxSalary: Option[Int],
+    companies: List[String] = List(),
+    locations: List[String] = List(),
+    countries: List[String] = List(),
+    seniorities: List[String] = List(),
+    tags: List[String] = List(),
+    maxSalary: Option[Int] = None,
     remote: Boolean = false
   )
 }

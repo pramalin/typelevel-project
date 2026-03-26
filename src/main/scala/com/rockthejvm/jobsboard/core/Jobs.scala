@@ -20,7 +20,7 @@ trait Jobs[F[_]] {
   // "Algebra"
   // CRUD
   def create (ownerEmail: String, jobInfo: JobInfo): F[UUID]
-  def all(): F[List[Job]]
+  def all(): F[List[Job]] // TODO fix thoughts on the all() method
   def all(filter: JobFilter, pagination: Pagination): F[List[Job]]
   def find(id: UUID): F[Option[Job]]
   def update(id: UUID, jobInfo: JobInfo): F[Option[Job]]
