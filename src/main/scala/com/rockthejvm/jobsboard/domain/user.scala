@@ -12,6 +12,14 @@ object user {
         role: Role
     )
 
+    final case class NewUserInfo(
+        email: String,
+        hashedPassword: String,
+        firstName: Option[String],
+        lastName: Option[String],
+        company: Option[String]
+    )
+
      enum Role {
         case ADMIN, RECRUITER
      }
