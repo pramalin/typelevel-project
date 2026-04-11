@@ -19,7 +19,7 @@ insert into users (
     role
 ) values (
     'mailer@mailinator.com',
-    'rockthejvm',
+    '$2a$10$7XxTL6cI5UDRXhjNnrLuY.3fZQggtaa6wv2K/TyG2fE6dINoKjMNa',
     'Mailer',
     'Man',
     'Rock the JVM',
@@ -35,7 +35,7 @@ insert into users (
     role
 ) values (
     'riccardo@rockthejvm.com',
-    'riccardorulez',
+    '$2a$10$cFOIo3E1e8Le7OfJ5WwLNOr/XKtMjUyuI.dAGtJMA2AEA9Q1ws6zu',
     'Riccardo',
     'Cordin',
     'Rock the JVM',

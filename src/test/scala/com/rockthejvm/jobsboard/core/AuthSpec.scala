@@ -118,7 +118,7 @@ class AuthSpec
                     user.firstName shouldBe Some("Bob")
                     user.lastName shouldBe Some("Jones")
                     user.company shouldBe Some("Company")
-                    user.role should not be Role.RECRUITER
+                    user.role shouldBe Role.RECRUITER
 
                 case None => fail()
             }

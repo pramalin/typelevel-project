@@ -8,11 +8,16 @@ import tsec.passwordhashers.PasswordHash
 
 object PasswordHashingPlayground extends IOApp.Simple {
     override def run: IO[Unit] = 
-        BCrypt.hashpw[IO]("scalarocks").flatMap(IO.println) *>
+        BCrypt.hashpw[IO]("rockthejvm").flatMap(IO.println) *>
+        BCrypt.hashpw[IO]("riccardorulez").flatMap(IO.println) *>
+        BCrypt.hashpw[IO]("simplepassword").flatMap(IO.println) *>
+        BCrypt.hashpw[IO]("riccardorocks").flatMap(IO.println)
+/*
         BCrypt
             .checkpwBool[IO](
                 "scalarocks",
                 PasswordHash[BCrypt]("$2a$10$4ghT6c5sC6..iXIE2gcDgeYXrugZ/km5zqSWPo1qe0Zf6xmyOJV0S")
             )
             .flatMap(IO.println)
+*/
 }
