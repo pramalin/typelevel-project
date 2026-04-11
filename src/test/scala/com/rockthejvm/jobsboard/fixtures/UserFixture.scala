@@ -2,6 +2,7 @@ package com.rockthejvm.jobsboard.fixtures
 
 import com.rockthejvm.jobsboard.domain.user.User
 import com.rockthejvm.jobsboard.domain.user.Role
+import com.rockthejvm.jobsboard.domain.user.NewUserInfo
 
 /* 
 rockthejvm => $2a$10$7XxTL6cI5UDRXhjNnrLuY.3fZQggtaa6wv2K/TyG2fE6dINoKjMNa
@@ -9,7 +10,7 @@ riccardorulez => $2a$10$cFOIo3E1e8Le7OfJ5WwLNOr/XKtMjUyuI.dAGtJMA2AEA9Q1ws6zu
 simplepassword => $2a$10$1BFzCpqKxnxS2Pw3M.M5Xu8PLlVf3sHtyypZxdAWJR9lq1rrPln6S
 riccardorocks => $2a$10$lAw.fj6w0ua0h32FIVc4POCVx3XgRg7GDYDfk/.mi.pAsXF84wr8e
  */
-trait UsersFixture {
+trait UserFixture {
     val Mailer = User(
         "mailer@mailinator.com",
         "$2a$10$7XxTL6cI5UDRXhjNnrLuY.3fZQggtaa6wv2K/TyG2fE6dINoKjMNa",
@@ -20,6 +21,7 @@ trait UsersFixture {
     )
 
     val mailerEmail = Mailer.email
+    val mailerPassword = "rockthejvm"
 
     val Riccardo = User(
         "riccardo@rockthejvm.com",
@@ -31,6 +33,7 @@ trait UsersFixture {
     )
 
     val riccardoEmail = Riccardo.email
+    val riccardoPassword = "riccardorulez"
 
     val NewUser = User(
         "newuser@gmail.com",
@@ -50,4 +53,19 @@ trait UsersFixture {
         Role.ADMIN
     )
 
+    val NewUserMailer = NewUserInfo(
+        mailerEmail,
+        mailerPassword,
+        Some("Mailer"),
+        Some("Man"),
+        Some("Rock the JVM")
+    ) 
+
+    val NewUserRiccardo = NewUserInfo(
+        riccardoEmail,
+        riccardoPassword,
+        Some("Riccardo"),
+        Some("Cordin"),
+        Some("Rock the JVM")
+    )
 }

@@ -23,7 +23,7 @@ class AuthSpec
     extends AsyncFreeSpec
     with AsyncIOSpec
     with Matchers
-    with UsersFixture {
+    with UserFixture {
   
     given logger: Logger[IO] = Slf4jLogger.getLogger[IO]
 
