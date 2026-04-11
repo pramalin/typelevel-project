@@ -26,7 +26,7 @@ class JobRoutes[F[_]: Concurrent: Logger] private (jobs: Jobs[F]) extends HttpVa
   object LimitQueryParam extends OptionalQueryParamDecoderMatcher[Int]("limit")
 
   // POST /jobs/offset=x&limit=y {filters} // TODO add query params and filters
-  private val allJobROute: HttpRoutes[F] = HttpRoutes.of[F] {
+  private val allJobRoute: HttpRoutes[F] = HttpRoutes.of[F] {
     case req@ POST -> Root :? LimitQueryParam(limit) +& OffsetQueryParam(offset) =>
     for {
       filter <- req.as[JobFilter]
@@ -82,7 +82,7 @@ class JobRoutes[F[_]: Concurrent: Logger] private (jobs: Jobs[F]) extends HttpVa
   }
 
   val routes = Router(
-    "/jobs" -> (allJobROute <+> findJobRoute <+> createJobRoute <+> updateJobRoute <+> deleteJobRoute)
+    "/jobs" -> (allJobRoute <+> findJobRoute <+> createJobRoute <+> updateJobRoute <+> deleteJobRoute)
   )
 }
 
