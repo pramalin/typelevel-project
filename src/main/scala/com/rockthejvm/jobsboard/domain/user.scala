@@ -14,7 +14,7 @@ object user {
 
     final case class NewUserInfo(
         email: String,
-        hashedPassword: String,
+        password: String,
         firstName: Option[String],
         lastName: Option[String],
         company: Option[String]

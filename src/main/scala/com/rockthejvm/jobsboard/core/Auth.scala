@@ -52,7 +52,7 @@ class LiveAuth[F[_]: Async: Logger] private (
             case Some(_) => None.pure[F]
             case None => for {
                 // hash the new password
-                hashedPassword <- BCrypt.hashpw[F](newUserInfo.hashedPassword)
+                hashedPassword <- BCrypt.hashpw[F](newUserInfo.password)
                 user <- User(
                     newUserInfo.email,
                     hashedPassword,
