@@ -58,12 +58,29 @@ class AuthRouteSpec
 
     val mockedAuth: Auth[IO] = new Auth[IO] {
         // TODO make sure only the mailer user exists in the DB before running the tests
-        def login(email: String, password: String): IO[Option[JwtToken]] = ???
-        def signUp(newUserInfo: NewUserInfo): IO[Option[User]] = ???
+        def login(email: String, password: String): IO[Option[JwtToken]] =
+          if(email == mailerEmail && password == mailerPassword) {
+            mockedAuthenticator.create(mailerEmail).map(Some(_))
+          } else IO.pure(None)
+
+        def signUp(newUserInfo: NewUserInfo): IO[Option[User]] =
+            if(newUserInfo.email == riccardoEmail)
+             Some(Riccardo).pure[IO]
+            else IO.pure(None)
+
         def changePassword(
             email: String,
             newPasswordInfo: NewPasswordInfo
-        ): IO[Either[String, Option[User]]] = ???
+        ): IO[Either[String, Option[User]]] =
+            if(email == mailerEmail)
+               if(newPasswordInfo.oldPassword == mailerPassword)
+                 IO.pure(Right(Some(Mailer)))
+               else
+                 IO.pure(Left("Invalid password"))
+            else
+               IO.pure(Right(None)) 
+
+        def authenticator: Authenticator[IO] = mockedAuthenticator
     }
 
     extension (r: Request[IO])
