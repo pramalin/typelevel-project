@@ -13,6 +13,7 @@ import tsec.jws.mac.JWTMac
 import scala.concurrent.duration.*
 import com.rockthejvm.jobsboard.domain.user.*
 import com.rockthejvm.jobsboard.domain.security.*
+import tsec.authentication.SecuredRequestHandler
 
 trait SecuredRouteFixture extends UserFixture {
 
@@ -42,4 +43,5 @@ trait SecuredRouteFixture extends UserFixture {
                 Authorization(Credentials.Token(AuthScheme.Bearer, jwtString))
             }
   
+    given securedHandler: SecuredHandler[IO] = SecuredRequestHandler(mockedAuthenticator)
 }

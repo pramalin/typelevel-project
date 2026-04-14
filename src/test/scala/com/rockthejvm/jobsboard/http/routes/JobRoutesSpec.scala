@@ -28,7 +28,7 @@ class JobRoutesSpec
     with Http4sDsl[IO]
     with JobFixture
     with SecuredRouteFixture {
-  
+
     ////////////////////////////////////////////////////////////
     // prep
     ////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ class JobRoutesSpec
     }
 
     given logger: Logger[IO] = Slf4jLogger.getLogger[IO]
-    val jobRoutes: HttpRoutes[IO] = JobRoutes[IO](jobs, mockedAuthenticator).routes
+    val jobRoutes: HttpRoutes[IO] = JobRoutes[IO](jobs).routes
 
     ////////////////////////////////////////////////////////////
     // tests

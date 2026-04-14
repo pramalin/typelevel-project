@@ -40,9 +40,9 @@ class AuthRouteSpec
     ////////////////////////////////////////////////////////////
     val mockedAuth: Auth[IO] = new Auth[IO] {
         // TODO make sure only the mailer user exists in the DB before running the tests
-        def login(email: String, password: String): IO[Option[JwtToken]] =
+        def login(email: String, password: String): IO[Option[User]] =
           if(email == mailerEmail && password == mailerPassword) {
-            mockedAuthenticator.create(mailerEmail).map(Some(_))
+            IO(Some(Mailer))
           } else IO.pure(None)
 
         def signUp(newUserInfo: NewUserInfo): IO[Option[User]] =
@@ -67,7 +67,7 @@ class AuthRouteSpec
         def authenticator: Authenticator[IO] = mockedAuthenticator
     }
     given logger: Logger[IO] = Slf4jLogger.getLogger[IO]
-    val authRoutes: HttpRoutes[IO] = AuthRoutes[IO](mockedAuth).routes
+    val authRoutes: HttpRoutes[IO] = AuthRoutes[IO](mockedAuth, mockedAuthenticator).routes
 
 
     ////////////////////////////////////////////////////////////
