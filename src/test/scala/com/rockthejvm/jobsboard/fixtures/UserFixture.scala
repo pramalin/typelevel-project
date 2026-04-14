@@ -1,7 +1,8 @@
 package com.rockthejvm.jobsboard.fixtures
 
-import com.rockthejvm.jobsboard.domain.user.User
-import com.rockthejvm.jobsboard.domain.user.Role
+import cats.effect.IO
+import com.rockthejvm.jobsboard.core.Users
+import com.rockthejvm.jobsboard.domain.user.*
 import com.rockthejvm.jobsboard.domain.user.NewUserInfo
 
 /* 
@@ -11,6 +12,16 @@ simplepassword => $2a$10$1BFzCpqKxnxS2Pw3M.M5Xu8PLlVf3sHtyypZxdAWJR9lq1rrPln6S
 riccardorocks => $2a$10$lAw.fj6w0ua0h32FIVc4POCVx3XgRg7GDYDfk/.mi.pAsXF84wr8e
  */
 trait UserFixture {
+
+    val mockedUsers: Users[IO] = new Users[IO] {
+        override def find(email: String): IO[Option[User]] = 
+            if (email == mailerEmail) IO.pure(Some(Mailer))
+            else IO.pure(None)
+        override def create(user: User): IO[String] = IO.pure(user.email)
+        override def update(user: User): IO[Option[User]] = IO.pure(Some(user))
+        override def delete(email: String): IO[Boolean] = IO.pure(true)
+    }
+
     val Mailer = User(
         "mailer@mailinator.com",
         "$2a$10$7XxTL6cI5UDRXhjNnrLuY.3fZQggtaa6wv2K/TyG2fE6dINoKjMNa",
