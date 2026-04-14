@@ -13,6 +13,7 @@ import tsec.authentication.JWTAuthenticator
 
 import scala.concurrent.duration.*
 import com.rockthejvm.jobsboard.fixtures.* 
+import com.rockthejvm.jobsboard.config.*
 import com.rockthejvm.jobsboard.domain.user.*
 import com.rockthejvm.jobsboard.domain.auth.*
 import com.rockthejvm.jobsboard.domain.security.*
@@ -36,30 +37,12 @@ class AuthSpec
         override def delete(email: String): IO[Boolean] = IO.pure(true)
     }
 
-    val mockedAuthenticator: Authenticator[IO] = {
-        // key for hashing
-        val key = HMACSHA256.unsafeGenerateKey
-        // identity store to rerieve users
-        val idStore: IdentityStore[IO, String, User]  = (email: String) =>
-            if (email == mailerEmail) OptionT.pure(Mailer)
-            else if (email == riccardoEmail) OptionT.pure(Riccardo)
-            else OptionT.none[IO, User]
-        
-        // jwt authenticator
-        JWTAuthenticator.unbacked.inBearerToken(
-            1.day, // expiration of tokens
-            None,  // max idle time (optional)
-            idStore, //  identity store
-            key // hash key
-            
-        )
-
-    }
+    val mockConfig = SecurityConfig("secret", 1.day)
 
     "Auth 'algebra'" - {
         "login should return None if the user doesn't exists" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 maybeToken <- auth.login("user@rockthejvm", "password")
             } yield maybeToken
             
@@ -69,7 +52,7 @@ class AuthSpec
 
         "login should return None if the user exists but the password is wrong" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 maybeToken <- auth.login(mailerEmail, "wrongpassword")
             } yield maybeToken
             
@@ -78,7 +61,7 @@ class AuthSpec
     
         "login should return token if the user exists and the password is correct" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 maybeToken <- auth.login(mailerEmail, "rockthejvm")
             } yield maybeToken
             
@@ -87,7 +70,7 @@ class AuthSpec
     
         "signing up should not create a user with an existing email" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 maybeUser <- auth.signUp(NewUserInfo(
                  mailerEmail,
                  "somepassword",
@@ -102,7 +85,7 @@ class AuthSpec
     
         "signing up should create a completely new user" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 maybeUser <- auth.signUp(NewUserInfo(
                  "bob@rockthejvm.com",
                  "somePassword",
@@ -126,7 +109,7 @@ class AuthSpec
     
         "changePassword should return Right(None) if the user doesn't esist" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 result <- auth.changePassword("alice@rockthejavm.com", NewPasswordInfo("oldpw", "newpw"))
             } yield result 
             
@@ -135,7 +118,7 @@ class AuthSpec
     
         "changePassword should return Left with an error if the user esists and the password is incorrect" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 result <- auth.changePassword(mailerEmail, NewPasswordInfo("oldpw", "newpw"))
             } yield result 
             
@@ -144,7 +127,7 @@ class AuthSpec
     
         "changePassword should correctly change password if all details are correct" in {
             val program = for {
-                auth <- LiveAuth[IO](mockedUsers, mockedAuthenticator)
+                auth <- LiveAuth[IO](mockedUsers)(mockConfig)
                 result <- auth.changePassword(mailerEmail, NewPasswordInfo("rockthejvm", "scalarocks"))
                 isNicePasswprd <- result match {
                     case Right(Some(user)) =>
