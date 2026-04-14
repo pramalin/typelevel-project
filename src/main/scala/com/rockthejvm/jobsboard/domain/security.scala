@@ -5,25 +5,29 @@ import cats.implicits.*
 import tsec.mac.jca.HMACSHA256
 import tsec.authentication.AugmentedJWT
 import tsec.authentication.JWTAuthenticator
-
-import com.rockthejvm.jobsboard.domain.user.*
 import tsec.authentication.SecuredRequest
-import org.http4s.Response
 import tsec.authorization.BasicRBAC
 import tsec.authorization.AuthorizationInfo
 import tsec.authentication.TSecAuthService
+import tsec.authentication.SecuredRequestHandler
+
+import com.rockthejvm.jobsboard.domain.user.*
+import org.http4s.Response
 import org.http4s.Status
 
 object security {
     type Crypto = HMACSHA256
     type JwtToken = AugmentedJWT[Crypto, String]
     type Authenticator[F[_]] = JWTAuthenticator[F, String, User, Crypto]
+    // type aliases for http routes
     type AuthRoute[F[_]] = PartialFunction[SecuredRequest[F, User, JwtToken], F[Response[F]]]
-    type AuthRBAC[F[_]] = BasicRBAC[F, Role, User, JwtToken]
+    type SecuredHandler[F[_]] = SecuredRequestHandler[F, String, User, JwtToken]
 
     // RBAC
     // BasicRBAC[F, Role, User, JwtToken]
-    given quthRole[F[_]: Applicative]: AuthorizationInfo[F, Role, User] with {
+    type AuthRBAC[F[_]] = BasicRBAC[F, Role, User, JwtToken]
+
+    given authRole[F[_]: Applicative]: AuthorizationInfo[F, Role, User] with {
         override def fetchInfo(u: User): F[Role] = u.role.pure[F]
     }
 
