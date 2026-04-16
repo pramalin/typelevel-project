@@ -20,7 +20,7 @@
             "/home/pramalin/.sbt/boot/scala-2.12.21/lib/scala-library.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.19/sbt-bloop_2.12_1.0-2.0.19.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/sbt/sbt-native-packager_2.12_1.0/1.9.11/sbt-native-packager_2.12_1.0-1.9.11.jar",
-            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.12.0/sbt-scalajs-1.12.0.jar",
+            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.21.0/sbt-scalajs_2.12_1.0-1.21.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-scalajs-bundler_2.12_1.0/0.21.0/sbt-scalajs-bundler-0.21.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-scalajs-crossproject_2.12_1.0/1.2.0/sbt-scalajs-crossproject-1.2.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main_2.12/1.12.5/main_2.12-1.12.5.jar",
@@ -31,9 +31,9 @@
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/eldis/tool-launcher/0.2.2/tool-launcher-0.2.2.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/2.3.0/scala-xml_2.12-2.3.0.jar",
-            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.12.0/scalajs-linker-interface_2.12-1.12.0.jar",
-            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.12.0/scalajs-sbt-test-adapter_2.12-1.12.0.jar",
-            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.1/sbt-platform-deps-1.0.1.jar",
+            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.21.0/scalajs-linker-interface_2.12-1.21.0.jar",
+            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.21.0/scalajs-sbt-test-adapter_2.12-1.21.0.jar",
+            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.2/sbt-platform-deps-1.0.2.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-js-envs_2.12/1.4.0/scalajs-js-envs_2.12-1.4.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-env-nodejs_2.12/1.4.0/scalajs-env-nodejs_2.12-1.4.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar",
@@ -62,7 +62,7 @@
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/plokhotnyuk/jsoniter-scala/jsoniter-scala-core_2.12/2.13.5.2/jsoniter-scala-core_2.12-2.13.5.2.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/unroll-annotation_2.12/0.1.12/unroll-annotation_2.12-0.1.12.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/ant/ant-launcher/1.10.9/ant-launcher-1.10.9.jar",
-            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.12.0/scalajs-ir_2.12-1.12.0.jar",
+            "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.21.0/scalajs-ir_2.12-1.21.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-logging_2.12/1.1.1/scalajs-logging_2.12-1.1.1.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar",
             "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/30.1-android/guava-30.1-android.jar",
@@ -261,7 +261,7 @@
                 "/home/pramalin/work/typelevel-project/project/.bloop/typelevel-project-build/scala-2.12/sbt-1.0/classes",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.19/sbt-bloop_2.12_1.0-2.0.19.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/sbt/sbt-native-packager_2.12_1.0/1.9.11/sbt-native-packager_2.12_1.0-1.9.11.jar",
-                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.12.0/sbt-scalajs-1.12.0.jar",
+                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.21.0/sbt-scalajs_2.12_1.0-1.21.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-scalajs-bundler_2.12_1.0/0.21.0/sbt-scalajs-bundler-0.21.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-scalajs-crossproject_2.12_1.0/1.2.0/sbt-scalajs-crossproject-1.2.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.3.3/bloop-config_2.12-2.3.3.jar",
@@ -271,9 +271,9 @@
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/io_2.12/1.2.2/io_2.12-1.2.2.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/2.1.0/scala-xml_2.12-2.1.0.jar",
-                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.12.0/scalajs-linker-interface_2.12-1.12.0.jar",
-                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.12.0/scalajs-sbt-test-adapter_2.12-1.12.0.jar",
-                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.1/sbt-platform-deps-1.0.1.jar",
+                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.21.0/scalajs-linker-interface_2.12-1.21.0.jar",
+                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.21.0/scalajs-sbt-test-adapter_2.12-1.21.0.jar",
+                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.2/sbt-platform-deps-1.0.2.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-js-envs_2.12/1.4.0/scalajs-js-envs_2.12-1.4.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-env-nodejs_2.12/1.4.0/scalajs-env-nodejs_2.12-1.4.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar",
@@ -286,7 +286,7 @@
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/swoval/apple-file-events/1.3.2/apple-file-events-1.3.2.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/4.5.0/jna-4.5.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna-platform/4.5.0/jna-platform-4.5.0.jar",
-                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.12.0/scalajs-ir_2.12-1.12.0.jar",
+                "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.21.0/scalajs-ir_2.12-1.21.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-logging_2.12/1.1.1/scalajs-logging_2.12-1.1.1.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar",
                 "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/guava/guava/30.1-android/guava-30.1-android.jar",
@@ -423,17 +423,17 @@
                 {
                     "organization": "org.scala-js",
                     "name": "sbt-scalajs",
-                    "version": "1.12.0",
+                    "version": "1.21.0",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "sbt-scalajs",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.12.0/sbt-scalajs-1.12.0.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.21.0/sbt-scalajs_2.12_1.0-1.21.0.jar"
                         },
                         {
                             "name": "sbt-scalajs",
                             "classifier": "sources",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.12.0/sbt-scalajs-1.12.0-sources.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/sbt-scalajs_2.12_1.0/1.21.0/sbt-scalajs_2.12_1.0-1.21.0-sources.jar"
                         }
                     ]
                 },
@@ -559,51 +559,51 @@
                 {
                     "organization": "org.scala-js",
                     "name": "scalajs-linker-interface_2.12",
-                    "version": "1.12.0",
+                    "version": "1.21.0",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "scalajs-linker-interface_2.12",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.12.0/scalajs-linker-interface_2.12-1.12.0.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.21.0/scalajs-linker-interface_2.12-1.21.0.jar"
                         },
                         {
                             "name": "scalajs-linker-interface_2.12",
                             "classifier": "sources",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.12.0/scalajs-linker-interface_2.12-1.12.0-sources.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-linker-interface_2.12/1.21.0/scalajs-linker-interface_2.12-1.21.0-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.scala-js",
                     "name": "scalajs-sbt-test-adapter_2.12",
-                    "version": "1.12.0",
+                    "version": "1.21.0",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "scalajs-sbt-test-adapter_2.12",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.12.0/scalajs-sbt-test-adapter_2.12-1.12.0.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.21.0/scalajs-sbt-test-adapter_2.12-1.21.0.jar"
                         },
                         {
                             "name": "scalajs-sbt-test-adapter_2.12",
                             "classifier": "sources",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.12.0/scalajs-sbt-test-adapter_2.12-1.12.0-sources.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-sbt-test-adapter_2.12/1.21.0/scalajs-sbt-test-adapter_2.12-1.21.0-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "org.portable-scala",
                     "name": "sbt-platform-deps",
-                    "version": "1.0.1",
+                    "version": "1.0.2",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "sbt-platform-deps",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.1/sbt-platform-deps-1.0.1.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.2/sbt-platform-deps-1.0.2.jar"
                         },
                         {
                             "name": "sbt-platform-deps",
                             "classifier": "sources",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.1/sbt-platform-deps-1.0.1-sources.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/portable-scala/sbt-platform-deps_2.12_1.0/1.0.2/sbt-platform-deps-1.0.2-sources.jar"
                         }
                     ]
                 },
@@ -763,17 +763,17 @@
                 {
                     "organization": "org.scala-js",
                     "name": "scalajs-ir_2.12",
-                    "version": "1.12.0",
+                    "version": "1.21.0",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "scalajs-ir_2.12",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.12.0/scalajs-ir_2.12-1.12.0.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.21.0/scalajs-ir_2.12-1.21.0.jar"
                         },
                         {
                             "name": "scalajs-ir_2.12",
                             "classifier": "sources",
-                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.12.0/scalajs-ir_2.12-1.12.0-sources.jar"
+                            "path": "/home/pramalin/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-ir_2.12/1.21.0/scalajs-ir_2.12-1.21.0-sources.jar"
                         }
                     ]
                 },
