@@ -1,4 +1,29 @@
 .nav-link {
+  color: red;
   padding: 20px;
+}
+
+.header-container {
+  border-bottom: 1px solid #000;
+  align-items: center;
+  display: flex;
+}
+
+.header-nav {
+  margin-left: auto;
+}
+
+.nav-links {
+  align-items: center;
+  display: flex;
+}
+
+.nav-item {
+  padding: 10px;
+  list-style: none;
+}
+
+.home-logo {
+  height: 50px;
 }
 /*# sourceMappingURL=app.b2625c6b.css.map */
