@@ -7,6 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 
 import com.rockthejvm.jobsboard.core.*
+import com.rockthejvm.jobsboard.pages.*
 
 object Header {
     // public API
@@ -15,9 +16,9 @@ object Header {
             renderLogo(),
             div(`class`:= "header-nav")(
                 ul(`class` := "nav-links")(
-                    renderNavLink("Jobs", "/jobs"),
-                    renderNavLink("Login", "/login"),
-                    renderNavLink("Sign up", "/signup"),
+                    renderNavLink("Jobs", Page.Urls.JOBS),
+                    renderNavLink("Login", Page.Urls.LOGIN),
+                    renderNavLink("Sign up", Page.Urls.SIGNUP),
                 )
             )
         )
