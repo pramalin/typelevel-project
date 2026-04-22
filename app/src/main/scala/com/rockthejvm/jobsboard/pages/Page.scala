@@ -6,6 +6,11 @@ import cats.effect.IO
 object Page {
     trait Msg
 
+    enum StatusKind {
+        case SUCCESS, ERROR, LOADING
+    }
+
+    final case class Status(message: String, kind: StatusKind)
     object Urls {
         val LOGIN            = "/login"
         val SIGNUP           = "/signup"
@@ -19,7 +24,7 @@ object Page {
     def get(location: String): Page =
         location match {
             case Urls.LOGIN            => LoginPage()
-            case Urls.SIGNUP           => SignupPage()
+            case Urls.SIGNUP           => SignUpPage()
             case Urls.FORGOT_PASSWORD  => ForgotPasswordPage()
             case Urls.RECOVER_PASSWORD => RecoverPasswordPage()
             case Urls.EMPTY | Urls.HOME | Urls.JOBS => JobListPage()
