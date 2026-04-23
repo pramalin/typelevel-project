@@ -1,10 +1,16 @@
 package com.rockthejvm.jobsboard.pages
 
 import tyrian.*
+import tyrian.http.*
 import tyrian.Html.*
-import tyrian.cmds.*
 import cats.effect.IO
+import tyrian.cmds.*
+import io.circe.syntax.*
+import io.circe.parser.*
+import io.circe.generic.auto.*
+
 import com.rockthejvm.jobsboard.common.*
+import com.rockthejvm.jobsboard.domain.auth.NewUserInfo
 
 // form
 /* 
@@ -43,8 +49,18 @@ final case class SignUpPage(
                 (setErrorStatus("Please enter a password"), Cmd.None)
             else if (password != confirmPassword)
                 (setErrorStatus("Password fields do not match"), Cmd.None)
-            else (this, Logger.consoleLog[IO]("SIGNING UP: ", email, password, firstName, lastName, company))
-
+            else
+                 (this, Commands.signup(
+                    NewUserInfo(
+                        email,
+                        password,
+                        Option(firstName).filter(_.nonEmpty),
+                         Option(lastName).filter(_.nonEmpty),
+                        Option(company).filter(_.nonEmpty))))
+        case SignUpError(message) =>
+             (setErrorStatus(message), Cmd.None)
+        case SignUpSuccess(message) =>
+             (setSuccessStatus(message), Cmd.None)
         case _ => (this, Cmd.None)
     }
 
@@ -95,6 +111,8 @@ final case class SignUpPage(
     // util
     def setErrorStatus(message: String): Page =
         this.copy(status = Some(Page.Status(message, Page.StatusKind.ERROR)))
+    def setSuccessStatus(message: String): Page =
+        this.copy(status = Some(Page.Status(message, Page.StatusKind.SUCCESS)))
 }
 
 
@@ -105,9 +123,38 @@ object SignUpPage {
     case class UpdateConfirmPassword(confirmPassword: String) extends Msg
     case class UpdateFirstName(firstName: String) extends Msg
     case class UpdateLastName(lastName: String) extends Msg
-    case class UpdateCompany(company: String) extends Msg
-    
+    case class UpdateCompany(company: String) extends Msg    
     // actions
     case object AttemptSignUp extends Msg
     case object NoOp extends Msg
+    // statuses
+    case class SignUpError(message: String) extends Msg
+    case class SignUpSuccess(message: String) extends Msg
+
+    object EndPoints {
+        val signup = new Endpoint[Msg] {
+            val location: String = Constants.EndPoints.signUp
+            val method: Method = Method.Post 
+            val onSuccess: Response => Msg = response => response.status match {
+                case Status(201, _) =>
+                    SignUpSuccess("Success! Log in Now.")
+                case Status(s, _) if s >= 400 && s < 500 =>
+                    val json = response.body
+                    val parsed = parse(json).flatMap(_.hcursor.get[String]("error"))
+                    parsed match {
+                        case Left(e) => SignUpError(s"Error: ${e.getMessage}")
+                        case Right(e) => SignUpError(e)
+                    }
+            }
+            val onError: HttpError => Msg =
+                e => SignUpError(e.toString)
+
+        }
+    }
+
+    object Commands {
+        def signup(newUserInfo: NewUserInfo): Cmd[IO, Msg] =
+            EndPoints.signup.call(newUserInfo)
+    }
+
 }

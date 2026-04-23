@@ -3,7 +3,7 @@ package com.rockthejvm.jobsboard.fixtures
 import cats.effect.IO
 import com.rockthejvm.jobsboard.core.Users
 import com.rockthejvm.jobsboard.domain.user.*
-import com.rockthejvm.jobsboard.domain.user.NewUserInfo
+import com.rockthejvm.jobsboard.domain.auth.*
 
 /* 
 rockthejvm => $2a$10$7XxTL6cI5UDRXhjNnrLuY.3fZQggtaa6wv2K/TyG2fE6dINoKjMNa
