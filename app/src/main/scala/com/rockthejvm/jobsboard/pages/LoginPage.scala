@@ -37,7 +37,7 @@ final case class LoginPage(
         case LoginError(message) =>
              (setErrorStatus(message), Cmd.None)
         case LoginSuccess(token) =>
-             (setSuccessStatus("Success"), Cmd.Emit(Session.SetToken(email, token)))
+             (setSuccessStatus("Success"), Cmd.Emit(Session.SetToken(email, token, isNewUser = true)))
         case _ => (this, Cmd.None)
     }
     override def view(): Html[App.Msg] =
