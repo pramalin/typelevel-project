@@ -131,9 +131,9 @@ object SignUpPage {
     case class SignUpError(message: String) extends Msg
     case class SignUpSuccess(message: String) extends Msg
 
-    object EndPoints {
+    object Endpoints {
         val signup = new Endpoint[Msg] {
-            val location: String = Constants.EndPoints.signUp
+            val location: String = Constants.Endpoints.signUp
             val method: Method = Method.Post 
             val onSuccess: Response => Msg = response => response.status match {
                 case Status(201, _) =>
@@ -154,7 +154,7 @@ object SignUpPage {
 
     object Commands {
         def signup(newUserInfo: NewUserInfo): Cmd[IO, Msg] =
-            EndPoints.signup.call(newUserInfo)
+            Endpoints.signup.call(newUserInfo)
     }
 
 }
