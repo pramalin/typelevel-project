@@ -13,9 +13,9 @@ import components.Header
 import com.rockthejvm.jobsboard.pages.*
 
 object App {
-    type Msg = Router.Msg | Page.Msg
+    trait Msg
 
-    case class Model(router: Router, page: Page)
+    case class Model(router: Router, session: Session,page: Page)
 }
 
 @JSExportTopLevel("RockTheJvmApp")
@@ -27,7 +27,9 @@ class App extends TyrianApp[App.Msg, App.Model] {
         val page = Page.get(location)
         val pageCmd = page.initCmd
         val (router, routerCmd) = Router.startAt(location)
-        (Model(router, page), routerCmd |+| pageCmd)
+        val session = Session()
+        val sessionCmd = session.initCmd
+        (Model(router, session, page), routerCmd |+| sessionCmd |+| pageCmd)
     }
     
     override def subscriptions(model: Model): Sub[IO, Msg] =
@@ -42,7 +44,7 @@ class App extends TyrianApp[App.Msg, App.Model] {
     // model => message => (new model, ___ /*new command*/)
     // update is triggered whenever we get a new message
     override def update(model: Model): Msg => (Model, Cmd[IO, Msg]) = {
-         case msg: Router.Msg =>
+        case msg: Router.Msg =>
             val (newRouter, routerCmd) = model.router.update(msg)
             if(model.router == newRouter)
                 (model, Cmd.None)   
@@ -52,7 +54,10 @@ class App extends TyrianApp[App.Msg, App.Model] {
                 val newPageCmd = newPage.initCmd
                 (model.copy(router = newRouter, page = newPage), routerCmd |+| newPageCmd)
             }
-        case msg: Page.Msg =>
+        case msg: Session.Msg =>
+                val (newSession, cmd) = model.session.update(msg)
+                (model.copy(session = newSession), cmd)
+        case msg: App.Msg =>
             // update the page
             val (newPage, cmd) = model.page.update(msg)
             (model.copy(page = newPage), cmd)

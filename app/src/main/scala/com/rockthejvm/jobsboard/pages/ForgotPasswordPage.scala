@@ -4,10 +4,12 @@ import tyrian.*
 import tyrian.Html.*
 import cats.effect.IO
 
+import com.rockthejvm.jobsboard.*
+
 final case class ForgotPasswordPage() extends Page {
-    override def initCmd: Cmd[IO, Page.Msg] = Cmd.None
-    override def update(msg: Page.Msg): (Page, Cmd[IO, Page.Msg]) = (this, Cmd.None)
-    override def view(): Html[Page.Msg] = Html.div(
+    override def initCmd: Cmd[IO, App.Msg] = Cmd.None
+    override def update(msg: App.Msg): (Page, Cmd[IO, App.Msg]) = (this, Cmd.None)
+    override def view(): Html[App.Msg] = Html.div(
         Html.h1("Forgot Password Page")
     )
 }
