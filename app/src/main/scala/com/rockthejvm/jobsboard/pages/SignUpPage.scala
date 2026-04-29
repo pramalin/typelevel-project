@@ -135,7 +135,7 @@ object SignUpPage {
 
     object Endpoints {
         val signup = new Endpoint[Msg] {
-            val location: String = Constants.Endpoints.signUp
+            val location: String = Constants.endpoints.signUp
             val method: Method = Method.Post 
             val onSuccess: Response => Msg = response => response.status match {
                 case Status(201, _) =>
