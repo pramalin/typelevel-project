@@ -14,17 +14,6 @@ import com.rockthejvm.jobsboard.domain.auth.NewUserInfo
 
 import com.rockthejvm.jobsboard.*
 
-// form
-/* 
-  input
-    - email
-    - password
-    - confirm password
-    - first name
-    - last name
-    - company
-  button - trigger a sign up  
-*/
 final case class SignUpPage(
     email: String = "",
     password: String = "",
@@ -33,7 +22,7 @@ final case class SignUpPage(
     lastName: String = "",
     company: String = "",
     status: Option[Page.Status] = None
-) extends Page {
+) extends FormPage("Sign Up", status) {
     import SignUpPage.*
 
     override def initCmd: Cmd[IO, App.Msg] = Cmd.None
@@ -66,49 +55,20 @@ final case class SignUpPage(
         case _ => (this, Cmd.None)
     }
 
-    override def view(): Html[App.Msg] = 
-       div(`class` := "form-section")(
-        // title: Sign Up
-        div(`class` := "top-section")(
-        h1("Sign Up")
-       ),
-       // form
-       form(name:= "sign-in", `class` := "form", onEvent("submit", e => {
-        e.preventDefault()
-        NoOp
-       }))(
-            // 6 inputs
-            renderInput("Email", "email", "text", true, UpdateEmail(_)),
-            renderInput("Password", "password", "password", true, UpdatePassword(_)),
-            renderInput("Confirm Password", "cPassword", "password", true, UpdateConfirmPassword(_)),
-            renderInput("First Name", "firstname", "text", true, UpdateFirstName(_)),
-            renderInput("Last Name", "lastname", "text", true, UpdateLastName(_)),
-            renderInput("Company", "company", "text", true, UpdateCompany(_)),
-            // button
-            button(`type` := "button", onClick(AttemptSignUp))("Sign Up"),
-            status.map(s => div(s.message)).getOrElse(div())
-       )
+    override protected def renderFormContent(): List[Html[App.Msg]]  = List(
+        renderInput("Email", "email", "text", true, UpdateEmail(_)),
+        renderInput("Password", "password", "password", true, UpdatePassword(_)),
+        renderInput("Confirm Password", "cPassword", "password", true, UpdateConfirmPassword(_)),
+        renderInput("First Name", "firstname", "text", true, UpdateFirstName(_)),
+        renderInput("Last Name", "lastname", "text", true, UpdateLastName(_)),
+        renderInput("Company", "company", "text", true, UpdateCompany(_)),
+        // button
+        button(`type` := "button", onClick(AttemptSignUp))("Sign Up"),
     )
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // private
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // UI
-    private def renderInput(
-        name: String,
-        uid: String,
-        kind: String,
-        isRequired: Boolean,
-        onChange: String => Msg
-    ) =
-        div(`class` := "form-input")(
-           label(`for` := name, `class` := "form-label")(
-            if(isRequired) span("*") else span(),
-            text(name)
-           ),
-           input(`type` := kind, `class` := "form-control", id := uid, onInput(onChange)) 
-        )
 
     // util
     def setErrorStatus(message: String): Page =
@@ -137,7 +97,7 @@ object SignUpPage {
         val signup = new Endpoint[Msg] {
             val location: String = Constants.endpoints.signUp
             val method: Method = Method.Post 
-            val onSuccess: Response => Msg = response => response.status match {
+            val onResponse: Response => Msg = response => response.status match {
                 case Status(201, _) =>
                     SignUpSuccess("Success! Log in Now.")
                 case Status(s, _) if s >= 400 && s < 500 =>
@@ -147,6 +107,7 @@ object SignUpPage {
                         case Left(e) => SignUpError(s"Error: ${e.getMessage}")
                         case Right(e) => SignUpError(e)
                     }
+                case _ => SignUpError("Unknown reply from server. Something's fishy.")
             }
             val onError: HttpError => Msg =
                 e => SignUpError(e.toString)

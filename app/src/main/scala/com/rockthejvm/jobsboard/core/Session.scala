@@ -71,14 +71,14 @@ object Session {
         val logout = new Endpoint[Msg] {
             val location= Constants.endpoints.logout
             val method = Method.Post
-            val onSuccess: Response => Msg = _ => LogoutSuccess
+            val onResponse: Response => Msg = _ => LogoutSuccess
             val onError: HttpError => Msg = _ => LogoutFailure
         }
 
         val checkToken = new Endpoint[Msg] {
             val location= Constants.endpoints.checkToken
             val method = Method.Get
-            val onSuccess: Response => Msg = response => response.status match {
+            val onResponse: Response => Msg = response => response.status match {
                 case Status(200, _) => KeepToken
                 case _ => InvalidateToken
             }
