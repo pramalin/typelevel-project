@@ -68,7 +68,6 @@ object ResetPasswordPage {
     case class UpdateEmail(email: String) extends Msg
     case class UpdateToken(token: String) extends Msg
     case class UpdatePassword(password: String) extends Msg
-    case class AttemptResetPassword(password: String) extends Msg
     // actions
     case object AttemptResetPassword extends Msg
     case class ResetPasswordFailure(error: String) extends Msg
