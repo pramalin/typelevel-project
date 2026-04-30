@@ -4,16 +4,19 @@ import tyrian.*
 import tyrian.http.*
 import tyrian.Html.*
 import cats.effect.IO
+import org.scalajs.dom.*
+import scala.concurrent.duration.FiniteDuration
 
 import com.rockthejvm.jobsboard.common.*
 import com.rockthejvm.jobsboard.core.*
 import com.rockthejvm.jobsboard.*
+import org.scalajs.dom.HTMLFormElement
 
 abstract class FormPage(title: String, status: Option[Page.Status]) extends Page {
 
     // public API
     override def initCmd: Cmd[IO, App.Msg] =
-        Cmd.None
+        clearForm()
     override def view(): Html[App.Msg] =
         renderForm()
 
@@ -31,6 +34,7 @@ abstract class FormPage(title: String, status: Option[Page.Status]) extends Page
        form(
             name:= "sign-in",
             `class` := "form",
+            id := "form",
             onEvent(
                 "submit",
                 e => {
@@ -71,4 +75,27 @@ abstract class FormPage(title: String, status: Option[Page.Status]) extends Page
                 }
             )
         )(text)
+
+
+    /*
+        check if the form has has loaded (if it's present on the page)
+          document.getElementByUd()
+        check again, while the element is null, with a space of 100 millis
+
+        use IO effects!  
+    */
+
+    private def clearForm() = {
+        Cmd.Run[IO, Unit, App.Msg] {
+            def effect: IO[Option[HTMLFormElement]] = for {
+                maybeForm <- IO(Option(document.getElementById("form").asInstanceOf[HTMLFormElement]))
+                finalForm <- 
+                    if(maybeForm.isEmpty) IO.sleep(FiniteDuration(100, "millis")) *> effect
+                    else IO(maybeForm)
+            } yield finalForm
+
+
+            effect.map(_.foreach(_.reset()))
+        }(_ => App.NoOp)
+    }
 }
