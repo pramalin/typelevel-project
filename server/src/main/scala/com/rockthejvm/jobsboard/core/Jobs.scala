@@ -25,6 +25,7 @@ trait Jobs[F[_]] {
   def find(id: UUID): F[Option[Job]]
   def update(id: UUID, jobInfo: JobInfo): F[Option[Job]]
   def delete(id: UUID): F[Int]
+  def possibleFilters(): F[JobFilter]
 }
 
 /* 
@@ -229,9 +230,41 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
     .update
     .run
     .transact(xa)
+
+  override def possibleFilters(): F[JobFilter] = {
+    sql"""
+    select
+      array(select distinct(company) from jobs) as companies,
+      array(select distinct(location) from jobs) as locations,
+      array(select distinct(country) from jobs where country is not null) as countries,
+      array(select distinct(seniority) from jobs where seniority is not null) as seniorities,
+      array(select distinct(unnest(tags)) from jobs) as tags,
+      max(salaryHi),
+      false from jobs
+    """
+    .query[JobFilter]
+    .option
+    .transact(xa)
+    .map(_.getOrElse(JobFilter()))
+  }
 }
 
 object LiveJobs {
+  given jobFilterRead: Read[JobFilter] = Read[
+    (
+      List[String],
+      List[String],
+      List[String],
+      List[String],
+      List[String],
+      Option[Int],
+      Boolean
+    )
+  ].map {
+    case (companies, locations, countries, seniorities, tags, maxSalary, remote) =>
+      JobFilter(companies, locations, countries, seniorities, tags, maxSalary, false)
+  }
+
     given jobRead: Read[Job] = Read[(
       UUID,                 // id,
       Long,                 // date,
