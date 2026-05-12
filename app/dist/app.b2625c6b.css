@@ -69,4 +69,10 @@
   margin: 10px;
   padding: 10px;
 }
+
+.job-hero {
+  align-items: center;
+  margin: 20px;
+  display: flex;
+}
 /*# sourceMappingURL=app.b2625c6b.css.map */

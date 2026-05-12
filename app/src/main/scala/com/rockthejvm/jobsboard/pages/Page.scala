@@ -14,6 +14,11 @@ object Page {
     }
 
     final case class Status(message: String, kind: StatusKind)
+
+    object Status {
+        val LOADING = Status("Loading", StatusKind.LOADING) 
+    }
+
     object Urls {
         val LOGIN            = "/login"
         val SIGNUP           = "/signup"
@@ -25,6 +30,7 @@ object Page {
         val EMPTY            = ""
         val HOME             = "/"
         val HASH             = "#"
+        def JOB(id: String) = s"/jobs/$id"
     }
 
     def get(location: String): Page =

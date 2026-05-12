@@ -49,7 +49,7 @@ final case class ResetPasswordPage(
        renderInput("Token", "token", "text", true, UpdateToken(_)),
        renderInput("Password", "password", "password", true, UpdatePassword(_)),
        button(`type` := "button", onClick(AttemptResetPassword))("Reset Password"),
-       renderAuxLink(Page.Urls.FORGOT_PASSWORD, "Don't have a token yet?")
+       Anchors.renderSimpleNavLink("Don't have a token yet?", Page.Urls.FORGOT_PASSWORD)
     )
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
