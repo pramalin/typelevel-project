@@ -4397,18 +4397,17 @@ $c_Lcom_rockthejvm_jobsboard_pages_Page$.prototype.get__T__Lcom_rockthejvm_jobsb
                 if (location === "/jobs") break matchAlts2;
                 break matchAlts1;
             }
+            var filterPanel = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$().$lessinit$greater$default$1__Lcom_rockthejvm_jobsboard_components_FilterPanel();
             var companies = $m_sci_Nil$();
             var locations = $m_sci_Nil$();
             var countries = $m_sci_Nil$();
             var seniorities = $m_sci_Nil$();
             var tags$1 = $m_sci_Nil$();
             var maxSalary = $m_s_None$();
-            var possibleFilters = new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags$1, maxSalary, false);
-            var maybeError = $m_s_None$();
-            var filterPanel = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, maybeError);
+            var jobFilter = new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags$1, maxSalary, false);
             var jobs = $m_sci_Nil$();
-            var status$6 = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$().$lessinit$greater$default$4__s_Option();
-            var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel, jobs, true, status$6);
+            var status$6 = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$().$lessinit$greater$default$5__s_Option();
+            var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel, jobFilter, jobs, true, status$6);
             break matchResult5;
         }
         if (location !== null) {
@@ -19576,6 +19575,12 @@ function $f_Ltyrian_HtmlAttributes__$init$__V($thiz) {
     new $c_Ltyrian_HtmlAttributes$PropertyNameDouble($thiz, "value");
     new $c_Ltyrian_HtmlAttributes$PropertyNameBoolean($thiz, "value");
 }
+function $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr($thiz, isUsed) {
+    return $as_Ltyrian_Attr(isUsed ? new $c_Ltyrian_NamedAttribute("checked") : $m_Ltyrian_EmptyAttribute$());
+}
+function $f_Ltyrian_HtmlAttributes__disabled__Z__Ltyrian_Attr($thiz, isUsed) {
+    return $as_Ltyrian_Attr(isUsed ? new $c_Ltyrian_NamedAttribute("disabled") : $m_Ltyrian_EmptyAttribute$());
+}
 function $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr($thiz, msg) {
     var msg$1 = new $c_sjsr_AnonFunction1_$$Lambda$412915ce24663401f4bc24349a746e1dbd693dc1((_$9)=>msg);
     return new $c_Ltyrian_Event("click", msg$1);
@@ -19720,6 +19725,15 @@ function $f_Ltyrian_HtmlTags__h4$minusno_attrs$minuslist$minusplaintext__T__Ltyr
     ]));
     var children = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
     return new $c_Ltyrian_Tag("h4", attributes, children);
+}
+function $f_Ltyrian_HtmlTags__h6$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html($thiz, attributes, plainText) {
+    var attributes$1 = $n(attributes).toList__sci_List();
+    $m_sci_List$();
+    var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Ltyrian_Text.getArrayOf()).constr([
+        ($m_Ltyrian_Html$(), new $c_Ltyrian_Text(plainText))
+    ]));
+    var children = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+    return new $c_Ltyrian_Tag("h6", attributes$1, children);
 }
 function $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html($thiz, attributes, plainText) {
     var attributes$1 = $n(attributes).toList__sci_List();
@@ -24429,13 +24443,13 @@ var $d_Lcats_syntax_Tuple4SemigroupalOps = new $TypeData().initClass($c_Lcats_sy
         return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(error);
     });
     var $x_3 = $m_Lcom_rockthejvm_jobsboard_common_Endpoint$();
-    var $x_2 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$1$2)=>{
-        var _$1 = $as_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(_$1$2);
-        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(_$1);
+    var $x_2 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
+        var _$2 = $as_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(_$2$2);
+        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(_$2);
     });
-    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
-        var _$2 = $as_T(_$2$2);
-        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(_$2);
+    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$3$2)=>{
+        var _$3 = $as_T(_$3$2);
+        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(_$3);
     });
     $m_Lio_circe_Decoder$();
     var instance = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$Endpoints$$anon$1$$anon$2();
@@ -24638,9 +24652,9 @@ var $d_Lcom_rockthejvm_jobsboard_pages_ForgotPasswordPage$Endpoints$$anon$1 = ne
         var canLoadMore = offset$2 === 0 || !$n(list).isEmpty__Z();
         return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(list, canLoadMore);
     });
-    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$1$2)=>{
-        var _$1 = $as_T(_$1$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(_$1);
+    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
+        var _$2 = $as_T(_$2$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(_$2);
     });
     $m_Lio_circe_Decoder$();
     $m_Lio_circe_Decoder$();
@@ -40427,6 +40441,24 @@ var $d_Lcom_rockthejvm_jobsboard_App = new $TypeData().initClass($c_Lcom_rockthe
     Ltyrian_TyrianAppF: 1,
     Ltyrian_TyrianApp: 1
 });
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$() {}
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_components_FilterPanel$() {}
+$h_Lcom_rockthejvm_jobsboard_components_FilterPanel$.prototype = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$.prototype;
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$.prototype.$lessinit$greater$default$2__sci_Map = function() {
+    return $m_sci_Map$EmptyMap$();
+};
+var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$ = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$, "com.rockthejvm.jobsboard.components.FilterPanel$", {
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$: 1,
+    s_deriving_Mirror: 1,
+    s_deriving_Mirror$Product: 1
+});
+var $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$;
+function $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$() {
+    if (!$n_Lcom_rockthejvm_jobsboard_components_FilterPanel$) $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$ = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$();
+    return $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$;
+}
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_core_Router$() {}
 $c_Lcom_rockthejvm_jobsboard_core_Router$.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_core_Router$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_core_Router$;
@@ -41046,7 +41078,23 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$;
 /** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_JobListPage$() {}
 $h_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype = $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype;
-$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype.$lessinit$greater$default$4__s_Option = function() {
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype.$lessinit$greater$default$1__Lcom_rockthejvm_jobsboard_components_FilterPanel = function() {
+    var companies = $m_sci_Nil$();
+    var locations = $m_sci_Nil$();
+    var countries = $m_sci_Nil$();
+    var seniorities = $m_sci_Nil$();
+    var tags = $m_sci_Nil$();
+    var maxSalary = $m_s_None$();
+    var possibleFilters = new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags, maxSalary, false);
+    var selectedFilters = $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$().$lessinit$greater$default$2__sci_Map();
+    var maybeError = $m_s_None$();
+    var filterAction = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$1$2)=>{
+        var _$1 = $as_sci_Map(_$1$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(_$1);
+    });
+    return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, selectedFilters, maybeError, 0, false, false, filterAction);
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$.prototype.$lessinit$greater$default$5__s_Option = function() {
     var kind = $s_Lcom_rockthejvm_jobsboard_pages_Page$StatusKind$__LOADING__Lcom_rockthejvm_jobsboard_pages_Page$StatusKind();
     var value = new $c_Lcom_rockthejvm_jobsboard_pages_Page$Status("Loading", kind);
     return new $c_s_Some(value);
@@ -47472,6 +47520,10 @@ $c_Lcats_data_Chain$ChainIterator.prototype.copyToArray__O__I__I__I = function(x
 $c_Lcats_data_Chain$ChainIterator.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_Lcats_data_Chain$ChainIterator.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_Lcats_data_Chain$ChainIterator.prototype.iterator__sc_Iterator = function() {
     return this;
 };
@@ -50440,6 +50492,10 @@ $c_Lfs2_Chunk$$anon$1.prototype.copyToArray__O__I__I__I = function(xs, start, le
 $c_Lfs2_Chunk$$anon$1.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_Lfs2_Chunk$$anon$1.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_Lfs2_Chunk$$anon$1.prototype.iterator__sc_Iterator = function() {
     return this;
 };
@@ -51145,6 +51201,10 @@ $c_Lio_circe_DerivedDecoder$$anon$3.prototype.copyToArray__O__I__I__I = function
 $c_Lio_circe_DerivedDecoder$$anon$3.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_Lio_circe_DerivedDecoder$$anon$3.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_Lio_circe_DerivedDecoder$$anon$3.prototype.iterator__sc_Iterator = function() {
     return this;
 };
@@ -51212,6 +51272,10 @@ $c_Lio_circe_DerivedEncoder$$anon$2.prototype.copyToArray__O__I__I__I = function
 };
 $c_Lio_circe_DerivedEncoder$$anon$2.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_Lio_circe_DerivedEncoder$$anon$2.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lio_circe_DerivedEncoder$$anon$2.prototype.iterator__sc_Iterator = function() {
     return this;
@@ -51326,6 +51390,10 @@ $c_Lio_circe_JsonObject$$anon$6.prototype.copyToArray__O__I__I__I = function(xs,
 };
 $c_Lio_circe_JsonObject$$anon$6.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_Lio_circe_JsonObject$$anon$6.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lio_circe_JsonObject$$anon$6.prototype.iterator__sc_Iterator = function() {
     return this;
@@ -54526,6 +54594,10 @@ $c_Lorg_scalajs_dom_DOMList$DOMListIterator.prototype.copyToArray__O__I__I__I = 
 $c_Lorg_scalajs_dom_DOMList$DOMListIterator.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_Lorg_scalajs_dom_DOMList$DOMListIterator.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_Lorg_scalajs_dom_DOMList$DOMListIterator.prototype.iterator__sc_Iterator = function() {
     return this;
 };
@@ -54586,6 +54658,10 @@ $c_Lorg_scalajs_dom_NamedNodeMapMap$$anon$1.prototype.copyToArray__O__I__I__I = 
 };
 $c_Lorg_scalajs_dom_NamedNodeMapMap$$anon$1.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_Lorg_scalajs_dom_NamedNodeMapMap$$anon$1.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lorg_scalajs_dom_NamedNodeMapMap$$anon$1.prototype.iterator__sc_Iterator = function() {
     return this;
@@ -55011,6 +55087,10 @@ $c_sc_AbstractIterator.prototype.copyToArray__O__I__I__I = function(dest, start,
 };
 $c_sc_AbstractIterator.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_sc_AbstractIterator.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_sc_AbstractIterator.prototype.iterator__sc_Iterator = function() {
     return this;
@@ -55629,6 +55709,10 @@ $c_sjs_js_WrappedDictionary$DictionaryIterator.prototype.copyToArray__O__I__I__I
 };
 $c_sjs_js_WrappedDictionary$DictionaryIterator.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_sjs_js_WrappedDictionary$DictionaryIterator.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_sjs_js_WrappedDictionary$DictionaryIterator.prototype.knownSize__I = function() {
     return -1;
@@ -59131,11 +59215,269 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__
     } else var $x_1 = this$7.get__O();
     return $as_Ltyrian_Html($x_1);
 }
-/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, maybeError) {
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter__Ltyrian_Html($thiz) {
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group");
+    var array = [
+        x0
+    ];
+    var attributes$6 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$7 = $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-header");
+    var array$1 = [
+        x0$1
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var x0$6 = $f_Ltyrian_HtmlTags__h6$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$7, attributes, "Salary");
+    $m_Ltyrian_Html$();
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var array$2 = [
+        x0$2
+    ];
+    var attributes$4 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var this$14 = $m_Ltyrian_Html$();
+    var x0$3 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060for$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-salary");
+    var array$3 = [
+        x0$3
+    ];
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    var x0$5 = $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$14, attributes$1, "Min (in local currency)");
+    $m_Ltyrian_Html$();
+    var x0$4 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("number");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-salary");
+    var x2 = $m_Ltyrian_Html$().onInput__F1__Ltyrian_Attr(new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((s$2)=>{
+        var s = $as_T(s$2);
+        var this$16 = $n(s);
+        if (this$16 === "") var salary = 0;
+        else {
+            $m_sc_StringOps$();
+            var this$19 = $m_jl_Integer$();
+            var salary = this$19.java$lang$Integer$$parseIntImpl__T__I__I__I(s, 10, 214748364);
+        }
+        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(salary);
+    }));
+    var array$4 = [
+        x0$4,
+        x1,
+        x2
+    ];
+    var attributes$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$4);
+    $m_sci_List$();
+    var attributes$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$2);
+    var children = $m_sci_Nil$();
+    var x1$1 = new $c_Ltyrian_Tag("input", attributes$3, children);
+    var array$5 = [
+        x0$5,
+        x1$1
+    ];
+    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$5);
+    $m_sci_List$();
+    var attributes$5 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$4);
+    $m_sci_List$();
+    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
+    var x1$2 = new $c_Ltyrian_Tag("div", attributes$5, children$2);
+    var array$6 = [
+        x0$6,
+        x1$2
+    ];
+    var children$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$6);
+    $m_sci_List$();
+    var attributes$7 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$6);
+    $m_sci_List$();
+    var children$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$3);
+    return new $c_Ltyrian_Tag("div", attributes$7, children$4);
+}
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html($thiz, groupName, possibleValues) {
+    var this$1 = $n($n($thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters).get__O__s_Option(groupName));
+    if (this$1.isEmpty__Z()) {
+        var $x_1;
+        var $x_1 = $m_sci_Set$EmptySet$();
+    } else var $x_1 = this$1.get__O();
+    var selectedValues = $as_sci_Set($x_1);
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group");
+    var array = [
+        x0
+    ];
+    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$12 = $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-header");
+    var array$1 = [
+        x0$1
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var x0$5 = $f_Ltyrian_HtmlTags__h6$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$12, attributes, groupName);
+    $m_Ltyrian_Html$();
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var array$2 = [
+        x0$2
+    ];
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var this$17 = $n(possibleValues);
+    var f = (value$2)=>{
+        var value = $as_T(value$2);
+        return $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckbox__T__T__sci_Set__Ltyrian_Html($thiz, groupName, value, selectedValues);
+    };
+    if (this$17 === $m_sci_Nil$()) var $x_2 = $m_sci_Nil$();
+    else {
+        var x0$3 = this$17.head__O();
+        var h = new $c_sci_$colon$colon(f(x0$3), $m_sci_Nil$());
+        var t = h;
+        var rest = $as_sci_List(this$17.tail__O());
+        while(rest !== $m_sci_Nil$()){
+            var x0$4 = $n(rest).head__O();
+            var nx = new $c_sci_$colon$colon(f(x0$4), $m_sci_Nil$());
+            $n(t).sci_$colon$colon__f_next = nx;
+            t = nx;
+            rest = $as_sci_List($n(rest).tail__O());
+        }
+        var $x_2 = h;
+    }
+    var children = $as_sci_List($x_2);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    var x1 = new $c_Ltyrian_Tag("div", attributes$2, children);
+    var array$3 = [
+        x0$5,
+        x1
+    ];
+    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    $m_sci_List$();
+    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
+    $m_sci_List$();
+    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
+    return new $c_Ltyrian_Tag("div", attributes$4, children$2);
+}
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckbox__Ltyrian_Html($thiz) {
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var array = [
+        x0
+    ];
+    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$7 = $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060for$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-checkbox");
+    var array$1 = [
+        x0$1
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var x0$3 = $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$7, attributes, "Remote");
+    $m_Ltyrian_Html$();
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-checkbox");
+    var this$8 = $m_Ltyrian_Html$();
+    var isUsed = $thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+    var x2 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
+    $m_Ltyrian_Html$();
+    var msg = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((event$2)=>{
+        var checkbox = event$2.target;
+        var remote = $uZ(checkbox.checked);
+        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(remote);
+    });
+    var x3 = new $c_Ltyrian_Event("change", msg);
+    var array$2 = [
+        x0$2,
+        x1,
+        x2,
+        x3
+    ];
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    var children = $m_sci_Nil$();
+    var x1$1 = new $c_Ltyrian_Tag("input", attributes$2, children);
+    var array$3 = [
+        x0$3,
+        x1$1
+    ];
+    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    $m_sci_List$();
+    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
+    $m_sci_List$();
+    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
+    return new $c_Ltyrian_Tag("div", attributes$4, children$2);
+}
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckbox__T__T__sci_Set__Ltyrian_Html($thiz, groupName, value, selectedValues) {
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var array = [
+        x0
+    ];
+    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$7 = $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060for$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
+    var array$1 = [
+        x0$1
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var x0$3 = $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$7, attributes, value);
+    $m_Ltyrian_Html$();
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
+    var this$8 = $m_Ltyrian_Html$();
+    var isUsed = $n(selectedValues).contains__O__Z(value);
+    var x2 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
+    $m_Ltyrian_Html$();
+    var msg = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((event$2)=>{
+        var checkbox = event$2.target;
+        var checked = $uZ(checkbox.checked);
+        return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(groupName, value, checked);
+    });
+    var x3 = new $c_Ltyrian_Event("change", msg);
+    var array$2 = [
+        x0$2,
+        x1,
+        x2,
+        x3
+    ];
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    var children = $m_sci_Nil$();
+    var x1$1 = new $c_Ltyrian_Tag("input", attributes$2, children);
+    var array$3 = [
+        x0$3,
+        x1$1
+    ];
+    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    $m_sci_List$();
+    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
+    $m_sci_List$();
+    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
+    return new $c_Ltyrian_Tag("div", attributes$4, children$2);
+}
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderApplyFilterButton__Ltyrian_Html($thiz) {
+    var this$6 = $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
+    var this$1 = $m_Ltyrian_Html$();
+    var isUsed = !$thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
+    var x1 = $f_Ltyrian_HtmlAttributes__disabled__Z__Ltyrian_Attr(this$1, isUsed);
+    var this$2 = $m_Ltyrian_Html$();
+    var msg = $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$();
+    var x2 = $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr(this$2, msg);
+    var array = [
+        x0,
+        x1,
+        x2
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    return $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$6, attributes, "Apply Filters");
+}
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, selectedFilters, maybeError, maxSalary, remote, dirty, filterAction) {
     this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters = null;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters = null;
     this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError = null;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary = 0;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote = false;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty = false;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction = null;
     this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters = possibleFilters;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters = selectedFilters;
     this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError = maybeError;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary = maxSalary;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote = remote;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty = dirty;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction = filterAction;
 }
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel;
@@ -59145,18 +59487,60 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.productIterator__s
     return new $c_s_Product$$anon$1(this);
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.hashCode__I = function() {
-    return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, -633019401, true);
+    var acc = -889275714;
+    var hash = acc;
+    acc = $m_sr_Statics$().mix__I__I__I(hash, 763519308);
+    var hash$1 = acc;
+    var x = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+    var data = $m_sr_Statics$().anyHash__O__I(x);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
+    var hash$2 = acc;
+    var x$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+    var data$1 = $m_sr_Statics$().anyHash__O__I(x$1);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
+    var hash$3 = acc;
+    var x$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+    var data$2 = $m_sr_Statics$().anyHash__O__I(x$2);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$2);
+    var hash$4 = acc;
+    var data$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$3);
+    var hash$5 = acc;
+    var data$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote ? 1231 : 1237;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$5, data$4);
+    var hash$6 = acc;
+    var data$5 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty ? 1231 : 1237;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$6, data$5);
+    var hash$7 = acc;
+    var x$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+    var data$6 = $m_sr_Statics$().anyHash__O__I(x$3);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$7, data$6);
+    var hash$8 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$8, 7);
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel) {
         var x2 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel(x$0);
-        var x = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
-        var x$2 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
-        if (x === null ? x$2 === null : $n(x).equals__O__Z(x$2)) {
-            var x$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
-            var x$4 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
-            return x$3 === null ? x$4 === null : $n(x$3).equals__O__Z(x$4);
+        if (this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary === $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary && this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote === $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote && this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty === $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty) {
+            var x = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+            var x$2 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+            var $x_3 = x === null ? x$2 === null : $n(x).equals__O__Z(x$2);
+        } else var $x_3 = false;
+        if ($x_3) {
+            var x$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+            var x$4 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+            var $x_2 = x$3 === null ? x$4 === null : $n(x$3).equals__O__Z(x$4);
+        } else var $x_2 = false;
+        if ($x_2) {
+            var x$5 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+            var x$6 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+            var $x_1 = x$5 === null ? x$6 === null : $n(x$5).equals__O__Z(x$6);
+        } else var $x_1 = false;
+        if ($x_1) {
+            var x$7 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+            var x$8 = $n(x2).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+            return x$7 === null ? x$8 === null : $n(x$7).equals__O__Z(x$8);
         } else return false;
     } else return false;
 };
@@ -59164,37 +59548,134 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.toString__T = func
     return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.productArity__I = function() {
-    return 2;
+    return 7;
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.productPrefix__T = function() {
     return "FilterPanel";
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.productElement__I__O = function(n) {
-    if (n === 0) return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
-    if (n === 1) return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
-    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+    switch(n){
+        case 0:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+        case 1:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        case 2:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        case 3:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        case 4:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        case 5:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
+        case 6:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        default:
+            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+    }
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.update__Lcom_rockthejvm_jobsboard_App$Msg__T2 = function(msg) {
-    if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters) {
-        var x9 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(msg);
-        var this$2 = $n(x9);
-        var x11 = this$2.Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters__f_possibleFilters;
-        var maybeError = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
-        var _1 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(x11, maybeError);
-        var _2 = $m_Ltyrian_Cmd$None$();
-        return new $c_T2(_1, _2);
-    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError) {
-        var x6 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(msg);
-        var this$5 = $n(x6);
-        var x8 = this$5.Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error;
+    var x = $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$();
+    if (x === msg) {
         var possibleFilters = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
-        var maybeError$1 = new $c_s_Some(x8);
-        var _1$1 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, maybeError$1);
+        var selectedFilters = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        var maybeError = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        var maxSalary = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        var remote = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        var filterAction = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, selectedFilters, maybeError, maxSalary, remote, true, filterAction);
+        var msg$1 = $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction).apply__O__O(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters);
+        var _2 = new $c_Ltyrian_Cmd$Emit(msg$1);
+        return new $c_T2(_1, _2);
+    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters) {
+        var x20 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(msg);
+        var this$4 = $n(x20);
+        var x22 = this$4.Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters__f_possibleFilters;
+        var selectedFilters$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        var maybeError$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        var maxSalary$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        var remote$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        var dirty = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
+        var filterAction$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1$1 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(x22, selectedFilters$1, maybeError$1, maxSalary$1, remote$1, dirty, filterAction$1);
         var _2$1 = $m_Ltyrian_Cmd$None$();
         return new $c_T2(_1$1, _2$1);
-    } else {
+    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError) {
+        var x17 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(msg);
+        var this$7 = $n(x17);
+        var x19 = this$7.Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error;
+        var possibleFilters$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+        var selectedFilters$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        var maybeError$2 = new $c_s_Some(x19);
+        var maxSalary$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        var remote$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        var dirty$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
+        var filterAction$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1$2 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters$1, selectedFilters$2, maybeError$2, maxSalary$2, remote$2, dirty$1, filterAction$2);
         var _2$2 = $m_Ltyrian_Cmd$None$();
-        return new $c_T2(this, _2$2);
+        return new $c_T2(_1$2, _2$2);
+    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput) {
+        var x14 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(msg);
+        var this$11 = $n(x14);
+        var x16 = this$11.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary;
+        var possibleFilters$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+        var selectedFilters$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        var maybeError$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        var remote$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        var filterAction$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1$3 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters$2, selectedFilters$3, maybeError$3, x16, remote$3, true, filterAction$3);
+        var _2$3 = $m_Ltyrian_Cmd$None$();
+        return new $c_T2(_1$3, _2$3);
+    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote) {
+        var x11 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(msg);
+        var this$14 = $n(x11);
+        var x13 = this$14.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote;
+        var possibleFilters$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+        var selectedFilters$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters;
+        var maybeError$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        var maxSalary$3 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        var filterAction$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1$4 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters$3, selectedFilters$4, maybeError$4, maxSalary$3, x13, true, filterAction$4);
+        var _2$4 = $m_Ltyrian_Cmd$None$();
+        return new $c_T2(_1$4, _2$4);
+    } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked) {
+        var x6 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(msg);
+        var this$17 = $n(x6);
+        var x8 = this$17.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName;
+        var this$18 = $n(x6);
+        var x9 = this$18.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value;
+        var this$19 = $n(x6);
+        var x10 = this$19.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked;
+        var this$20 = $n($n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters).get__O__s_Option(x8));
+        if (this$20.isEmpty__Z()) {
+            var $x_1;
+            var $x_1 = $m_sci_Set$EmptySet$();
+        } else var $x_1 = this$20.get__O();
+        var oldGroup = $as_sci_Set($x_1);
+        if (x10) {
+            var this$25 = $n(oldGroup);
+            var newGroup = $as_sci_Set(this$25.incl__O__sci_SetOps(x9));
+        } else {
+            var this$26 = $n(oldGroup);
+            var newGroup = $as_sci_Set(this$26.excl__O__sci_SetOps(x9));
+        }
+        var this$30 = $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters);
+        var newGroups = $as_sci_Map(this$30.updated__O__O__sci_MapOps(x8, newGroup));
+        var possibleFilters$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters;
+        var maybeError$5 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError;
+        var maxSalary$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+        var remote$4 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+        var filterAction$5 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_filterAction;
+        var _1$5 = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters$4, newGroups, maybeError$5, maxSalary$4, remote$4, true, filterAction$5);
+        var $x_2 = $m_Ltyrian_cmds_Logger$();
+        var x0 = "Filters: " + newGroups;
+        var array = [
+            x0
+        ];
+        var _2$5 = $x_2.consoleLog__sci_Seq__Lcats_effect_kernel_Sync__Ltyrian_Cmd$SideEffect($ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array), $m_Lcats_effect_IO$().Lcats_effect_IO$__f__asyncForIO);
+        return new $c_T2(_1$5, _2$5);
+    } else {
+        var _2$6 = $m_Ltyrian_Cmd$None$();
+        return new $c_T2(this, _2$6);
     }
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.view__Ltyrian_Html = function() {
@@ -59205,13 +59686,24 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.view__Ltyrian_Html
     ];
     var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
     var x0$1 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__Ltyrian_Html(this);
-    var this$5 = $m_Ltyrian_Html$();
-    var this$4 = $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters);
-    var plainText = $m_sr_ScalaRunTime$()._toString__s_Product__T(this$4);
-    var x1 = $f_Ltyrian_HtmlTags__div$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$5, plainText);
+    var x1 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter__Ltyrian_Html(this);
+    var x2 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckbox__Ltyrian_Html(this);
+    var x3 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Companies", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_companies);
+    var x4 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Locations", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_locations);
+    var x5 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Countries", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_countries);
+    var x6 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Tags", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_tags);
+    var x7 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Seniorities", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_seniorities);
+    var x8 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderApplyFilterButton__Ltyrian_Html(this);
     var array$1 = [
         x0$1,
-        x1
+        x1,
+        x2,
+        x3,
+        x4,
+        x5,
+        x6,
+        x7,
+        x8
     ];
     var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
     $m_sci_List$();
@@ -59338,20 +59830,20 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$Endpoints$$anon$1$$anon$2.pr
         var failed = null;
         var i = 0;
         while(iter.hasNext__Z() && failed === null){
-            matchResult11: {
-                var x20 = iter.next__s_util_Either();
-                if (x20 instanceof $c_s_util_Right) {
-                    var x23 = $as_s_util_Right(x20);
-                    var value = $n(x23).s_util_Right__f_value;
+            matchResult22: {
+                var x45 = iter.next__s_util_Either();
+                if (x45 instanceof $c_s_util_Right) {
+                    var x48 = $as_s_util_Right(x45);
+                    var value = $n(x48).s_util_Right__f_value;
                     res.set(i, value);
-                    break matchResult11;
+                    break matchResult22;
                 }
-                if (x20 instanceof $c_s_util_Left) {
-                    var x21 = $as_s_util_Left(x20);
-                    failed = x21;
-                    break matchResult11;
+                if (x45 instanceof $c_s_util_Left) {
+                    var x46 = $as_s_util_Left(x45);
+                    failed = x46;
+                    break matchResult22;
                 }
-                throw new $c_s_MatchError(x20);
+                throw new $c_s_MatchError(x45);
             }
             i = 1 + i | 0;
         }
@@ -59457,20 +59949,20 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$Endpoints$$anon$1$$anon$2.prototy
         var failed = null;
         var i = 0;
         while(iter.hasNext__Z() && failed === null){
-            matchResult17: {
-                var x49 = iter.next__s_util_Either();
-                if (x49 instanceof $c_s_util_Right) {
-                    var x52 = $as_s_util_Right(x49);
-                    var value = $n(x52).s_util_Right__f_value;
+            matchResult20: {
+                var x56 = iter.next__s_util_Either();
+                if (x56 instanceof $c_s_util_Right) {
+                    var x59 = $as_s_util_Right(x56);
+                    var value = $n(x59).s_util_Right__f_value;
                     res.set(i, value);
-                    break matchResult17;
+                    break matchResult20;
                 }
-                if (x49 instanceof $c_s_util_Left) {
-                    var x50 = $as_s_util_Left(x49);
-                    failed = x50;
-                    break matchResult17;
+                if (x56 instanceof $c_s_util_Left) {
+                    var x57 = $as_s_util_Left(x56);
+                    failed = x57;
+                    break matchResult20;
                 }
-                throw new $c_s_MatchError(x49);
+                throw new $c_s_MatchError(x56);
             }
             i = 1 + i | 0;
         }
@@ -59620,20 +60112,20 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$Endpoints$$anon$1$$anon$2$$anon$3
         var failed = null;
         var i = 0;
         while(iter.hasNext__Z() && failed === null){
-            matchResult15: {
-                var x37 = iter.next__s_util_Either();
-                if (x37 instanceof $c_s_util_Right) {
-                    var x40 = $as_s_util_Right(x37);
-                    var value = $n(x40).s_util_Right__f_value;
+            matchResult18: {
+                var x44 = iter.next__s_util_Either();
+                if (x44 instanceof $c_s_util_Right) {
+                    var x47 = $as_s_util_Right(x44);
+                    var value = $n(x47).s_util_Right__f_value;
                     res.set(i, value);
-                    break matchResult15;
+                    break matchResult18;
                 }
-                if (x37 instanceof $c_s_util_Left) {
-                    var x38 = $as_s_util_Left(x37);
-                    failed = x38;
-                    break matchResult15;
+                if (x44 instanceof $c_s_util_Left) {
+                    var x45 = $as_s_util_Left(x44);
+                    failed = x45;
+                    break matchResult18;
                 }
-                throw new $c_s_MatchError(x37);
+                throw new $c_s_MatchError(x44);
             }
             i = 1 + i | 0;
         }
@@ -70191,8 +70683,43 @@ function $m_Ltyrian_Html$() {
     if (!$n_Ltyrian_Html$) $n_Ltyrian_Html$ = new $c_Ltyrian_Html$();
     return $n_Ltyrian_Html$;
 }
+/** @constructor */ function $c_Ltyrian_NamedAttribute(name) {
+    this.Ltyrian_NamedAttribute__f_name = null;
+    this.Ltyrian_NamedAttribute__f_name = name;
+}
+$c_Ltyrian_NamedAttribute.prototype = new $h_O();
+$c_Ltyrian_NamedAttribute.prototype.constructor = $c_Ltyrian_NamedAttribute;
+/** @constructor */ function $h_Ltyrian_NamedAttribute() {}
+$h_Ltyrian_NamedAttribute.prototype = $c_Ltyrian_NamedAttribute.prototype;
+$c_Ltyrian_NamedAttribute.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Ltyrian_NamedAttribute.prototype.hashCode__I = function() {
+    var this$2 = $m_s_util_hashing_MurmurHash3$();
+    return this$2.caseClassHash__s_Product__I__T__I(this, -889275714, null);
+};
+$c_Ltyrian_NamedAttribute.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Ltyrian_NamedAttribute) {
+        var x$0$2 = $as_Ltyrian_NamedAttribute(x$0);
+        return this.Ltyrian_NamedAttribute__f_name === $n(x$0$2).Ltyrian_NamedAttribute__f_name;
+    } else return false;
+};
+$c_Ltyrian_NamedAttribute.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Ltyrian_NamedAttribute.prototype.productArity__I = function() {
+    return 1;
+};
+$c_Ltyrian_NamedAttribute.prototype.productPrefix__T = function() {
+    return "NamedAttribute";
+};
+$c_Ltyrian_NamedAttribute.prototype.productElement__I__O = function(n) {
+    if (n === 0) return this.Ltyrian_NamedAttribute__f_name;
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
 function $as_Ltyrian_NamedAttribute(obj) {
-    return obj === null ? obj : $throwClassCastException(obj, "tyrian.NamedAttribute");
+    return obj instanceof $c_Ltyrian_NamedAttribute || obj === null ? obj : $throwClassCastException(obj, "tyrian.NamedAttribute");
 }
 function $isArrayOf_Ltyrian_NamedAttribute(obj, depth) {
     return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Ltyrian_NamedAttribute);
@@ -70200,6 +70727,13 @@ function $isArrayOf_Ltyrian_NamedAttribute(obj, depth) {
 function $asArrayOf_Ltyrian_NamedAttribute(obj, depth) {
     return $isArrayOf_Ltyrian_NamedAttribute(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Ltyrian.NamedAttribute;", depth);
 }
+var $d_Ltyrian_NamedAttribute = new $TypeData().initClass($c_Ltyrian_NamedAttribute, "tyrian.NamedAttribute", {
+    Ltyrian_NamedAttribute: 1,
+    Ltyrian_Attr: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
 function $as_Ltyrian_Property(obj) {
     return obj === null ? obj : $throwClassCastException(obj, "tyrian.Property");
 }
@@ -70451,10 +70985,11 @@ $c_Ltyrian_runtime_Rendering$$anon$1.prototype.isDefinedAt__Ltyrian_Attr__Z = fu
         $n(x$1);
         $n(x$1);
         return true;
-    } else {
-        var x$1$1;
-        return false;
-    }
+    } else if (x instanceof $c_Ltyrian_NamedAttribute) {
+        var x$1$1 = $as_Ltyrian_NamedAttribute(x);
+        $n(x$1$1);
+        return true;
+    } else return false;
 };
 $c_Ltyrian_runtime_Rendering$$anon$1.prototype.applyOrElse__Ltyrian_Attr__F1__O = function(x, default$1) {
     if (x instanceof $c_Ltyrian_Attribute) {
@@ -70465,10 +71000,12 @@ $c_Ltyrian_runtime_Rendering$$anon$1.prototype.applyOrElse__Ltyrian_Attr__F1__O 
         var this$3 = $n(x$1);
         var x16 = this$3.Ltyrian_Attribute__f_value;
         return new $c_T2(x15, x16);
-    } else {
-        var x$1$1, this$6, x12;
-        return $n(default$1).apply__O__O(x);
-    }
+    } else if (x instanceof $c_Ltyrian_NamedAttribute) {
+        var x$1$1 = $as_Ltyrian_NamedAttribute(x);
+        var this$6 = $n(x$1$1);
+        var x12 = this$6.Ltyrian_NamedAttribute__f_name;
+        return new $c_T2(x12, "");
+    } else return $n(default$1).apply__O__O(x);
 };
 $c_Ltyrian_runtime_Rendering$$anon$1.prototype.isDefinedAt__O__Z = function(x) {
     return this.isDefinedAt__Ltyrian_Attr__Z($as_Ltyrian_Attr(x));
@@ -73690,8 +74227,8 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError.prototype.h
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError) {
-        var x13 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(x$0);
-        return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error === $n(x13).Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error && ($n(x13), true);
+        var x26 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError(x$0);
+        return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error === $n(x26).Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError__f_error && ($n(x26), true);
     } else return false;
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$FilterPanelError.prototype.toString__T = function() {
@@ -73741,11 +74278,11 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters.prototype
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters) {
-        var x17 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(x$0);
+        var x30 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters(x$0);
         var x = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters__f_possibleFilters;
-        var x$2 = $n(x17).Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters__f_possibleFilters;
+        var x$2 = $n(x30).Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters__f_possibleFilters;
         if (x === null ? x$2 === null : $n(x).equals__O__Z(x$2)) {
-            $n(x17);
+            $n(x30);
             return true;
         } else return false;
     } else return false;
@@ -73774,6 +74311,200 @@ function $asArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossible
 }
 var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters, "com.rockthejvm.jobsboard.components.FilterPanel$SetPossibleFilters", {
     Lcom_rockthejvm_jobsboard_components_FilterPanel$SetPossibleFilters: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(remote) {
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote = false;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote = remote;
+}
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote() {}
+$h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype;
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.hashCode__I = function() {
+    var acc = -889275714;
+    var hash = acc;
+    acc = $m_sr_Statics$().mix__I__I__I(hash, -818547057);
+    var hash$1 = acc;
+    var data = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote ? 1231 : 1237;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
+    var hash$2 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote) {
+        var x42 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(x$0);
+        return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote === $n(x42).Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote && ($n(x42), true);
+    } else return false;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.productArity__I = function() {
+    return 1;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.productPrefix__T = function() {
+    return "UpdateRemote";
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote.prototype.productElement__I__O = function(n) {
+    if (n === 0) return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote__f_remote;
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+function $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(obj) {
+    return obj instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateRemote");
+}
+function $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(obj, depth) {
+    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote);
+}
+function $asArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(obj, depth) {
+    return $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.components.FilterPanel$UpdateRemote;", depth);
+}
+var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateRemote", {
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(salary) {
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary = 0;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary = salary;
+}
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput() {}
+$h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype;
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.hashCode__I = function() {
+    var acc = -889275714;
+    var hash = acc;
+    acc = $m_sr_Statics$().mix__I__I__I(hash, 1674556279);
+    var hash$1 = acc;
+    var data = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
+    var hash$2 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput) {
+        var x34 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(x$0);
+        return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary === $n(x34).Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary && ($n(x34), true);
+    } else return false;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.productArity__I = function() {
+    return 1;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.productPrefix__T = function() {
+    return "UpdateSalaryInput";
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput.prototype.productElement__I__O = function(n) {
+    if (n === 0) return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput__f_salary;
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+function $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(obj) {
+    return obj instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateSalaryInput");
+}
+function $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(obj, depth) {
+    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput);
+}
+function $asArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(obj, depth) {
+    return $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.components.FilterPanel$UpdateSalaryInput;", depth);
+}
+var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateSalaryInput", {
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateSalaryInput: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(groupName, value, checked) {
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName = null;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value = null;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked = false;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName = groupName;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value = value;
+    this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked = checked;
+}
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked() {}
+$h_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype;
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.hashCode__I = function() {
+    var acc = -889275714;
+    var hash = acc;
+    acc = $m_sr_Statics$().mix__I__I__I(hash, -2013927297);
+    var hash$1 = acc;
+    var x = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName;
+    var data = $m_sr_Statics$().anyHash__O__I(x);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
+    var hash$2 = acc;
+    var x$1 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value;
+    var data$1 = $m_sr_Statics$().anyHash__O__I(x$1);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
+    var hash$3 = acc;
+    var data$2 = this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked ? 1231 : 1237;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$2);
+    var hash$4 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$4, 3);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked) {
+        var x38 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(x$0);
+        return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked === $n(x38).Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked && this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName === $n(x38).Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName && this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value === $n(x38).Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value && ($n(x38), true);
+    } else return false;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.productArity__I = function() {
+    return 3;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.productPrefix__T = function() {
+    return "UpdateValueChecked";
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked.prototype.productElement__I__O = function(n) {
+    switch(n){
+        case 0:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_groupName;
+        case 1:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_value;
+        case 2:
+            return this.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked__f_checked;
+        default:
+            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+    }
+};
+function $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(obj) {
+    return obj instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateValueChecked");
+}
+function $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(obj, depth) {
+    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked);
+}
+function $asArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(obj, depth) {
+    return $isArrayOf_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.components.FilterPanel$UpdateValueChecked;", depth);
+}
+var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked, "com.rockthejvm.jobsboard.components.FilterPanel$UpdateValueChecked", {
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked: 1,
     Lcom_rockthejvm_jobsboard_App$Msg: 1,
     Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg: 1,
     s_Equals: 1,
@@ -74181,14 +74912,14 @@ function $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__maybeRenderLoadMore__s_
             var x0$3;
             if (s !== null) {
                 var this$6 = $n(s);
-                var x25 = this$6.Lcom_rockthejvm_jobsboard_pages_Page$Status__f_message;
+                var x28 = this$6.Lcom_rockthejvm_jobsboard_pages_Page$Status__f_message;
                 var this$7 = $n(s);
-                var x26 = this$7.Lcom_rockthejvm_jobsboard_pages_Page$Status__f_kind;
+                var x29 = this$7.Lcom_rockthejvm_jobsboard_pages_Page$Status__f_kind;
                 var x = $s_Lcom_rockthejvm_jobsboard_pages_Page$StatusKind$__LOADING__Lcom_rockthejvm_jobsboard_pages_Page$StatusKind();
-                if (x === null) var $x_1 = x26 === null;
+                if (x === null) var $x_1 = x29 === null;
                 else {
                     var this$8 = $n(x);
-                    var $x_1 = this$8 === x26;
+                    var $x_1 = this$8 === x29;
                 }
                 if ($x_1) {
                     var this$9 = $m_Ltyrian_Html$();
@@ -74196,21 +74927,21 @@ function $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__maybeRenderLoadMore__s_
                     break matchResult6;
                 }
                 var x$3 = $s_Lcom_rockthejvm_jobsboard_pages_Page$StatusKind$__ERROR__Lcom_rockthejvm_jobsboard_pages_Page$StatusKind();
-                if (x$3 === null) var $x_2 = x26 === null;
+                if (x$3 === null) var $x_2 = x29 === null;
                 else {
                     var this$10 = $n(x$3);
-                    var $x_2 = this$10 === x26;
+                    var $x_2 = this$10 === x29;
                 }
                 if ($x_2) {
                     var this$11 = $m_Ltyrian_Html$();
-                    var x0$3 = $f_Ltyrian_HtmlTags__div$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$11, x25);
+                    var x0$3 = $f_Ltyrian_HtmlTags__div$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$11, x28);
                     break matchResult6;
                 }
                 var x$5 = $s_Lcom_rockthejvm_jobsboard_pages_Page$StatusKind$__SUCCESS__Lcom_rockthejvm_jobsboard_pages_Page$StatusKind();
-                if (x$5 === null) var $x_3 = x26 === null;
+                if (x$5 === null) var $x_3 = x29 === null;
                 else {
                     var this$12 = $n(x$5);
-                    var $x_3 = this$12 === x26;
+                    var $x_3 = this$12 === x29;
                 }
                 if ($x_3) {
                     if ($thiz.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore) {
@@ -74247,12 +74978,50 @@ function $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__maybeRenderLoadMore__s_
         return new $c_s_Some(value);
     }
 }
-/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel, jobs, canLoadMore, status) {
+function $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__createJobFilter__sci_Map__Lcom_rockthejvm_jobsboard_domain_job$JobFilter($thiz, selectedFilters) {
+    var this$1 = $n($n(selectedFilters).get__O__s_Option("Companies"));
+    if (this$1.isEmpty__Z()) {
+        var $x_1;
+        var $x_1 = $m_sci_Set$EmptySet$();
+    } else var $x_1 = this$1.get__O();
+    var companies = $n($as_sc_IterableOnceOps($x_1)).toList__sci_List();
+    var this$6 = $n($n(selectedFilters).get__O__s_Option("Locations"));
+    if (this$6.isEmpty__Z()) {
+        var $x_2;
+        var $x_2 = $m_sci_Set$EmptySet$();
+    } else var $x_2 = this$6.get__O();
+    var locations = $n($as_sc_IterableOnceOps($x_2)).toList__sci_List();
+    var this$11 = $n($n(selectedFilters).get__O__s_Option("Countries"));
+    if (this$11.isEmpty__Z()) {
+        var $x_3;
+        var $x_3 = $m_sci_Set$EmptySet$();
+    } else var $x_3 = this$11.get__O();
+    var countries = $n($as_sc_IterableOnceOps($x_3)).toList__sci_List();
+    var this$16 = $n($n(selectedFilters).get__O__s_Option("Seniorities"));
+    if (this$16.isEmpty__Z()) {
+        var $x_4;
+        var $x_4 = $m_sci_Set$EmptySet$();
+    } else var $x_4 = this$16.get__O();
+    var seniorities = $n($as_sc_IterableOnceOps($x_4)).toList__sci_List();
+    var this$21 = $n($n(selectedFilters).get__O__s_Option("Tags"));
+    if (this$21.isEmpty__Z()) {
+        var $x_5;
+        var $x_5 = $m_sci_Set$EmptySet$();
+    } else var $x_5 = this$21.get__O();
+    var tags = $n($as_sc_IterableOnceOps($x_5)).toList__sci_List();
+    var value = $n($thiz.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
+    var maxSalary = new $c_s_Some(value);
+    var remote = $n($thiz.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
+    return new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags, maxSalary, remote);
+}
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel, jobFilter, jobs, canLoadMore, status) {
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel = null;
+    this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter = null;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs = null;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore = false;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status = null;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel = filterPanel;
+    this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter = jobFilter;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs = jobs;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore = canLoadMore;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status = status;
@@ -74273,18 +75042,22 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.hashCode__I = function(
     var data = $m_sr_Statics$().anyHash__O__I(x);
     acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
     var hash$2 = acc;
-    var x$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
+    var x$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
     var data$1 = $m_sr_Statics$().anyHash__O__I(x$1);
     acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
     var hash$3 = acc;
-    var data$2 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore ? 1231 : 1237;
+    var x$2 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
+    var data$2 = $m_sr_Statics$().anyHash__O__I(x$2);
     acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$2);
     var hash$4 = acc;
-    var x$2 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
-    var data$3 = $m_sr_Statics$().anyHash__O__I(x$2);
+    var data$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore ? 1231 : 1237;
     acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$3);
     var hash$5 = acc;
-    return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4);
+    var x$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
+    var data$4 = $m_sr_Statics$().anyHash__O__I(x$3);
+    acc = $m_sr_Statics$().mix__I__I__I(hash$5, data$4);
+    var hash$6 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$6, 5);
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
@@ -74293,17 +75066,22 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.equals__O__Z = function
         if (this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore === $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore) {
             var x = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
             var x$2 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
-            var $x_2 = x === null ? x$2 === null : $n(x).equals__O__Z(x$2);
+            var $x_3 = x === null ? x$2 === null : $n(x).equals__O__Z(x$2);
+        } else var $x_3 = false;
+        if ($x_3) {
+            var x$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
+            var x$4 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
+            var $x_2 = x$3 === null ? x$4 === null : $n(x$3).equals__O__Z(x$4);
         } else var $x_2 = false;
         if ($x_2) {
-            var x$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
-            var x$4 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
-            var $x_1 = x$3 === null ? x$4 === null : $n(x$3).equals__O__Z(x$4);
+            var x$5 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
+            var x$6 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
+            var $x_1 = x$5 === null ? x$6 === null : $n(x$5).equals__O__Z(x$6);
         } else var $x_1 = false;
         if ($x_1) {
-            var x$5 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
-            var x$6 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
-            return x$5 === null ? x$6 === null : $n(x$5).equals__O__Z(x$6);
+            var x$7 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
+            var x$8 = $n(x2).Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
+            return x$7 === null ? x$8 === null : $n(x$7).equals__O__Z(x$8);
         } else return false;
     } else return false;
 };
@@ -74311,7 +75089,7 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.toString__T = function(
     return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.productArity__I = function() {
-    return 4;
+    return 5;
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.productPrefix__T = function() {
     return "JobListPage";
@@ -74321,10 +75099,12 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.productElement__I__O = 
         case 0:
             return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
         case 1:
-            return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
+            return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
         case 2:
-            return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
+            return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
         case 3:
+            return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
+        case 4:
             return this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
         default:
             throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
@@ -74346,43 +75126,50 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.initCmd__Ltyrian_Cmd = 
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.update__Lcom_rockthejvm_jobsboard_App$Msg__T2 = function(msg) {
     if (msg instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs) {
-        var x13 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(msg);
-        var this$2 = $n(x13);
-        var x15 = this$2.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_list;
-        var this$3 = $n(x13);
-        var x16 = this$3.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore;
+        var x16 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(msg);
+        var this$2 = $n(x16);
+        var x18 = this$2.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_list;
+        var this$3 = $n(x16);
+        var x19 = this$3.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore;
         var \u03B41$ = this.setSuccessStatus__T__Lcom_rockthejvm_jobsboard_pages_JobListPage("Loaded");
         var this$4 = $n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs);
-        var jobs$2 = this$4.appendedAll__sc_IterableOnce__sci_List(x15);
+        var jobs$2 = this$4.appendedAll__sc_IterableOnce__sci_List(x18);
         var this$5 = $n(\u03B41$);
         var filterPanel$2 = this$5.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
         var this$6 = $n(\u03B41$);
-        var status$2 = this$6.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
+        var jobFilter$2 = this$6.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
+        var this$7 = $n(\u03B41$);
+        var status$2 = this$7.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
         $n(\u03B41$);
-        var _1 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$2, jobs$2, x16, status$2);
+        var _1 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$2, jobFilter$2, jobs$2, x19, status$2);
         var _2 = $m_Ltyrian_Cmd$None$();
         return new $c_T2(_1, _2);
     } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus) {
-        var x10 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(msg);
-        var this$10 = $n(x10);
-        var x12 = this$10.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e;
-        var _1$1 = this.setErrorStatus__T__Lcom_rockthejvm_jobsboard_pages_JobListPage(x12);
+        var x13 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(msg);
+        var this$11 = $n(x13);
+        var x15 = this$11.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e;
+        var _1$1 = this.setErrorStatus__T__Lcom_rockthejvm_jobsboard_pages_JobListPage(x15);
         var _2$1 = $m_Ltyrian_Cmd$None$();
         return new $c_T2(_1$1, _2$1);
     } else {
         var x = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$LoadMoreJobs$();
         if (x === msg) {
             var offset$1 = $n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs).length__I();
-            var companies = $m_sci_Nil$();
-            var locations = $m_sci_Nil$();
-            var countries = $m_sci_Nil$();
-            var seniorities = $m_sci_Nil$();
-            var tags = $m_sci_Nil$();
-            var maxSalary = $m_s_None$();
-            var filter$1 = new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags, maxSalary, false);
             var limit$1 = $m_Lcom_rockthejvm_jobsboard_common_Constants$().Lcom_rockthejvm_jobsboard_common_Constants$__f_defaultPageSize;
-            var _2$2 = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$Commands$().getJobs__Lcom_rockthejvm_jobsboard_domain_job$JobFilter__I__I__Ltyrian_Cmd(filter$1, limit$1, offset$1);
+            var _2$2 = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$Commands$().getJobs__Lcom_rockthejvm_jobsboard_domain_job$JobFilter__I__I__Ltyrian_Cmd(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter, limit$1, offset$1);
             return new $c_T2(this, _2$2);
+        } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs) {
+            var x10 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(msg);
+            var this$16 = $n(x10);
+            var x12 = this$16.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters;
+            var newJobFilter = $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__createJobFilter__sci_Map__Lcom_rockthejvm_jobsboard_domain_job$JobFilter(this, x12);
+            var jobs$4 = $m_sci_Nil$();
+            var filterPanel$4 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
+            var canLoadMore$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
+            var status$4 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
+            var _1$2 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$4, newJobFilter, jobs$4, canLoadMore$3, status$4);
+            var _2$3 = $m_Lcom_rockthejvm_jobsboard_pages_JobListPage$Commands$().getJobs__Lcom_rockthejvm_jobsboard_domain_job$JobFilter__I__I__Ltyrian_Cmd(newJobFilter, $m_Lcom_rockthejvm_jobsboard_common_Constants$().Lcom_rockthejvm_jobsboard_common_Constants$__f_defaultPageSize, 0);
+            return new $c_T2(_1$2, _2$3);
         } else if ($is_Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg(msg)) {
             var x9 = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg(msg);
             matchResult4: {
@@ -74396,14 +75183,15 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.update__Lcom_rockthejvm
             }
             var newFilterPanel = $as_Lcom_rockthejvm_jobsboard_components_FilterPanel($n(\u03B43$).T2__f__1);
             var cmd = $as_Ltyrian_Cmd($n(\u03B43$).T2__f__2);
+            var jobFilter = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
             var jobs = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
             var canLoadMore = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
             var status = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_status;
-            var _1$2 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(newFilterPanel, jobs, canLoadMore, status);
-            return new $c_T2(_1$2, cmd);
+            var _1$3 = new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(newFilterPanel, jobFilter, jobs, canLoadMore, status);
+            return new $c_T2(_1$3, cmd);
         } else {
-            var _2$3 = $m_Ltyrian_Cmd$None$();
-            return new $c_T2(this, _2$3);
+            var _2$4 = $m_Ltyrian_Cmd$None$();
+            return new $c_T2(this, _2$4);
         }
     }
 };
@@ -74463,18 +75251,20 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.setErrorStatus__T__Lcom
     var value = new $c_Lcom_rockthejvm_jobsboard_pages_Page$Status(message, kind);
     var status$3 = new $c_s_Some(value);
     var filterPanel$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
+    var jobFilter$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
     var jobs$3 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
     var canLoadMore$2 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
-    return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$3, jobs$3, canLoadMore$2, status$3);
+    return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$3, jobFilter$3, jobs$3, canLoadMore$2, status$3);
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.setSuccessStatus__T__Lcom_rockthejvm_jobsboard_pages_JobListPage = function(message) {
     var kind = $s_Lcom_rockthejvm_jobsboard_pages_Page$StatusKind$__SUCCESS__Lcom_rockthejvm_jobsboard_pages_Page$StatusKind();
     var value = new $c_Lcom_rockthejvm_jobsboard_pages_Page$Status(message, kind);
     var status$1 = new $c_s_Some(value);
     var filterPanel$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel;
+    var jobFilter$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobFilter;
     var jobs$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs;
     var canLoadMore$1 = this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_canLoadMore;
-    return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$1, jobs$1, canLoadMore$1, status$1);
+    return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage(filterPanel$1, jobFilter$1, jobs$1, canLoadMore$1, status$1);
 };
 function $as_Lcom_rockthejvm_jobsboard_pages_JobListPage(obj) {
     return obj instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.pages.JobListPage");
@@ -74523,14 +75313,14 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs.prototype.hashCode__I = f
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs) {
-        var x32 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(x$0);
-        if (this.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore === $n(x32).Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore) {
+        var x35 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(x$0);
+        if (this.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore === $n(x35).Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_canLoadMore) {
             var x = this.Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_list;
-            var x$2 = $n(x32).Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_list;
+            var x$2 = $n(x35).Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs__f_list;
             var $x_1 = x === null ? x$2 === null : $n(x).equals__O__Z(x$2);
         } else var $x_1 = false;
         if ($x_1) {
-            $n(x32);
+            $n(x35);
             return true;
         } else return false;
     } else return false;
@@ -74566,6 +75356,62 @@ var $d_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs = new $TypeData().ini
     s_Product: 1,
     Ljava_io_Serializable: 1
 });
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(selectedFilters) {
+    this.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters = null;
+    this.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters = selectedFilters;
+}
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs() {}
+$h_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype = $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype;
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.hashCode__I = function() {
+    return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 1228385650, true);
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs) {
+        var x41 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(x$0);
+        var x = this.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters;
+        var x$2 = $n(x41).Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters;
+        if (x === null ? x$2 === null : $n(x).equals__O__Z(x$2)) {
+            $n(x41);
+            return true;
+        } else return false;
+    } else return false;
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.productArity__I = function() {
+    return 1;
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.productPrefix__T = function() {
+    return "FilterJobs";
+};
+$c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs.prototype.productElement__I__O = function(n) {
+    if (n === 0) return this.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs__f_selectedFilters;
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+function $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(obj) {
+    return obj instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.pages.JobListPage$FilterJobs");
+}
+function $isArrayOf_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(obj, depth) {
+    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs);
+}
+function $asArrayOf_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(obj, depth) {
+    return $isArrayOf_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.pages.JobListPage$FilterJobs;", depth);
+}
+var $d_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs, "com.rockthejvm.jobsboard.pages.JobListPage$FilterJobs", {
+    Lcom_rockthejvm_jobsboard_pages_JobListPage$FilterJobs: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_pages_JobListPage$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(e) {
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e = null;
     this.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e = e;
@@ -74583,8 +75429,8 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus.prototype.hashCode
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus) {
-        var x28 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(x$0);
-        return this.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e === $n(x28).Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e && ($n(x28), true);
+        var x31 = $as_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(x$0);
+        return this.Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e === $n(x31).Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus__f_e && ($n(x31), true);
     } else return false;
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus.prototype.toString__T = function() {
@@ -76734,6 +77580,10 @@ $c_Lio_circe_DerivedEncoder$$anon$1.prototype.copyToArray__O__I__I__I = function
 $c_Lio_circe_DerivedEncoder$$anon$1.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_Lio_circe_DerivedEncoder$$anon$1.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_Lio_circe_DerivedEncoder$$anon$1.prototype.head__O = function() {
     return $n(this.iterator__sc_Iterator()).next__O();
 };
@@ -76863,6 +77713,10 @@ $c_Lio_circe_JsonObject$LinkedHashMapJsonObject$$anon$5.prototype.copyToArray__O
 };
 $c_Lio_circe_JsonObject$LinkedHashMapJsonObject$$anon$5.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_Lio_circe_JsonObject$LinkedHashMapJsonObject$$anon$5.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lio_circe_JsonObject$LinkedHashMapJsonObject$$anon$5.prototype.head__O = function() {
     var this$1 = new $c_Lio_circe_JsonObject$$anon$6(this);
@@ -86315,6 +87169,44 @@ function $m_Ltyrian_Cmd$None$() {
     if (!$n_Ltyrian_Cmd$None$) $n_Ltyrian_Cmd$None$ = new $c_Ltyrian_Cmd$None$();
     return $n_Ltyrian_Cmd$None$;
 }
+/** @constructor */ function $c_Ltyrian_EmptyAttribute$() {}
+$c_Ltyrian_EmptyAttribute$.prototype = new $h_O();
+$c_Ltyrian_EmptyAttribute$.prototype.constructor = $c_Ltyrian_EmptyAttribute$;
+/** @constructor */ function $h_Ltyrian_EmptyAttribute$() {}
+$h_Ltyrian_EmptyAttribute$.prototype = $c_Ltyrian_EmptyAttribute$.prototype;
+$c_Ltyrian_EmptyAttribute$.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Ltyrian_EmptyAttribute$.prototype.hashCode__I = function() {
+    return 853194735;
+};
+$c_Ltyrian_EmptyAttribute$.prototype.toString__T = function() {
+    return "EmptyAttribute";
+};
+$c_Ltyrian_EmptyAttribute$.prototype.productArity__I = function() {
+    return 0;
+};
+$c_Ltyrian_EmptyAttribute$.prototype.productPrefix__T = function() {
+    return "EmptyAttribute";
+};
+$c_Ltyrian_EmptyAttribute$.prototype.productElement__I__O = function(n) {
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+var $d_Ltyrian_EmptyAttribute$ = new $TypeData().initClass($c_Ltyrian_EmptyAttribute$, "tyrian.EmptyAttribute$", {
+    Ltyrian_EmptyAttribute$: 1,
+    Ltyrian_Attr: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1,
+    s_deriving_Mirror: 1,
+    s_deriving_Mirror$Product: 1,
+    s_deriving_Mirror$Singleton: 1
+});
+var $n_Ltyrian_EmptyAttribute$;
+function $m_Ltyrian_EmptyAttribute$() {
+    if (!$n_Ltyrian_EmptyAttribute$) $n_Ltyrian_EmptyAttribute$ = new $c_Ltyrian_EmptyAttribute$();
+    return $n_Ltyrian_EmptyAttribute$;
+}
 /** @constructor */ function $c_Ltyrian_Sub$None$() {}
 $c_Ltyrian_Sub$None$.prototype = new $h_O();
 $c_Ltyrian_Sub$None$.prototype.constructor = $c_Ltyrian_Sub$None$;
@@ -86854,6 +87746,45 @@ var $d_Lcats_kernel_instances_FiniteDurationOrder = new $TypeData().initClass($c
     Lcats_kernel_UpperBounded: 1,
     Lcats_kernel_instances_FiniteDurationBounded: 1
 });
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$() {}
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$() {}
+$h_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype = $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype;
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.hashCode__I = function() {
+    return -1161358544;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.toString__T = function() {
+    return "TriggerFilter";
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.productArity__I = function() {
+    return 0;
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.productPrefix__T = function() {
+    return "TriggerFilter";
+};
+$c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$.prototype.productElement__I__O = function(n) {
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+var $d_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$ = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$, "com.rockthejvm.jobsboard.components.FilterPanel$TriggerFilter$", {
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_components_FilterPanel$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1,
+    s_deriving_Mirror: 1,
+    s_deriving_Mirror$Product: 1,
+    s_deriving_Mirror$Singleton: 1
+});
+var $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$;
+function $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$() {
+    if (!$n_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$) $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$ = new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$();
+    return $n_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$;
+}
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_core_Session$CheckToken$() {}
 $c_Lcom_rockthejvm_jobsboard_core_Session$CheckToken$.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_core_Session$CheckToken$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_core_Session$CheckToken$;
@@ -88477,6 +89408,10 @@ $c_sc_SeqView$Sorted.prototype.copyToArray__O__I__I__I = function(dest, start, n
 $c_sc_SeqView$Sorted.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
 };
+$c_sc_SeqView$Sorted.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
+};
 $c_sc_SeqView$Sorted.prototype.head__O = function() {
     return $n(this.iterator__sc_Iterator()).next__O();
 };
@@ -88625,6 +89560,10 @@ $c_sc_SeqView$Sorted$ReverseSorted.prototype.copyToArray__O__I__I__I = function(
 };
 $c_sc_SeqView$Sorted$ReverseSorted.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_sc_SeqView$Sorted$ReverseSorted.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_sc_SeqView$Sorted$ReverseSorted.prototype.head__O = function() {
     return $n(this.iterator__sc_Iterator()).next__O();
@@ -89227,6 +90166,10 @@ $c_Lorg_scalajs_dom_DOMList$DOMListSeq.prototype.copyToArray__O__I__I__I = funct
 };
 $c_Lorg_scalajs_dom_DOMList$DOMListSeq.prototype.addString__scm_StringBuilder__T__T__T__scm_StringBuilder = function(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end);
+};
+$c_Lorg_scalajs_dom_DOMList$DOMListSeq.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lorg_scalajs_dom_DOMList$DOMListSeq.prototype.head__O = function() {
     return $n(this.iterator__sc_Iterator()).next__O();
@@ -95615,6 +96558,10 @@ $c_Lorg_scalajs_dom_NamedNodeMapMap.prototype.size__I = function() {
 };
 $c_Lorg_scalajs_dom_NamedNodeMapMap.prototype.copyToArray__O__I__I__I = function(xs, start, len) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len);
+};
+$c_Lorg_scalajs_dom_NamedNodeMapMap.prototype.toList__sci_List = function() {
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this);
 };
 $c_Lorg_scalajs_dom_NamedNodeMapMap.prototype.head__O = function() {
     var this$1 = new $c_Lorg_scalajs_dom_NamedNodeMapMap$$anon$1(this);
