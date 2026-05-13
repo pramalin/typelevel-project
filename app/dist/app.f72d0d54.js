@@ -40178,9 +40178,9 @@ var $d_Lcom_rockthejvm_jobsboard_pages_ForgotPasswordPage$Endpoints$$anon$1 = ne
         var canLoadMore = offset$2 === 0 || !$n(list).isEmpty__Z();
         return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$AddJobs(list, canLoadMore);
     });
-    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
-        var _$2 = $as_T(_$2$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(_$2);
+    var $x_1 = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$3$2)=>{
+        var _$3 = $as_T(_$3$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_JobListPage$SetErrorStatus(_$3);
     });
     $m_Lio_circe_Decoder$();
     $m_Lio_circe_Decoder$();
@@ -62124,17 +62124,32 @@ $c_Lcom_rockthejvm_jobsboard_App.prototype.update__Lcom_rockthejvm_jobsboard_App
 };
 $c_Lcom_rockthejvm_jobsboard_App.prototype.view__Lcom_rockthejvm_jobsboard_App$Model__Ltyrian_Html = function(model) {
     $m_Ltyrian_Html$();
-    var x0 = $m_Lcom_rockthejvm_jobsboard_components_Header$().view__Ltyrian_Html();
-    var x1 = $n($n(model).Lcom_rockthejvm_jobsboard_App$Model__f_page).view__Ltyrian_Html();
+    var x0$2 = $m_Lcom_rockthejvm_jobsboard_components_Header$().view__Ltyrian_Html();
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("container-fluid");
     var array = [
-        x0,
-        x1
+        x0
     ];
-    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var attributes = $m_sci_Nil$();
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var x0$1 = $n($n(model).Lcom_rockthejvm_jobsboard_App$Model__f_page).view__Ltyrian_Html();
+    var array$1 = [
+        x0$1
+    ];
+    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    $m_sci_List$();
+    var attributes$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes);
     $m_sci_List$();
     var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
-    return new $c_Ltyrian_Tag("div", attributes, children$1);
+    var x1 = new $c_Ltyrian_Tag("div", attributes$1, children$1);
+    var array$2 = [
+        x0$2,
+        x1
+    ];
+    var children$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var attributes$2 = $m_sci_Nil$();
+    $m_sci_List$();
+    var children$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$2);
+    return new $c_Ltyrian_Tag("div", attributes$2, children$3);
 };
 $c_Lcom_rockthejvm_jobsboard_App.prototype.launch = function(arg, ...rest) {
     switch($uI(rest.length)){
@@ -94053,6 +94068,108 @@ var $d_Lcats_kernel_instances_BitSetPartialOrder = new $TypeData().initClass($c_
     Lcats_kernel_PartialOrder: 1,
     Lcats_kernel_Hash: 1
 });
+function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderFilterGroup__T__Ltyrian_Html__Ltyrian_Html($thiz, groupName, contents) {
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-item");
+    var array = [
+        x0
+    ];
+    var attributes$7 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-header");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("heading" + groupName);
+    var array$1 = [
+        x0$1,
+        x1
+    ];
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var this$18 = $m_Ltyrian_Html$();
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-button collapsed");
+    var x1$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
+    $m_Ltyrian_Html$();
+    $m_Ltyrian_Attribute$();
+    var x2 = new $c_Ltyrian_Attribute("data-bs-toggle", "collapse");
+    $m_Ltyrian_Html$();
+    var value = "#collapse" + groupName;
+    $m_Ltyrian_Attribute$();
+    var x3 = new $c_Ltyrian_Attribute("data-bs-target", value);
+    $m_Ltyrian_Html$();
+    $m_Ltyrian_Attribute$();
+    var x4 = new $c_Ltyrian_Attribute("aria-expanded", "false");
+    $m_Ltyrian_Html$();
+    var value$1 = "collapse" + groupName;
+    $m_Ltyrian_Attribute$();
+    var x5 = new $c_Ltyrian_Attribute("aria-controls", value$1);
+    var array$2 = [
+        x0$2,
+        x1$1,
+        x2,
+        x3,
+        x4,
+        x5
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var x0$3 = $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$18, attributes, groupName);
+    var array$3 = [
+        x0$3
+    ];
+    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    $m_sci_List$();
+    var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
+    var x0$7 = new $c_Ltyrian_Tag("h2", attributes$2, children$1);
+    $m_Ltyrian_Html$();
+    var x0$4 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-collapse collapse");
+    var x1$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("collapse" + groupName);
+    $m_Ltyrian_Html$();
+    $m_Ltyrian_Attribute$();
+    var x2$1 = new $c_Ltyrian_Attribute("aria-labelledby", "headingOne");
+    $m_Ltyrian_Html$();
+    $m_Ltyrian_Attribute$();
+    var x3$1 = new $c_Ltyrian_Attribute("data-bs-parent", "#accordionExample");
+    var array$4 = [
+        x0$4,
+        x1$2,
+        x2$1,
+        x3$1
+    ];
+    var attributes$5 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$4);
+    $m_Ltyrian_Html$();
+    var x0$5 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-body");
+    var array$5 = [
+        x0$5
+    ];
+    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$5);
+    var array$6 = [
+        contents
+    ];
+    var children$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$6);
+    $m_sci_List$();
+    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
+    $m_sci_List$();
+    var children$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$2);
+    var x0$6 = new $c_Ltyrian_Tag("div", attributes$4, children$3);
+    var array$7 = [
+        x0$6
+    ];
+    var children$4 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$7);
+    $m_sci_List$();
+    var attributes$6 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$5);
+    $m_sci_List$();
+    var children$5 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$4);
+    var x1$3 = new $c_Ltyrian_Tag("div", attributes$6, children$5);
+    var array$8 = [
+        x0$7,
+        x1$3
+    ];
+    var children$6 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$8);
+    $m_sci_List$();
+    var attributes$8 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$7);
+    $m_sci_List$();
+    var children$7 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$6);
+    return new $c_Ltyrian_Tag("div", attributes$8, children$7);
+}
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__Ltyrian_Html($thiz) {
     var this$1 = $n($thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maybeError);
     if (this$1.isEmpty__Z()) var this$7 = $m_s_None$();
@@ -94081,7 +94198,7 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__
 }
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter__Ltyrian_Html($thiz) {
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group");
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("mb-3");
     var array = [
         x0
     ];
@@ -94149,7 +94266,7 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter
     var attributes$7 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$6);
     $m_sci_List$();
     var children$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$3);
-    return new $c_Ltyrian_Tag("div", attributes$7, children$4);
+    return $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderFilterGroup__T__Ltyrian_Html__Ltyrian_Html($thiz, "Salary", new $c_Ltyrian_Tag("div", attributes$7, children$4));
 }
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html($thiz, groupName, possibleValues) {
     var this$1 = $n($n($thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_selectedFilters).get__O__s_Option(groupName));
@@ -94159,38 +94276,25 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGrou
     } else var $x_1 = this$1.get__O();
     var selectedValues = $as_sci_Set($x_1);
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group");
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("mb-3");
     var array = [
         x0
     ];
-    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var this$12 = $m_Ltyrian_Html$();
-    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-header");
-    var array$1 = [
-        x0$1
-    ];
-    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
-    var x0$5 = $f_Ltyrian_HtmlTags__h6$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$12, attributes, groupName);
-    $m_Ltyrian_Html$();
-    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
-    var array$2 = [
-        x0$2
-    ];
-    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
-    var this$17 = $n(possibleValues);
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$10 = $n(possibleValues);
     var f = (value$2)=>{
         var value = $as_T(value$2);
         return $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckbox__T__T__sci_Set__Ltyrian_Html($thiz, groupName, value, selectedValues);
     };
-    if (this$17 === $m_sci_Nil$()) var $x_2 = $m_sci_Nil$();
+    if (this$10 === $m_sci_Nil$()) var $x_2 = $m_sci_Nil$();
     else {
-        var x0$3 = this$17.head__O();
-        var h = new $c_sci_$colon$colon(f(x0$3), $m_sci_Nil$());
+        var x0$1 = this$10.head__O();
+        var h = new $c_sci_$colon$colon(f(x0$1), $m_sci_Nil$());
         var t = h;
-        var rest = $as_sci_List(this$17.tail__O());
+        var rest = $as_sci_List(this$10.tail__O());
         while(rest !== $m_sci_Nil$()){
-            var x0$4 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(x0$4), $m_sci_Nil$());
+            var x0$2 = $n(rest).head__O();
+            var nx = new $c_sci_$colon$colon(f(x0$2), $m_sci_Nil$());
             $n(t).sci_$colon$colon__f_next = nx;
             t = nx;
             rest = $as_sci_List($n(rest).tail__O());
@@ -94199,22 +94303,12 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGrou
     }
     var children = $as_sci_List($x_2);
     $m_sci_List$();
-    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
-    var x1 = new $c_Ltyrian_Tag("div", attributes$2, children);
-    var array$3 = [
-        x0$5,
-        x1
-    ];
-    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
-    $m_sci_List$();
-    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
-    $m_sci_List$();
-    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
-    return new $c_Ltyrian_Tag("div", attributes$4, children$2);
+    var attributes$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes);
+    return $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderFilterGroup__T__Ltyrian_Html__Ltyrian_Html($thiz, groupName, new $c_Ltyrian_Tag("div", attributes$1, children));
 }
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckbox__Ltyrian_Html($thiz) {
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-check");
     var array = [
         x0
     ];
@@ -94227,23 +94321,25 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckb
     var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
     var x0$3 = $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$7, attributes, "Remote");
     $m_Ltyrian_Html$();
-    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
-    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-checkbox");
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-check-input");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
+    var x2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-checkbox");
     var this$8 = $m_Ltyrian_Html$();
     var isUsed = $thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
-    var x2 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
+    var x3 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
     $m_Ltyrian_Html$();
     var msg = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((event$2)=>{
         var checkbox = event$2.target;
         var remote = $uZ(checkbox.checked);
         return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateRemote(remote);
     });
-    var x3 = new $c_Ltyrian_Event("change", msg);
+    var x4 = new $c_Ltyrian_Event("change", msg);
     var array$2 = [
         x0$2,
         x1,
         x2,
-        x3
+        x3,
+        x4
     ];
     var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
     $m_sci_List$();
@@ -94259,49 +94355,53 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckb
     var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
     $m_sci_List$();
     var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
-    return new $c_Ltyrian_Tag("div", attributes$4, children$2);
+    return $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderFilterGroup__T__Ltyrian_Html__Ltyrian_Html($thiz, "Remote", new $c_Ltyrian_Tag("div", attributes$4, children$2));
 }
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckbox__T__T__sci_Set__Ltyrian_Html($thiz, groupName, value, selectedValues) {
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-group-content");
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-check");
     var array = [
         x0
     ];
     var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
     var this$7 = $m_Ltyrian_Html$();
-    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060for$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-check-label");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060for$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
     var array$1 = [
-        x0$1
+        x0$1,
+        x1
     ];
     var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
     var x0$3 = $f_Ltyrian_HtmlTags__label$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$7, attributes, value);
     $m_Ltyrian_Html$();
-    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
-    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
+    var x0$2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-check-input");
+    var x1$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("checkbox");
+    var x2 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("filter-" + groupName + "-" + value);
     var this$8 = $m_Ltyrian_Html$();
     var isUsed = $n(selectedValues).contains__O__Z(value);
-    var x2 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
+    var x3 = $f_Ltyrian_HtmlAttributes__checked__Z__Ltyrian_Attr(this$8, isUsed);
     $m_Ltyrian_Html$();
     var msg = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((event$2)=>{
         var checkbox = event$2.target;
         var checked = $uZ(checkbox.checked);
         return new $c_Lcom_rockthejvm_jobsboard_components_FilterPanel$UpdateValueChecked(groupName, value, checked);
     });
-    var x3 = new $c_Ltyrian_Event("change", msg);
+    var x4 = new $c_Ltyrian_Event("change", msg);
     var array$2 = [
         x0$2,
-        x1,
+        x1$1,
         x2,
-        x3
+        x3,
+        x4
     ];
     var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
     $m_sci_List$();
     var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
     var children = $m_sci_Nil$();
-    var x1$1 = new $c_Ltyrian_Tag("input", attributes$2, children);
+    var x1$2 = new $c_Ltyrian_Tag("input", attributes$2, children);
     var array$3 = [
         x0$3,
-        x1$1
+        x1$2
     ];
     var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
     $m_sci_List$();
@@ -94311,21 +94411,38 @@ function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckbox__T_
     return new $c_Ltyrian_Tag("div", attributes$4, children$2);
 }
 function $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderApplyFilterButton__Ltyrian_Html($thiz) {
-    var this$6 = $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
-    var this$1 = $m_Ltyrian_Html$();
-    var isUsed = !$thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
-    var x1 = $f_Ltyrian_HtmlAttributes__disabled__Z__Ltyrian_Attr(this$1, isUsed);
-    var this$2 = $m_Ltyrian_Html$();
-    var msg = $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$();
-    var x2 = $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr(this$2, msg);
+    $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("jvm-accordion-search-btn");
     var array = [
-        x0,
-        x1,
-        x2
+        x0
     ];
-    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    return $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$6, attributes, "Apply Filters");
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$9 = $m_Ltyrian_Html$();
+    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("btn btn-primary");
+    var x1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
+    var this$4 = $m_Ltyrian_Html$();
+    var isUsed = !$thiz.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_dirty;
+    var x2 = $f_Ltyrian_HtmlAttributes__disabled__Z__Ltyrian_Attr(this$4, isUsed);
+    var this$5 = $m_Ltyrian_Html$();
+    var msg = $m_Lcom_rockthejvm_jobsboard_components_FilterPanel$TriggerFilter$();
+    var x3 = $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr(this$5, msg);
+    var array$1 = [
+        x0$1,
+        x1,
+        x2,
+        x3
+    ];
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var x0$2 = $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$9, attributes, "Apply Filters");
+    var array$2 = [
+        x0$2
+    ];
+    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    $m_sci_List$();
+    var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
+    return new $c_Ltyrian_Tag("div", attributes$2, children$1);
 }
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_components_FilterPanel(possibleFilters, selectedFilters, maybeError, maxSalary, remote, dirty, filterAction) {
     this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters = null;
@@ -94544,37 +94661,158 @@ $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.update__Lcom_rockt
 };
 $c_Lcom_rockthejvm_jobsboard_components_FilterPanel.prototype.view__Ltyrian_Html = function() {
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("filter-panel-container");
-    var array = [
-        x0
-    ];
-    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var x0$1 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__Ltyrian_Html(this);
-    var x1 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter__Ltyrian_Html(this);
-    var x2 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckbox__Ltyrian_Html(this);
-    var x3 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Companies", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_companies);
-    var x4 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Locations", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_locations);
-    var x5 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Countries", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_countries);
-    var x6 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Tags", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_tags);
-    var x7 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Seniorities", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_seniorities);
-    var x8 = $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderApplyFilterButton__Ltyrian_Html(this);
-    var array$1 = [
-        x0$1,
-        x1,
-        x2,
-        x3,
-        x4,
-        x5,
-        x6,
-        x7,
-        x8
-    ];
-    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
-    $m_sci_List$();
-    var attributes$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes);
+    var this$1 = $m_sjsr_package$();
+    var xs = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion accordion-flush"),
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("accordionFlushExample")
+    ]);
+    var array = this$1.refArrayToJSArray__AO__sjs_js_Array(xs);
+    var attributes$13 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$85 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$4 = $m_sjsr_package$();
+    var xs$1 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-item")
+    ]);
+    var array$1 = this$4.refArrayToJSArray__AO__sjs_js_Array(xs$1);
+    var attributes$11 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var this$78 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$7 = $m_sjsr_package$();
+    var xs$2 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-header"),
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("flush-headingOne")
+    ]);
+    var array$2 = this$7.refArrayToJSArray__AO__sjs_js_Array(xs$2);
+    var attributes$5 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var this$47 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$18 = $m_sjsr_package$();
+    var xs$3 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-button"),
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-search-filter"),
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button"),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("data-bs-toggle", "collapse")),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("data-bs-target", "#flush-collapseOne")),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("aria-expanded", "true")),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("aria-controls", "flush-collapseOne"))
+    ]);
+    var array$3 = this$18.refArrayToJSArray__AO__sjs_js_Array(xs$3);
+    var attributes$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    var this$40 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$21 = $m_sjsr_package$();
+    var xs$4 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("jvm-recent-jobs-accordion-body-heading")
+    ]);
+    var array$4 = this$21.refArrayToJSArray__AO__sjs_js_Array(xs$4);
+    var attributes$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$4);
+    var this$33 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$27 = $m_sjsr_package$();
+    var this$24 = $m_Ltyrian_Html$();
+    var xs$5 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        $f_Ltyrian_HtmlTags__span$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$24, "Search"),
+        ($m_Ltyrian_Html$(), new $c_Ltyrian_Text(" Filters"))
+    ]);
+    var array$5 = this$27.refArrayToJSArray__AO__sjs_js_Array(xs$5);
+    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$5);
+    var attributes = $m_sci_Nil$();
     $m_sci_List$();
     var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
-    return new $c_Ltyrian_Tag("div", attributes$1, children$1);
+    var xs$6 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("h3", attributes, children$1)
+    ]);
+    var array$6 = this$33.refArrayToJSArray__AO__sjs_js_Array(xs$6);
+    var children$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$6);
+    $m_sci_List$();
+    var attributes$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$1);
+    $m_sci_List$();
+    var children$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$2);
+    var xs$7 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("div", attributes$2, children$3)
+    ]);
+    var array$7 = this$40.refArrayToJSArray__AO__sjs_js_Array(xs$7);
+    var children$4 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$7);
+    $m_sci_List$();
+    var attributes$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$3);
+    $m_sci_List$();
+    var children$5 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$4);
+    var xs$8 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("button", attributes$4, children$5)
+    ]);
+    var array$8 = this$47.refArrayToJSArray__AO__sjs_js_Array(xs$8);
+    var children$6 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$8);
+    $m_sci_List$();
+    var attributes$6 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$5);
+    $m_sci_List$();
+    var children$7 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$6);
+    var $x_1 = new $c_Ltyrian_Tag("h2", attributes$6, children$7);
+    $m_Ltyrian_Html$();
+    var this$58 = $m_sjsr_package$();
+    var xs$9 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-collapse collapse show"),
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_id$minusString).$colon$eq__T__Ltyrian_Attribute("flush-collapseOne"),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("aria-labelledby", "flush-headingOne")),
+        ($m_Ltyrian_Html$(), $m_Ltyrian_Attribute$(), new $c_Ltyrian_Attribute("data-bs-parent", "#accordionFlushExample"))
+    ]);
+    var array$9 = this$58.refArrayToJSArray__AO__sjs_js_Array(xs$9);
+    var attributes$9 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$9);
+    var this$71 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$61 = $m_sjsr_package$();
+    var xs$10 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("accordion-body p-0")
+    ]);
+    var array$10 = this$61.refArrayToJSArray__AO__sjs_js_Array(xs$10);
+    var attributes$7 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$10);
+    var this$64 = $m_sjsr_package$();
+    var xs$11 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__maybeRenderError__Ltyrian_Html(this),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderSalaryFilter__Ltyrian_Html(this),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderRemoteCheckbox__Ltyrian_Html(this),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Companies", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_companies),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Locations", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_locations),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Countries", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_countries),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Tags", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_tags),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderCheckboxGroup__T__sci_List__Ltyrian_Html(this, "Seniorities", $n(this.Lcom_rockthejvm_jobsboard_components_FilterPanel__f_possibleFilters).Lcom_rockthejvm_jobsboard_domain_job$JobFilter__f_seniorities),
+        $p_Lcom_rockthejvm_jobsboard_components_FilterPanel__renderApplyFilterButton__Ltyrian_Html(this)
+    ]);
+    var array$11 = this$64.refArrayToJSArray__AO__sjs_js_Array(xs$11);
+    var children$8 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$11);
+    $m_sci_List$();
+    var attributes$8 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$7);
+    $m_sci_List$();
+    var children$9 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$8);
+    var xs$12 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("div", attributes$8, children$9)
+    ]);
+    var array$12 = this$71.refArrayToJSArray__AO__sjs_js_Array(xs$12);
+    var children$10 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$12);
+    $m_sci_List$();
+    var attributes$10 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$9);
+    $m_sci_List$();
+    var children$11 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$10);
+    var xs$13 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        $x_1,
+        new $c_Ltyrian_Tag("div", attributes$10, children$11)
+    ]);
+    var array$13 = this$78.refArrayToJSArray__AO__sjs_js_Array(xs$13);
+    var children$12 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$13);
+    $m_sci_List$();
+    var attributes$12 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$11);
+    $m_sci_List$();
+    var children$13 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$12);
+    var xs$14 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("div", attributes$12, children$13)
+    ]);
+    var array$14 = this$85.refArrayToJSArray__AO__sjs_js_Array(xs$14);
+    var children$14 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$14);
+    $m_sci_List$();
+    var attributes$14 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$13);
+    $m_sci_List$();
+    var children$15 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$14);
+    return new $c_Ltyrian_Tag("div", attributes$14, children$15);
 };
 function $as_Lcom_rockthejvm_jobsboard_components_FilterPanel(obj) {
     return obj instanceof $c_Lcom_rockthejvm_jobsboard_components_FilterPanel || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.components.FilterPanel");
@@ -119996,7 +120234,15 @@ function $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__createJobFilter__sci_Ma
     } else var $x_5 = this$21.get__O();
     var tags = $n($as_sc_IterableOnceOps($x_5)).toList__sci_List();
     var value = $n($thiz.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_maxSalary;
-    var maxSalary = new $c_s_Some(value);
+    var this$27 = new $c_s_Some(value);
+    if (this$27.isEmpty__Z()) var $x_6 = true;
+    else {
+        var x0 = this$27.s_Some__f_value;
+        var _$2$2 = $uI(x0);
+        var $x_6 = _$2$2 > 0;
+    }
+    if ($x_6) var maxSalary = this$27;
+    else var maxSalary = $m_s_None$();
     var remote = $n($thiz.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).Lcom_rockthejvm_jobsboard_components_FilterPanel__f_remote;
     return new $c_Lcom_rockthejvm_jobsboard_domain_job$JobFilter(companies, locations, countries, seniorities, tags, maxSalary, remote);
 }
@@ -120183,54 +120429,91 @@ $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.update__Lcom_rockthejvm
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.view__Ltyrian_Html = function() {
     $m_Ltyrian_Html$();
-    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("job-list-page");
-    var array = [
-        x0
-    ];
-    var attributes$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var x0$4 = $n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).view__Ltyrian_Html();
+    var this$1 = $m_sjsr_package$();
+    var xs = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("section-1")
+    ]);
+    var array = this$1.refArrayToJSArray__AO__sjs_js_Array(xs);
+    var attributes$8 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    var this$42 = $m_sjsr_package$();
     $m_Ltyrian_Html$();
-    var x0$1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("job-container");
-    var array$1 = [
-        x0$1
-    ];
-    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
-    var this$8 = $n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs);
-    var f = (job$2)=>{
-        var job = $as_Lcom_rockthejvm_jobsboard_domain_job$Job(job$2);
-        return $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__renderJob__Lcom_rockthejvm_jobsboard_domain_job$Job__Ltyrian_Html(this, job);
-    };
-    if (this$8 === $m_sci_Nil$()) var $x_1 = $m_sci_Nil$();
-    else {
-        var x0$2 = this$8.head__O();
-        var h = new $c_sci_$colon$colon(f(x0$2), $m_sci_Nil$());
-        var t = h;
-        var rest = $as_sci_List(this$8.tail__O());
-        while(rest !== $m_sci_Nil$()){
-            var x0$3 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(x0$3), $m_sci_Nil$());
-            $n(t).sci_$colon$colon__f_next = nx;
-            t = nx;
-            rest = $as_sci_List($n(rest).tail__O());
-        }
-        var $x_1 = h;
-    }
-    var this$9 = $n($as_sci_List($x_1));
-    var suffix = $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__maybeRenderLoadMore__s_Option(this);
-    var children = this$9.appendedAll__sc_IterableOnce__sci_List(suffix);
+    var this$4 = $m_sjsr_package$();
+    var xs$1 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("container")
+    ]);
+    var array$1 = this$4.refArrayToJSArray__AO__sjs_js_Array(xs$1);
+    var attributes$6 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+    var this$35 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$7 = $m_sjsr_package$();
+    var xs$2 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("row jvm-recent-jobs-body")
+    ]);
+    var array$2 = this$7.refArrayToJSArray__AO__sjs_js_Array(xs$2);
+    var attributes$4 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    var this$28 = $m_sjsr_package$();
+    $m_Ltyrian_Html$();
+    var this$10 = $m_sjsr_package$();
+    var xs$3 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("col-lg-4")
+    ]);
+    var array$3 = this$10.refArrayToJSArray__AO__sjs_js_Array(xs$3);
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$3);
+    var this$13 = $m_sjsr_package$();
+    var xs$4 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        $n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_filterPanel).view__Ltyrian_Html()
+    ]);
+    var array$4 = this$13.refArrayToJSArray__AO__sjs_js_Array(xs$4);
+    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$4);
     $m_sci_List$();
     var attributes$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes);
-    var x1 = new $c_Ltyrian_Tag("div", attributes$1, children);
-    var array$2 = [
-        x0$4,
-        x1
-    ];
-    var children$1 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$2);
+    $m_sci_List$();
+    var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
+    var $x_1 = new $c_Ltyrian_Tag("div", attributes$1, children$1);
+    $m_Ltyrian_Html$();
+    var this$20 = $m_sjsr_package$();
+    var xs$5 = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+        $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("col-lg-8")
+    ]);
+    var array$5 = this$20.refArrayToJSArray__AO__sjs_js_Array(xs$5);
+    var attributes$2 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$5);
+    var this$24 = $n($n(this.Lcom_rockthejvm_jobsboard_pages_JobListPage__f_jobs).map__F1__sci_List(new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((job$2)=>{
+        var job = $as_Lcom_rockthejvm_jobsboard_domain_job$Job(job$2);
+        return $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__renderJob__Lcom_rockthejvm_jobsboard_domain_job$Job__Ltyrian_Html(this, job);
+    })));
+    var suffix = $p_Lcom_rockthejvm_jobsboard_pages_JobListPage__maybeRenderLoadMore__s_Option(this);
+    var children$2 = this$24.appendedAll__sc_IterableOnce__sci_List(suffix);
     $m_sci_List$();
     var attributes$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$2);
+    var xs$6 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        $x_1,
+        new $c_Ltyrian_Tag("div", attributes$3, children$2)
+    ]);
+    var array$6 = this$28.refArrayToJSArray__AO__sjs_js_Array(xs$6);
+    var children$3 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$6);
     $m_sci_List$();
-    var children$2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$1);
-    return new $c_Ltyrian_Tag("div", attributes$3, children$2);
+    var attributes$5 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$4);
+    $m_sci_List$();
+    var children$4 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$3);
+    var xs$7 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("div", attributes$5, children$4)
+    ]);
+    var array$7 = this$35.refArrayToJSArray__AO__sjs_js_Array(xs$7);
+    var children$5 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$7);
+    $m_sci_List$();
+    var attributes$7 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$6);
+    $m_sci_List$();
+    var children$6 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$5);
+    var xs$8 = new ($d_Ltyrian_Elem.getArrayOf()).constr([
+        new $c_Ltyrian_Tag("div", attributes$7, children$6)
+    ]);
+    var array$8 = this$42.refArrayToJSArray__AO__sjs_js_Array(xs$8);
+    var children$7 = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$8);
+    $m_sci_List$();
+    var attributes$9 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(attributes$8);
+    $m_sci_List$();
+    var children$8 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children$7);
+    return new $c_Ltyrian_Tag("section", attributes$9, children$8);
 };
 $c_Lcom_rockthejvm_jobsboard_pages_JobListPage.prototype.setErrorStatus__T__Lcom_rockthejvm_jobsboard_pages_JobListPage = function(message) {
     $m_Lcom_rockthejvm_jobsboard_pages_Page$Status$();

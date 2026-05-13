@@ -1,3 +1,1119 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  color: #fff;
+  background: #f14521;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: Montserrat;
+}
+
+:root {
+  --background-color: #f14521;
+  --black: #000;
+  --white: #fff;
+}
+
+main .jvm-home-page-top-bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  place-items: center;
+  width: 100%;
+  height: 400px;
+  display: grid;
+}
+
+main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+  letter-spacing: .05em;
+  color: #fff;
+  margin-bottom: 17px;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 61px;
+}
+
+main .jvm-home-page-top-bg-img .jvm-home-page-title p {
+  letter-spacing: .05em;
+  color: var(--white);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+main .jvm-home-page-recent-jobs-heading {
+  margin-top: 80px;
+}
+
+main .jvm-home-page-recent-jobs-heading h1 {
+  letter-spacing: .1em;
+  color: #222;
+  margin: 0;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 37px;
+}
+
+main .jvm-home-page-recent-jobs-heading img {
+  margin-top: -20px !important;
+}
+
+main .jvm-home-page-recent-jobs-heading p {
+  color: #222222b3;
+  margin-top: 15px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+main .section-1 .accordion-flush {
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: 0 0 4px #00000026;
+}
+
+.accordion-item:first-of-type {
+  width: 100%;
+}
+
+main .section-1 .search-filter-checkbox-option {
+  overflow: auto;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-heading h3 {
+  color: #222c;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-heading h3 span {
+  border-bottom: 2px solid var(--background-color);
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all {
+  float: right;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all a {
+  color: #222c;
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+main .section-1 .jvm-recent-job-accordions .jvm-recent-job-accordion-body .accordion-header button {
+  box-shadow: none;
+  color: #222c;
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.accordion-flush .accordion-item .accordion-button.collapsed {
+  box-shadow: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.accordion-flush .accordion-item #accordion-search-filter {
+  box-shadow: none;
+  background: none;
+}
+
+.accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed {
+  height: 84px;
+  box-shadow: none;
+  color: #222c;
+  background: #fff;
+  border: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border-bottom: 1px solid #cecece !important;
+}
+
+main .section-1 #button-addon2 {
+  background: #fff;
+  border: .6px solid #222c;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+  padding-left: 15px;
+  border-left: none !important;
+}
+
+main .section-1 input:checked {
+  background-color: #f14521;
+}
+
+main .section-1 input::placeholder {
+  color: #222c;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 12px;
+}
+
+.accordion-button:after {
+  content: "";
+  background: url("accordion-add-img.912f29ad.png");
+  margin-left: auto;
+  transition: all .5s;
+  transform: translateZ(10px);
+  background-repeat: no-repeat !important;
+}
+
+.accordion-button:not(.collapsed):after {
+  background: url("accordion-minus-img.f79336cb.png");
+  transition: all .5s;
+  transform: translateY(10px);
+}
+
+main .section-1 .form-control {
+  box-shadow: none;
+  background: #fff;
+  border: .6px solid #222c;
+  border-radius: 150px;
+  padding: 7px 0 6px 16px;
+}
+
+main .section-1 .form-check input {
+  box-shadow: none;
+  border: 1px solid #2229;
+  border-radius: 2px;
+  outline: none;
+  width: 15px;
+  height: 15px;
+}
+
+main .section-1 .form-check label {
+  letter-spacing: .09em;
+  color: #000c;
+  margin-left: 10px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+}
+
+main .section-1 .jvm-accordion-search-btn {
+  place-items: center;
+  height: 130px;
+  display: grid;
+}
+
+main .section-1 .jvm-accordion-search-btn button {
+  color: #fff;
+  background: #f14521;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 135px;
+  flex-grow: 0;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+main .section-1 .jvm-accordion-search-btn button:hover {
+  background: #ff6544;
+}
+
+main .section-1 .jvm-accordion-search-btn button:focus {
+  background: #07263a;
+}
+
+.accordion-flush .accordion-item:last-child {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 4px #00000026;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-search-btn button:hover {
+  background: #ff6544;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply a {
+  text-decoration: none;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-search-btn button:focus {
+  background: #07263a;
+}
+
+main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+  color: #fff;
+  background: #f14521;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 135px;
+  flex: none;
+  order: 0;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs {
+  background: #fff;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  padding: 28px 30px;
+  display: flex;
+  box-shadow: 0 0 4px #00000026;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs .jvm-recent-jobs-available-jobs-heading {
+  margin-bottom: -20px;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs .jvm-recent-jobs-available-jobs-heading img {
+  margin-top: -25px;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs h3 {
+  color: #222c;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle {
+  color: #2229;
+  background: none;
+  border: 1px solid #2229;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px 10px 10px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  display: flex;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle:after {
+  margin-left: 81px;
+}
+
+main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown ul li {
+  color: #2229;
+  font-size: 12px;
+}
+
+main .section-1 .jvm-recent-jobs-cards {
+  border-left: 2px solid var(--background-color);
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  padding: 30px;
+  display: flex;
+  box-shadow: 0 1px 2px #0000001a;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+  float: left;
+  width: 12%;
+  margin-right: 20px;
+}
+
+main .section-1 .jvm-recent-jobs-card-title {
+  float: left;
+  width: 66%;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2 {
+  letter-spacing: .09em;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+  letter-spacing: .09em;
+  color: #525252;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior img {
+  margin-right: 5px;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+  letter-spacing: .09em;
+  color: #525252;
+  align-items: center;
+  margin-right: 54px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company img {
+  margin-right: 5px;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company span {
+  color: #f14521;
+  font-size: 11px;
+}
+
+main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+  margin-top: 15px;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply {
+  float: right;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+  display: flex;
+  position: relative;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+  color: #fff;
+  background: #f14521;
+  border: none;
+  border-radius: 135px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17px;
+  display: flex;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button:hover {
+  background: #ff6544;
+}
+
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button:focus {
+  background: #07263a;
+}
+
+main .section-1 .jvm-recent-jobs-card-btn-apply img {
+  position: absolute;
+  top: -30px;
+  right: -31px;
+}
+
+main .section-1 .jvm-recent-jobs-load-more-jobs-btn {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
+  color: #f14521;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+@media (width <= 1200px) {
+  main .jvm-home-page-top-bg-img {
+    height: 350px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    font-size: 45px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p {
+    font-size: 19px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading h1 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p, main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+    font-size: 16px;
+  }
+
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-jobs-accordion-body-heading {
+    padding: 27px 16px 11px 26px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading h3, .accordion-flush .accordion-item .accordion-button.collapsed, main .section-1 .jvm-recent-jobs-available-jobs h3 {
+    font-size: 17px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs img {
+    width: 60px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all a {
+    font-size: 12px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs {
+    padding: 25px 27px;
+  }
+
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-job-accordion-body .accordion-header button {
+    height: 74px;
+    font-size: 17px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle {
+    font-size: 10px;
+    padding: 8px 13px 8px 8px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-menu li a {
+    font-size: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle:after {
+    margin-left: 60px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 26px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 14px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 17px;
+    font-size: 12px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 48px;
+    font-size: 12px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    position: absolute;
+    top: -27px;
+    right: -27px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
+    font-size: 18px;
+  }
+}
+
+@media (width <= 992px) {
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle {
+    font-size: 8px;
+    padding: 6px 10px 6px 6px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-menu li a {
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-jobs-accordion-body-heading {
+    padding: 24px 13px 8px 23px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+    width: 60%;
+    padding: 8px 100px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle:after {
+    margin-left: 40px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 300px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    font-size: 40px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading img {
+    width: 75px;
+    margin-top: -26px !important;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p {
+    font-size: 16px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading {
+    margin-top: 65px;
+  }
+
+  main .section-1 .accordion-flush, main .section-1 .jvm-recent-jobs-available-jobs {
+    margin-top: 40px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading h1 {
+    font-size: 24px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p, main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+    font-size: 14px;
+  }
+}
+
+@media (width <= 800px) {
+  main .jvm-home-page-top-bg-img {
+    height: 280px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    margin-bottom: 10px;
+    font-size: 33px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p, main .jvm-home-page-recent-jobs-heading p {
+    font-size: 14px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading h1 {
+    font-size: 20px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading img {
+    width: 60px;
+    margin-top: -30px !important;
+  }
+
+  main .jvm-home-page-recent-jobs-heading {
+    margin-top: 50px;
+  }
+}
+
+@media (width <= 769px) {
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-jobs-accordion-body-heading {
+    height: 77px;
+    padding: 22px 11px 6px 21px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 220px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p, main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+    font-size: 12px;
+  }
+
+  main .section-1 .accordion-flush, main .section-1 .jvm-recent-jobs-available-jobs {
+    margin-top: 30px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company span {
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-search-btn {
+    height: 100px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading h3, main .accordion-flush .accordion-item .accordion-button.collapsed, main .section-1 .jvm-recent-jobs-available-jobs h3 {
+    font-size: 14px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs .jvm-recent-jobs-available-jobs-heading img {
+    width: 47px;
+    margin-top: -30px !important;
+  }
+
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-job-accordion-body .accordion-header button {
+    height: 64px;
+    font-size: 14px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 20px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 12px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all .fa-minus {
+    margin-top: 13px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 37px;
+    font-size: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    padding: 5px 30px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
+    font-size: 15px;
+  }
+}
+
+@media (width <= 680px) {
+  main .section-1 .jvm-recent-job-accordions .jvm-recent-jobs-accordion-body-heading {
+    padding: 19px 9px 6px 18px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 180px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading img {
+    width: 40px;
+    margin-top: -40px !important;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    margin-bottom: 7px;
+    font-size: 27px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p, main .jvm-home-page-recent-jobs-heading p {
+    font-size: 11px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading h1 {
+    font-size: 17px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading {
+    margin-top: 40px;
+  }
+}
+
+@media (width <= 580px) {
+  main .section-1 .jvm-recent-jobs-accordion-body-heading h3, main .section-1 .jvm-recent-job-accordions .jvm-recent-job-accordion-body .accordion-header button, main .section-1 .jvm-recent-jobs-available-jobs h3 {
+    font-size: 13px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 140px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p, main .jvm-home-page-recent-jobs-heading p {
+    margin: 0;
+    font-size: 10px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading h1 {
+    font-size: 13px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading {
+    margin-top: 30px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 15px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 8px;
+    font-size: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all .fa-minus {
+    margin-top: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 30px;
+    font-size: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    width: 30px;
+    position: absolute;
+    top: -17px;
+    right: -17px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    padding: 5px 30px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 10px;
+  }
+
+  main .section-1 .accordion-flush, main .section-1 .jvm-recent-jobs-available-jobs {
+    margin-top: 20px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
+    font-size: 12px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (width <= 452px) {
+  main .jvm-home-page-top-bg-img {
+    height: 160px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-search-btn {
+    height: 70px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-search-btn button {
+    width: 40%;
+    height: 32px;
+    padding: 0 !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    margin: 0;
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company img, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior img {
+    width: 9px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading {
+    margin-top: 20px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p {
+    margin-top: -15px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 7px;
+    font-size: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-accordion-body-heading .jvm-recent-jobs-accordion-clear-all .fa-minus {
+    margin-top: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 27px;
+    font-size: 9px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    width: 25px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    padding: 4px 15px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
+    font-size: 10px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-company #dollar-sign-img {
+    width: 6px;
+  }
+}
+
+@media (width <= 399px) {
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle:after {
+    margin-left: 20px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 130px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs h3 {
+    font-size: 10px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    font-size: 14px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title p {
+    margin-bottom: 0;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p {
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 10px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 4px;
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company span {
+    font-size: 5px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 22px;
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    width: 20px;
+    position: absolute;
+    top: -10px;
+    right: -11px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 0;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    padding: 2px 16px;
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 5px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (width <= 330px) {
+  main .section-1 .jvm-recent-jobs-available-jobs-dropdown .dropdown-toggle:after {
+    margin-left: 8px;
+  }
+
+  main .jvm-home-page-top-bg-img {
+    height: 120px;
+  }
+
+  main .section-1 .jvm-recent-jobs-available-jobs h3 {
+    font-size: 10px;
+  }
+
+  main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
+    font-size: 14px;
+  }
+
+  main .jvm-home-page-recent-jobs-heading p {
+    font-size: 8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 6px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 0;
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company span {
+    font-size: 5px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 22px;
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    width: 20px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .card-course-rupees {
+    margin-top: 0;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    border-radius: 100px;
+    padding: 0 10px;
+    font-size: 7px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 3px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (width <= 308px) {
+  main .section-1 .jvm-recent-jobs-cards {
+    padding: 3px !important;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2, main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    font-size: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company {
+    margin-right: 0;
+    font-size: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-company span {
+    font-size: 5px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-course-details .card-senior {
+    margin-right: 15px;
+    font-size: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-card-btn-apply img {
+    width: 20px;
+    position: absolute;
+    top: -3px;
+    right: -5px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
+    border-radius: 100px;
+    padding: 0 8px;
+    font-size: 6px;
+  }
+
+  main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
+    margin-right: 3px;
+  }
+
+  main .section-1 .jvm-recent-jobs-load-more-jobs-btn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
 .home-logo {
   height: 50px;
 }
