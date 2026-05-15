@@ -375,11 +375,6 @@ body {
   width: 100%;
 }
 
-.logo img {
-  width: 226px;
-  margin-top: 60px;
-}
-
 .sidebar h4 {
   color: var(--background-color);
   margin-top: 60px;
