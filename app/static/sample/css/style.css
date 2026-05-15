@@ -460,7 +460,7 @@ ul {
     left: 1202px;
     top: 2177px;
     background: linear-gradient(180deg, rgba(46, 147, 238, 0.5) 0%, rgba(241, 69, 33, 0.8) 100%);
-    box-shadow: 1px 1px 7px #fb236a33;
+    box-shadow: 1px 1px 7px rgba(251, 35, 106, 0.2);
     border-radius: 5px;
 }
 

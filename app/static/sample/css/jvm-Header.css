@@ -35,10 +35,8 @@ main .jvm-home-page-top-bg-img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* todo replace image
     background-image: url(../static/img/home-page-top-img.png);
-    */
-    }
+}
 
 main .jvm-home-page-top-bg-img .jvm-home-page-title h1 {
     font-style: normal;
@@ -403,20 +401,17 @@ main .section-1 .jvm-recent-jobs-cards {
 }
 
 main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-img {
-    width: 30px;
-    height: 100px;
-
     margin-right: 20px;
- /*  width: 12%; */
-    float: left; 
+    width: 12%;
+    float: left;
 }
 
-main .section-1 .jvm-recent-jobs-card-contents {
+main .section-1 .jvm-recent-jobs-card-title {
     width: 66%;
     float: left;
 }
 
-main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2 {
+main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -581,7 +576,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 26px;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 14px;
     }
@@ -735,7 +730,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 20px;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 12px;
     }
@@ -839,7 +834,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 15px;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 10px;
     }
@@ -905,7 +900,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
         height: 32px;
         padding: 0px 0px !important;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 8px;
         margin: 0;
@@ -924,7 +919,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 10px;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 9px;
     }
@@ -992,7 +987,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 10px !important;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 8px;
     }
@@ -1056,7 +1051,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 6px !important;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 7px;
     }
@@ -1100,7 +1095,7 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     main .section-1 .jvm-recent-jobs-cards {
         padding: 3px !important;
     }
-    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-contents h2,
+    main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-title h2,
     main .section-1 .jvm-recent-jobs-cards .jvm-recent-jobs-card-btn-apply button {
         font-size: 6px;
     }
@@ -1135,3 +1130,6 @@ main .section-1 .jvm-recent-jobs-load-more-jobs-btn a {
     }
     /* CARD MEDIA QUERY */
 }
+
+
+/* ============================== MEDIA QUERY END ============================== */

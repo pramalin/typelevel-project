@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | JVM</title>
+
+    <!-- =========================================== START : BOOTSTRAP CDN  ============================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- ============================================== END : BOOTSTRAP CDN  ============================================ -->
+    <!-- ======================================= START : FONT AWESOME CDN ===================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- ======================================= END : FONT AWESOME CDN ===================================== -->
+    <!-- ========================================== START : CUSTOME STYLESHEET  ========================================= -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/jvm-Header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <!-- ========================================== END : CUSTOME STYLESHEET  =========================================== -->
+</head>
+
+<body>
+    <div>
+    <!--  ================ START NAVBAR =================  -->
+    <div class="container-fluid p-0">
+        <div class="jvm-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light JVM-nav">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/nav.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto menu align-center expanded text-center SMN_effect-3 ">
+                                <li class="nav-item">
+                                    <a class="nav-link jvm-item Home active-item" href="index.html">Home</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link jvm-item job" href="jobs.html">Jobs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link jvm-item contect-us" href="Contact-us.html">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link jvm-iteme" href="#">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link jvm-item post-a-job" href="Post-a-Job.html">Post A Job</a>
+                                </li>
+                                <!-- start-button   -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link " href="signin.html"><button class="btn-register" type="text">Register</button></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="login.html"><button class="btn-logout" type="text">Login</button></a>
+                                </li>
+
+                                <!-- End-button   -->
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--  ================ END NAVBAR =================  -->
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center p-0">
+                    <div class="jvm-home-page-top-bg-img">
+                        <div class="jvm-home-page-title">
+                            <h1>Your Dream Job, One Step Away</h1>
+                            <p>Highly Recommended Job Board</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="jvm-home-page-recent-jobs-heading">
+                        <h1>RECENT JOBS</h1>
+                        <img src="./img/jvm-home-page-recent-heading-border.png" class="img-fluid" alt="" />
+                        <p>Lorem ipsum dolor sit amet elit, sed do eiusmod tempor</p>
+                    </div>
+                </div>
+            </div>
+            <!--==============================  RECENT JOBS SECTION START HERE ====================-->
+            <section class="section-1">
+                <div class="container">
+                    <div class="row jvm-recent-jobs-body">
+                        <div class="col-lg-4 ">
+
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" id="accordion-search-filter" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            <div class="jvm-recent-jobs-accordion-body-heading">
+                                                    <h3><span>Search</span> Filters</h3>
+                                                    <!-- <div class="jvm-recent-jobs-accordion-clear-all">
+                                <a href="#" title="Clear All">Clear All</a>
+                            </div> -->
+                                               
+
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body p-0">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Company
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3">
+                                                            <div class="input-group mb-3">
+                                                                <input type="search" class="form-control" placeholder="Search...." aria-label="search-company" aria-describedby="button-addon2">
+                                                                <button class="btn " type="button" id="button-addon2"><i class="fas fa-search"></i> </button>
+                                                            </div>
+
+                                                            <div class="search-filter-checkbox-option">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-1">
+                                                                    <label class="form-check-label" for="company-1">
+                                                                        Company 1
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-2">
+                                                                    <label class="form-check-label" for="company-2">
+                                                                        Company 2
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-3">
+                                                                    <label class="form-check-label" for="company-3">
+                                                                        Company 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-3">
+                                                                    <label class="form-check-label" for="company-3">
+                                                                        Company 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-3">
+                                                                    <label class="form-check-label" for="company-3">
+                                                                        Company 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-3">
+                                                                    <label class="form-check-label" for="company-3">
+                                                                        Company 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-4">
+                                                                    <label class="form-check-label" for="company-4">
+                                                                        Company 4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="company-5">
+                                                                    <label class="form-check-label" for="company-5">
+                                                                        Company 5
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Country
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3">
+                                                            <div class="input-group mb-3">
+                                                                <input type="search" class="form-control" placeholder="Search...." aria-label="search-company" aria-describedby="button-addon2">
+                                                                <button class="btn " type="button" id="button-addon2"><i class="fas fa-search"></i> </button>
+
+
+                                                            </div>
+                                                            <div class="search-filter-checkbox-option">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="country-1">
+                                                                    <label class="form-check-label" for="country-1">
+                                                                        Country 1
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="country-2">
+                                                                    <label class="form-check-label" for="country-2">
+                                                                        Country 2
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="country-3">
+                                                                    <label class="form-check-label" for="country-3">
+                                                                        Country 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="country-4">
+                                                                    <label class="form-check-label" for="country-4">
+                                                                        Country 4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="country-5">
+                                                                    <label class="form-check-label" for="country-5">
+                                                                        Country 5
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingThree">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        State
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3">
+                                                            <div class="input-group mb-3">
+                                                                <input type="search" class="form-control" placeholder="Search...." aria-label="search-company" aria-describedby="button-addon2">
+                                                                <button class="btn " type="button" id="button-addon2"><i class="fas fa-search"></i> </button>
+
+
+                                                            </div>
+                                                            <div class="search-filter-checkbox-option">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="state-1">
+                                                                    <label class="form-check-label" for="state-1">
+                                                                        State 1
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="state-2">
+                                                                    <label class="form-check-label" for="state-2">
+                                                                        State 2
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="state-3">
+                                                                    <label class="form-check-label" for="state-3">
+                                                                        State 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="state-4">
+                                                                    <label class="form-check-label" for="state-4">
+                                                                        State 4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="state-5">
+                                                                    <label class="form-check-label" for="state-5">
+                                                                        State 5
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingFour">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                        Tags
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFour" class="accordion-collapse collapse " aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3">
+                                                            <div class="input-group mb-3">
+                                                                <input type="search" class="form-control" placeholder="Search...." aria-label="search-company" aria-describedby="button-addon2">
+                                                                <button class="btn " type="button" id="button-addon2"><i class="fas fa-search"></i> </button>
+
+
+                                                            </div>
+                                                            <div class="search-filter-checkbox-option">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="tags-1">
+                                                                    <label class="form-check-label" for="tags-1">
+                                                                        Tags 1
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="tags-2">
+                                                                    <label class="form-check-label" for="tags-2">
+                                                                        Tags 2
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="tags-3">
+                                                                    <label class="form-check-label" for="tags-3">
+                                                                        Tags 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="tags-4">
+                                                                    <label class="form-check-label" for="tags-4">
+                                                                        Tags 4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="tags-5">
+                                                                    <label class="form-check-label" for="tags-5">
+                                                                        Tags 5
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingFive">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                        Seniorities
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFive" class="accordion-collapse collapse " aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3">
+                                                            <div class="input-group mb-3">
+                                                                <input type="search" class="form-control" placeholder="Search...." aria-label="search-company" aria-describedby="button-addon2">
+                                                                <button class="btn " type="button" id="button-addon2"><i class="fas fa-search"></i> </button>
+
+
+                                                            </div>
+                                                            <div class="search-filter-checkbox-option">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="seniorites-1">
+                                                                    <label class="form-check-label" for="seniorites-1">
+                                                                        Seniorities 1
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="seniorites-2">
+                                                                    <label class="form-check-label" for="seniorites-2">
+                                                                        Seniorities 2
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="seniorites-3">
+                                                                    <label class="form-check-label" for="seniorites-3">
+                                                                        Seniorities 3
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="seniorites-4">
+                                                                    <label class="form-check-label" for="seniorites-4">
+                                                                        Seniorities 4
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="seniorites-5">
+                                                                    <label class="form-check-label" for="seniorites-5">
+                                                                        Seniorities 5
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jvm-accordion-search-btn">
+                                                <button type="button" class="btn btn-primary">Search</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-lg-8" id="jvm-recent-jobs-available-jobs">
+                            <div class="jvm-recent-jobs-available-jobs">
+                                <div class="jvm-recent-jobs-available-jobs-heading">
+                                    <h3>Available Jobs (15)</h3>
+                                    <img src="./img/jvm-available-heading-border.png" class="img-fluid " alt="">
+                                </div>
+                                <div class="jvm-recent-jobs-available-jobs-dropdown">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Ascending
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-jobs-card-img.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+                                    <div class="jvm-job-card-start">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <a href="./jobs.html"> <button type="button" class="btn btn-danger">Apply</button></a>
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-card-img-2.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+
+                                    <a href="./jobs.html"><button type="button" class="btn btn-danger">Apply</button></a>
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-jobs-card-img-3.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+                                    <div class="jvm-job-card-start">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <a href="./jobs.html"><button type="button" class="btn btn-danger">Apply</button></a>
+
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-jobs-card-img-4.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+                                    <a href="./jobs.html"><button type="button" class="btn btn-danger">Apply</button></a>
+
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-jobs-card-img-5.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+                                    <div class="jvm-job-card-start">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <a href="./jobs.html"><button type="button" class="btn btn-danger">Apply</button></a>
+
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-cards">
+                                <div class="jvm-recent-jobs-card-img">
+                                    <img src="./img/jvm-recent-jobs-card-img-6.png" class="img-fluid" alt="Course-img">
+                                </div>
+                                <div class="jvm-recent-jobs-card-contents">
+                                    <h2>Laravel Developer</h2>
+                                    <div class="jvm-recent-jobs-card-course-details">
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-course-company-img.png" class="img-fluid">Metaverse</a>
+                                        <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-location-img.png" class="img-fluid">Newyork, United State</a>
+
+                                        <div class="card-course-rupees">
+                                            <a href="#" class="card-senior"><img src="./img/jvm-recent-jobs-card-details-senior-img.png" class="img-fluid">Senior</a>
+                                            <a href="#" class="card-company"><img src="./img/jvm-recent-jobs-card-details-dollar-sign-img.png" class="img-fluid" id="dollar-sign-img">1200/ <span>month</span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jvm-recent-jobs-card-btn-apply">
+                                    <a href="./jobs.html"><button type="button" class="btn btn-danger">Apply</button></a>
+
+                                </div>
+                            </div>
+                            <div class="jvm-recent-jobs-load-more-jobs-btn">
+                                <a href="#">Load more jobs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--==============================  RECENT JOBS SECTION END HERE ====================-->
+
+    </main>
+
+    <!-- footer start -->
+    <footer>
+        <div class="container-fluid jvm-footer">
+            <div class="container jvm-footer-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 logo">
+                        <img src="img/logos.png" title="Logo" alt="logo" />
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 jvm-footer-links">
+                        <h4>Details</h4>
+                        <ul>
+                            <li><a href="#">Terms And Condition</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 jvm-footer-links">
+                        <h4>Quick Link</h4>
+                        <ul>
+                            <li><a href="./signin.html">Signin</a></li>
+                            <li><a href="./login.html">Signup</a></li>
+                            <li><a href="./Profile-Details.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 jvm-footer-links">
+                        <h4>Update Profile</h4>
+                        <ul>
+                            <li><a href="#">Update Profile</a></li>
+                        </ul>
+                        <div class="input-group sidebar-input-vt ">
+                            <input type="text" class="form-control vt-footer-input" placeholder="Enter Your Email" aria-label="Enter Your Email" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary vt-footer-btn" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="m-0">
+            <p>© 20232 JVM. All Right Reserved</p>
+        </div>
+    </footer>
+    </div>
+    <!-- footer end -->
+</body>
+
+</html>
