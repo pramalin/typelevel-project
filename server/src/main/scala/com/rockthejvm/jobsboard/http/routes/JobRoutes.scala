@@ -25,7 +25,7 @@ import com.rockthejvm.jobsboard.http.responses.FailureResponse
 import com.rockthejvm.jobsboard.http.validation.syntax.*
 import com.rockthejvm.jobsboard.logging.syntax.*
 
-class JobRoutes[F[_]: Concurrent: Logger: SecuredHandler] private (jobs: Jobs[F]) extends HttpValidationDsl[F] {
+class JobRoutes[F[_]: Concurrent: Logger: SecuredHandler] private (jobs: Jobs[F], stripe: Stripe[F]) extends HttpValidationDsl[F] {
   object OffsetQueryParam extends OptionalQueryParamDecoderMatcher[Int]("offset")
   object LimitQueryParam extends OptionalQueryParamDecoderMatcher[Int]("limit")
 
@@ -90,7 +90,21 @@ class JobRoutes[F[_]: Concurrent: Logger: SecuredHandler] private (jobs: Jobs[F]
       }
   }
 
-  val unautheredRoutes =   allFiltersRoute <+> allJobRoute <+> findJobRoute
+  // Stripe Endpoints
+
+  // POST /jobs/promoted { jobInfo }
+  private val promotedJobRoute: HttpRoutes[F] = HttpRoutes.of[F] {
+    case req @ POST -> Root / "promoted" =>
+      req.validate[JobInfo] { jobInfo =>
+        for {
+          jobId   <- jobs.create("todo@rockthejvm.com", jobInfo)
+          session <- stripe.createCheckoutSession(jobId.toString, "todo@rockthejvm.com")
+          resp <- session.map(sess => Ok(sess.getUrl())).getOrElse(NotFound())
+        } yield resp
+      }
+  }
+
+  val unautheredRoutes =  promotedJobRoute <+> allFiltersRoute <+> allJobRoute <+> findJobRoute
   val authedRoutes = SecuredHandler[F].liftService(
     createJobRoute.restrictedTo(allRoles) |+|
       updateJobRoute.restrictedTo(allRoles) |+|
@@ -103,6 +117,6 @@ class JobRoutes[F[_]: Concurrent: Logger: SecuredHandler] private (jobs: Jobs[F]
 }
 
 object JobRoutes {
-  def apply[F[_]: Concurrent: Logger: SecuredHandler](jobs: Jobs[F]) =
-     new JobRoutes[F](jobs)
+  def apply[F[_]: Concurrent: Logger: SecuredHandler](jobs: Jobs[F], stripe: Stripe[F]) =
+     new JobRoutes[F](jobs, stripe)
 }
