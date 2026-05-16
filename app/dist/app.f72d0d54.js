@@ -4287,6 +4287,7 @@ function $m_Lcom_rockthejvm_jobsboard_common_Constants$() {
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_resetPassword = null;
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_changePassword = null;
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_postJob = null;
+    this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_postJobPromoted = null;
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_jobs = null;
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_filters = null;
     $n_Lcom_rockthejvm_jobsboard_common_Constants$endpoints$ = this;
@@ -4299,6 +4300,7 @@ function $m_Lcom_rockthejvm_jobsboard_common_Constants$() {
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_resetPassword = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/auth/recover";
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_changePassword = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/auth/users/password";
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_postJob = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/jobs/create";
+    this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_postJobPromoted = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/jobs/promoted";
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_jobs = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/jobs";
     this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_filters = this.Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_root + "/api/jobs/filters";
 }
@@ -4400,6 +4402,41 @@ $c_Lcom_rockthejvm_jobsboard_common_Endpoint$.prototype.onResponse__F1__F1__Lio_
             if ((x11 - 400 | 0) >>> 0 <= 199) return $n(errorCb).apply__O__O("Error: " + x12);
         }
         throw new $c_s_MatchError(x6);
+    });
+};
+$c_Lcom_rockthejvm_jobsboard_common_Endpoint$.prototype.onResponseText__F1__F1__F1 = function(valueCb, errorCb) {
+    return new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((response$2)=>{
+        var response = $as_Ltyrian_http_Response(response$2);
+        var x18 = $n(response).Ltyrian_http_Response__f_status;
+        if (x18 !== null) {
+            var this$3 = $n(x18);
+            var x23 = this$3.Ltyrian_http_Status__f_code;
+            $n(x18);
+            if ((x23 - 200 | 0) >>> 0 <= 99) return $n(valueCb).apply__O__O($n(response).Ltyrian_http_Response__f_body);
+            if ((x23 - 400 | 0) >>> 0 <= 99) {
+                var json = $n(response).Ltyrian_http_Response__f_body;
+                var this$5 = $n($m_Lio_circe_parser_package$().parse__T__s_util_Either(json));
+                if (this$5 instanceof $c_s_util_Right) {
+                    var x36 = $as_s_util_Right(this$5);
+                    var b = $n(x36).s_util_Right__f_value;
+                    var _$2 = $as_Lio_circe_Json(b);
+                    var this$6 = $n(_$2);
+                    var parsed = new $c_Lio_circe_cursor_TopCursor(this$6, null, null).get__T__Lio_circe_Decoder__s_util_Either("error", $m_Lio_circe_Decoder$().Lio_circe_Decoder$__f_decodeString);
+                } else var parsed = this$5;
+                if (parsed instanceof $c_s_util_Left) {
+                    var x16 = $as_s_util_Left(parsed);
+                    var e = $as_Lio_circe_Error($n(x16).s_util_Left__f_value);
+                    return $n(errorCb).apply__O__O("Error: " + e);
+                }
+                if (parsed instanceof $c_s_util_Right) {
+                    var x14 = $as_s_util_Right(parsed);
+                    var e$2 = $as_T($n(x14).s_util_Right__f_value);
+                    return $n(errorCb).apply__O__O(e$2);
+                }
+                throw new $c_s_MatchError(parsed);
+            }
+        }
+        return $n(errorCb).apply__O__O("Unexpected response: " + $n(response).Ltyrian_http_Response__f_status);
     });
 };
 var $d_Lcom_rockthejvm_jobsboard_common_Endpoint$ = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_common_Endpoint$, "com.rockthejvm.jobsboard.common.Endpoint$", {
@@ -5281,8 +5318,9 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$;
 /** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$() {}
 $h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype;
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.postJob__T__T__T__T__Z__T__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__Ltyrian_Cmd = function(company, title, description, externalUrl, remote, location, salaryLo, salaryHi, currency, country, tags, image, seniority, other) {
-    var this$14 = $n($m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$().Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJob);
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.postJob__Z__T__T__T__T__Z__T__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__Ltyrian_Cmd = function(promoted, company, title, description, externalUrl, remote, location, salaryLo, salaryHi, currency, country, tags, image, seniority, other) {
+    var endpoint = promoted ? $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$().Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJobPromoted : $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$().Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJob;
+    var this$14 = $n(endpoint);
     $m_Lcom_rockthejvm_jobsboard_domain_job$JobInfo$();
     var this$1 = $n(tags);
     if (this$1.isEmpty__Z()) var tags$1 = $m_s_None$();
@@ -5292,9 +5330,9 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.postJob__T__T
         var $x_21 = $m_s_Predef$();
         var this$2 = $n(text);
         var xs = $f_T__split__T__I__AT(this$2, ",", 0);
-        var f = (_$14$2)=>{
-            var _$14 = $as_T(_$14$2);
-            return $f_T__trim__T($n(_$14));
+        var f = (_$17$2)=>{
+            var _$17 = $as_T(_$17$2);
+            return $f_T__trim__T($n(_$17));
         };
         var ct__runtimeClass;
         var ct__runtimeClass = $d_T.getClassOf();
@@ -5393,7 +5431,7 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.postJob__T__T
         var tags$1 = new $c_s_Some(value);
     }
     var payload = new $c_Lcom_rockthejvm_jobsboard_domain_job$JobInfo(company, title, description, externalUrl, remote, location, salaryLo, salaryHi, currency, country, tags$1, image, seniority, other);
-    var instance = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2();
+    var instance = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3();
     var this$15 = $m_Lcom_rockthejvm_jobsboard_core_Session$();
     return $p_Lcom_rockthejvm_jobsboard_common_Endpoint__internalCall__O__s_Option__Lio_circe_Encoder__Ltyrian_Cmd(this$14, payload, this$15.com$rockthejvm$jobsboard$core$Session$$$getCookie__T__s_Option("token"), instance);
 };
@@ -5404,7 +5442,7 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.loadFile__s_O
     var f = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((file$2)=>$m_Lcats_effect_IO$().async___F1__Lcats_effect_IO(new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((cb$3)=>{
             var cb = $as_F1(cb$3);
             var reader = new FileReader();
-            reader.onload = (_$15$2)=>{
+            reader.onload = (_$18$2)=>{
                 var $x_1 = $n(cb);
                 var value = $dp_toString__T($n(reader.result));
                 return $x_1.apply__O__O(new $c_s_util_Right(value));
@@ -5413,9 +5451,9 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$.prototype.loadFile__s_O
         })));
     var ev$1 = $m_Lcats_effect_IO$().Lcats_effect_IO$__f__asyncForIO;
     var task = $n(this$5.Lcats_Traverse$ToTraverseOps$$anon$3__f_typeClassInstance).traverse__O__F1__Lcats_Applicative__O(this$5.Lcats_Traverse$ToTraverseOps$$anon$3__f_self, f, ev$1);
-    var toMessage = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$16$2)=>{
-        var _$16 = $as_s_Option(_$16$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateImage(_$16);
+    var toMessage = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$19$2)=>{
+        var _$19 = $as_s_Option(_$19$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateImage(_$19);
     });
     return new $c_Ltyrian_Cmd$Run(task, toMessage);
 };
@@ -5429,8 +5467,10 @@ function $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$() {
 }
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$() {
     this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJob = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJobPromoted = null;
     $n_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$ = this;
     this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJob = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1();
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$__f_postJobPromoted = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2();
 }
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$;
@@ -40619,55 +40659,13 @@ function $asArrayOf_Lcom_rockthejvm_jobsboard_pages_Page(obj, depth) {
         var error = $n(e).toString__T();
         return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(error);
     });
-    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1__f_onResponse = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((response$2)=>{
-        var response = $as_Ltyrian_http_Response(response$2);
-        matchResult58: {
-            var $x_1;
-            var x127 = $n(response).Ltyrian_http_Response__f_status;
-            if (x127 !== null) {
-                var this$5 = $n(x127);
-                var x135 = this$5.Ltyrian_http_Status__f_code;
-                $n(x127);
-                if ((x135 - 200 | 0) >>> 0 <= 99) {
-                    var jobId = $n(response).Ltyrian_http_Response__f_body;
-                    var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobSuccess(jobId);
-                    break matchResult58;
-                }
-                if (x135 === 401) {
-                    var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError("You are not authorized to post a job.");
-                    break matchResult58;
-                }
-                if ((x135 - 400 | 0) >>> 0 <= 99) {
-                    var json = $n(response).Ltyrian_http_Response__f_body;
-                    var this$9 = $n($m_Lio_circe_parser_package$().parse__T__s_util_Either(json));
-                    if (this$9 instanceof $c_s_util_Right) {
-                        var x36 = $as_s_util_Right(this$9);
-                        var b = $n(x36).s_util_Right__f_value;
-                        var _$13 = $as_Lio_circe_Json(b);
-                        var this$10 = $n(_$13);
-                        var parsed = new $c_Lio_circe_cursor_TopCursor(this$10, null, null).get__T__Lio_circe_Decoder__s_util_Either("error", $m_Lio_circe_Decoder$().Lio_circe_Decoder$__f_decodeString);
-                    } else var parsed = this$9;
-                    if (parsed instanceof $c_s_util_Left) {
-                        var x125 = $as_s_util_Left(parsed);
-                        var e$1 = $as_Lio_circe_Error($n(x125).s_util_Left__f_value);
-                        var error$1 = "Error: " + e$1;
-                        var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(error$1);
-                        break matchResult58;
-                    }
-                    if (parsed instanceof $c_s_util_Right) {
-                        var x123 = $as_s_util_Right(parsed);
-                        var e$2$1 = $as_T($n(x123).s_util_Right__f_value);
-                        var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(e$2$1);
-                        break matchResult58;
-                    }
-                    throw new $c_s_MatchError(parsed);
-                }
-            }
-            var error$2 = "Unexpected response: " + $n(response).Ltyrian_http_Response__f_status;
-            var $x_1 = new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(error$2);
-        }
-        return $as_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg($x_1);
-    });
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1__f_onResponse = $m_Lcom_rockthejvm_jobsboard_common_Endpoint$().onResponseText__F1__F1__F1(new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$13$2)=>{
+        var _$13 = $as_T(_$13$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobSuccess(_$13);
+    }), new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$14$2)=>{
+        var _$14 = $as_T(_$14$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(_$14);
+    }));
 }
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1.prototype = new $h_O();
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1;
@@ -40689,18 +40687,46 @@ var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1 = new $Type
     Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$1: 1,
     Lcom_rockthejvm_jobsboard_common_Endpoint: 1
 });
-function $is_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj) {
-    return !!(obj && obj.$classData && obj.$classData.ancestors.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg);
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2() {
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_location = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_method = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onError = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onResponse = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_location = $m_Lcom_rockthejvm_jobsboard_common_Constants$endpoints$().Lcom_rockthejvm_jobsboard_common_Constants$endpoints$__f_postJobPromoted;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_method = $s_Ltyrian_http_Method$__Post__Ltyrian_http_Method();
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onError = new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((e$2)=>{
+        var e = $as_Ltyrian_http_HttpError(e$2);
+        var error = $n(e).toString__T();
+        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(error);
+    });
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onResponse = $m_Lcom_rockthejvm_jobsboard_common_Endpoint$().onResponseText__F1__F1__F1(new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$15$2)=>{
+        var _$15 = $as_T(_$15$2);
+        return new $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(_$15);
+    }), new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$16$2)=>{
+        var _$16 = $as_T(_$16$2);
+        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(_$16);
+    }));
 }
-function $as_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj) {
-    return $is_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj) || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.pages.PostJobPage$Msg");
-}
-function $isArrayOf_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj, depth) {
-    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg);
-}
-function $asArrayOf_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj, depth) {
-    return $isArrayOf_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Msg(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.pages.PostJobPage$Msg;", depth);
-}
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2() {}
+$h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype;
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype.location__T = function() {
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_location;
+};
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype.method__Ltyrian_http_Method = function() {
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_method;
+};
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype.onError__F1 = function() {
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onError;
+};
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2.prototype.onResponse__F1 = function() {
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2__f_onResponse;
+};
+var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2 = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2, "com.rockthejvm.jobsboard.pages.PostJobPage$Endpoints$$anon$2", {
+    Lcom_rockthejvm_jobsboard_pages_PostJobPage$Endpoints$$anon$2: 1,
+    Lcom_rockthejvm_jobsboard_common_Endpoint: 1
+});
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_ProfilePage$Endpoints$$anon$1() {
     this.Lcom_rockthejvm_jobsboard_pages_ProfilePage$Endpoints$$anon$1__f_location = null;
     this.Lcom_rockthejvm_jobsboard_pages_ProfilePage$Endpoints$$anon$1__f_method = null;
@@ -78815,6 +78841,17 @@ var $d_Lcom_rockthejvm_jobsboard_App$Model = new $TypeData().initClass($c_Lcom_r
     s_Product: 1,
     Ljava_io_Serializable: 1
 });
+function $p_Lcom_rockthejvm_jobsboard_core_Router__maybeCleanUrl__T__T($thiz, url) {
+    var this$1 = $n(url);
+    if ($uZ(this$1.startsWith("\""))) {
+        var this$3 = $n(url);
+        var this$2 = $n(url);
+        var endIndex = this$2.length - 1 | 0;
+        if (endIndex > this$3.length) $charAt(this$3, endIndex);
+        if (endIndex < 1) $charAt(this$3, -1);
+        return $as_T(this$3.substring(1, endIndex));
+    } else return url;
+}
 /** @constructor */ function $c_Lcom_rockthejvm_jobsboard_core_Router(location, history) {
     this.Lcom_rockthejvm_jobsboard_core_Router__f_location = null;
     this.Lcom_rockthejvm_jobsboard_core_Router__f_history = null;
@@ -78866,24 +78903,30 @@ $c_Lcom_rockthejvm_jobsboard_core_Router.prototype.productElement__I__O = functi
 };
 $c_Lcom_rockthejvm_jobsboard_core_Router.prototype.update__Lcom_rockthejvm_jobsboard_core_Router$Msg__T2 = function(msg) {
     if (msg instanceof $c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation) {
-        var x6 = $as_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation(msg);
-        var this$2 = $n(x6);
-        var x8 = this$2.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location;
-        var this$3 = $n(x6);
-        var x9 = this$3.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered;
-        if (this.Lcom_rockthejvm_jobsboard_core_Router__f_location === x8) {
+        var x9 = $as_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation(msg);
+        var this$2 = $n(x9);
+        var x11 = this$2.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location;
+        var this$3 = $n(x9);
+        var x12 = this$3.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered;
+        if (this.Lcom_rockthejvm_jobsboard_core_Router__f_location === x11) {
             var _2 = $m_Ltyrian_Cmd$None$();
             return new $c_T2(this, _2);
         } else {
-            var historyCmd = x9 ? $m_Ltyrian_Cmd$None$() : this.goto__T__Ltyrian_Cmd(x8);
+            var historyCmd = x12 ? $m_Ltyrian_Cmd$None$() : this.goto__T__Ltyrian_Cmd(x11);
             var history = this.Lcom_rockthejvm_jobsboard_core_Router__f_history;
-            var _1 = new $c_Lcom_rockthejvm_jobsboard_core_Router(x8, history);
+            var _1 = new $c_Lcom_rockthejvm_jobsboard_core_Router(x11, history);
             return new $c_T2(_1, historyCmd);
         }
-    } else {
+    }
+    if (msg instanceof $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect) {
+        var x6 = $as_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(msg);
+        var this$7 = $n(x6);
+        var x8 = this$7.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location;
+        window.location.href = $p_Lcom_rockthejvm_jobsboard_core_Router__maybeCleanUrl__T__T(this, x8);
         var _2$1 = $m_Ltyrian_Cmd$None$();
         return new $c_T2(this, _2$1);
     }
+    throw new $c_s_MatchError(msg);
 };
 $c_Lcom_rockthejvm_jobsboard_core_Router.prototype.goto__T__Ltyrian_Cmd = function(location) {
     var task = $n(this.Lcom_rockthejvm_jobsboard_core_Router__f_history).pushState__O__T__O(location, location);
@@ -120344,8 +120387,8 @@ $c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation.prototype.hashCode__I = 
 $c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation.prototype.equals__O__Z = function(x$0) {
     if (this === x$0) return true;
     else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation) {
-        var x11 = $as_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation(x$0);
-        return this.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered === $n(x11).Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered && this.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location === $n(x11).Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location && ($n(x11), true);
+        var x14 = $as_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation(x$0);
+        return this.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered === $n(x14).Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_browserTriggered && this.Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location === $n(x14).Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation__f_location && ($n(x14), true);
     } else return false;
 };
 $c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation.prototype.toString__T = function() {
@@ -120373,6 +120416,57 @@ function $asArrayOf_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation(obj, de
 }
 var $d_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation, "com.rockthejvm.jobsboard.core.Router$ChangeLocation", {
     Lcom_rockthejvm_jobsboard_core_Router$ChangeLocation: 1,
+    Lcom_rockthejvm_jobsboard_App$Msg: 1,
+    Lcom_rockthejvm_jobsboard_core_Router$Msg: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(location) {
+    this.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location = null;
+    this.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location = location;
+}
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect() {}
+$h_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype = $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype;
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.productIterator__sc_Iterator = function() {
+    return new $c_s_Product$$anon$1(this);
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.hashCode__I = function() {
+    return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 2007079106, true);
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.equals__O__Z = function(x$0) {
+    if (this === x$0) return true;
+    else if (x$0 instanceof $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect) {
+        var x18 = $as_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(x$0);
+        return this.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location === $n(x18).Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location && ($n(x18), true);
+    } else return false;
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.toString__T = function() {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this);
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.productArity__I = function() {
+    return 1;
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.productPrefix__T = function() {
+    return "ExternalRedirect";
+};
+$c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect.prototype.productElement__I__O = function(n) {
+    if (n === 0) return this.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect__f_location;
+    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
+};
+function $as_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(obj) {
+    return obj instanceof $c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect || obj === null ? obj : $throwClassCastException(obj, "com.rockthejvm.jobsboard.core.Router$ExternalRedirect");
+}
+function $isArrayOf_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(obj, depth) {
+    return !!(obj && obj.$classData && obj.$classData.arrayDepth === depth && obj.$classData.arrayBase.ancestors.Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect);
+}
+function $asArrayOf_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(obj, depth) {
+    return $isArrayOf_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect(obj, depth) || obj === null ? obj : $throwArrayCastException(obj, "Lcom.rockthejvm.jobsboard.core.Router$ExternalRedirect;", depth);
+}
+var $d_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect, "com.rockthejvm.jobsboard.core.Router$ExternalRedirect", {
+    Lcom_rockthejvm_jobsboard_core_Router$ExternalRedirect: 1,
     Lcom_rockthejvm_jobsboard_App$Msg: 1,
     Lcom_rockthejvm_jobsboard_core_Router$Msg: 1,
     s_Equals: 1,
@@ -130543,21 +130637,14 @@ var $d_Lcom_rockthejvm_jobsboard_pages_LoginPage$Commands$$anon$2 = new $TypeDat
     Lio_circe_Encoder$AsObject: 1,
     Lio_circe_DerivedEncoder: 1
 });
-function $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__renderInvalidPage__Ltyrian_Html($thiz) {
-    $m_Ltyrian_Html$();
-    var this$1 = $m_Ltyrian_Html$();
-    var x0 = $f_Ltyrian_HtmlTags__h1$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$1, "Post Job");
-    var this$2 = $m_Ltyrian_Html$();
-    var x1 = $f_Ltyrian_HtmlTags__div$minusno_attrs$minuslist$minusplaintext__T__Ltyrian_Html(this$2, "You need to be logged in to post a job.");
+function $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__renderInvalidContents__sci_List($thiz) {
+    var this$4 = $m_Ltyrian_Html$();
+    var x0 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060class$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("form-text");
     var array = [
-        x0,
-        x1
+        x0
     ];
-    var children = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var attributes = $m_sci_Nil$();
-    $m_sci_List$();
-    var children$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(children);
-    return new $c_Ltyrian_Tag("div", attributes, children$1);
+    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+    return new $c_sci_$colon$colon($f_Ltyrian_HtmlTags__p$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$4, attributes, "You need to be logged in to post a job."), $m_sci_Nil$());
 }
 function $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__parseNumber__T__I($thiz, s) {
     try {
@@ -130787,12 +130874,6 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.productElement__I__O = 
         default:
             throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), "" + n);
     }
-};
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.view__Ltyrian_Html = function() {
-    var this$1 = $m_Lcom_rockthejvm_jobsboard_core_Session$();
-    var this$2 = $n(this$1.com$rockthejvm$jobsboard$core$Session$$$getCookie__T__s_Option("token"));
-    if (!this$2.isEmpty__Z()) return this.renderForm__Ltyrian_Html();
-    else return $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__renderInvalidPage__Ltyrian_Html(this);
 };
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.update__Lcom_rockthejvm_jobsboard_App$Msg__T2 = function(msg) {
     if (msg instanceof $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCompany) {
@@ -131110,7 +131191,7 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.update__Lcom_rockthejvm
         } else {
             var x$3 = $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$AttemptPostJob$();
             if (x$3 === msg) {
-                var _2$15 = $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$().postJob__T__T__T__T__Z__T__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__Ltyrian_Cmd(this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_company, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_title, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_description, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_externalUrl, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_remote, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_location, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_salaryLo, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_salaryHi, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_currency, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_country, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_tags, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_image, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_seniority, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_other);
+                var _2$15 = $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$().postJob__Z__T__T__T__T__Z__T__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__s_Option__Ltyrian_Cmd(true, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_company, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_title, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_description, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_externalUrl, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_remote, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_location, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_salaryLo, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_salaryHi, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_currency, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_country, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_tags, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_image, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_seniority, this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_other);
                 return new $c_T2(this, _2$15);
             } else if (msg instanceof $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError) {
                 var x9 = $as_Lcom_rockthejvm_jobsboard_pages_PostJobPage$PostJobError(msg);
@@ -131139,97 +131220,102 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.update__Lcom_rockthejvm
     }
 };
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.renderFormContent__sci_List = function() {
-    $m_sci_List$();
-    var this$33 = $m_sjsr_package$();
-    var $x_15 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Company", "company", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$1$2)=>{
-        var _$1 = $as_T(_$1$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCompany(_$1);
-    }));
-    var $x_14 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Title", "title", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
-        var _$2 = $as_T(_$2$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateTitle(_$2);
-    }));
-    var $x_13 = this.renderTextArea__T__T__Z__F1__Ltyrian_Html("Description", "description", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$3$2)=>{
-        var _$3 = $as_T(_$3$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateDescription(_$3);
-    }));
-    var $x_12 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("ExternalUrl", "externalUrl", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$4$2)=>{
-        var _$4 = $as_T(_$4$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateExternalUrl(_$4);
-    }));
-    var $x_11 = this.renderToggle__T__T__T__Z__F1__Ltyrian_Html("Remote", "remote", "checkbox", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$5$2)=>{
-        $as_T(_$5$2);
-        return $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$ToggleRemote$();
-    }));
-    var $x_10 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Location", "location", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$6$2)=>{
-        var _$6 = $as_T(_$6$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateLocation(_$6);
-    }));
-    var $x_9 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("salaryLo", "salaryLo", "number", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((s$2)=>{
-        var s = $as_T(s$2);
-        var salaryLo = $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__parseNumber__T__I(this, s);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSalaryLo(salaryLo);
-    }));
-    var $x_8 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("salaryHi", "salaryHi", "number", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((s$2$1)=>{
-        var s$1 = $as_T(s$2$1);
-        var salaryHi = $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__parseNumber__T__I(this, s$1);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSalaryHi(salaryHi);
-    }));
-    var $x_7 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Currency", "currency", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$7$2)=>{
-        var _$7 = $as_T(_$7$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCurrency(_$7);
-    }));
-    var $x_6 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Country", "country", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$8$2)=>{
-        var _$8 = $as_T(_$8$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCountry(_$8);
-    }));
-    var $x_5 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Tags", "tags", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$9$2)=>{
-        var _$9 = $as_T(_$9$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateTags(_$9);
-    }));
-    var $x_4 = this.renderImageUploadInput__T__T__s_Option__F1__Ltyrian_Html("Logo", "logo", this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_image, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$10$2)=>{
-        var _$10 = $as_s_Option(_$10$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateImageFile(_$10);
-    }));
-    var $x_3 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Seniority", "seniority", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$11$2)=>{
-        var _$11 = $as_T(_$11$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSeniority(_$11);
-    }));
-    var $x_2 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Other", "other", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$12$2)=>{
-        var _$12 = $as_T(_$12$2);
-        return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateOther(_$12);
-    }));
-    var this$32 = $m_Ltyrian_Html$();
-    var this$29 = $m_sjsr_package$();
-    var $x_1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
-    var this$28 = $m_Ltyrian_Html$();
-    var msg = $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$AttemptPostJob$();
-    var xs = new ($d_Ltyrian_Attr.getArrayOf()).constr([
-        $x_1,
-        $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr(this$28, msg)
-    ]);
-    var array = this$29.refArrayToJSArray__AO__sjs_js_Array(xs);
-    var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
-    var xs$1 = new ($d_Ltyrian_Html.getArrayOf()).constr([
-        $x_15,
-        $x_14,
-        $x_13,
-        $x_12,
-        $x_11,
-        $x_10,
-        $x_9,
-        $x_8,
-        $x_7,
-        $x_6,
-        $x_5,
-        $x_4,
-        $x_3,
-        $x_2,
-        $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$32, attributes, "Post Job")
-    ]);
-    var array$1 = this$33.refArrayToJSArray__AO__sjs_js_Array(xs$1);
-    var elems = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
-    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+    var this$1 = $m_Lcom_rockthejvm_jobsboard_core_Session$();
+    var this$2 = $n(this$1.com$rockthejvm$jobsboard$core$Session$$$getCookie__T__s_Option("token"));
+    if (!!this$2.isEmpty__Z()) return $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__renderInvalidContents__sci_List(this);
+    else {
+        $m_sci_List$();
+        var this$35 = $m_sjsr_package$();
+        var $x_15 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Company", "company", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$1$2)=>{
+            var _$1 = $as_T(_$1$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCompany(_$1);
+        }));
+        var $x_14 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Title", "title", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$2$2)=>{
+            var _$2 = $as_T(_$2$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateTitle(_$2);
+        }));
+        var $x_13 = this.renderTextArea__T__T__Z__F1__Ltyrian_Html("Description", "description", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$3$2)=>{
+            var _$3 = $as_T(_$3$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateDescription(_$3);
+        }));
+        var $x_12 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("ExternalUrl", "externalUrl", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$4$2)=>{
+            var _$4 = $as_T(_$4$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateExternalUrl(_$4);
+        }));
+        var $x_11 = this.renderToggle__T__T__T__Z__F1__Ltyrian_Html("Remote", "remote", "checkbox", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$5$2)=>{
+            $as_T(_$5$2);
+            return $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$ToggleRemote$();
+        }));
+        var $x_10 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Location", "location", "text", true, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$6$2)=>{
+            var _$6 = $as_T(_$6$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateLocation(_$6);
+        }));
+        var $x_9 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("salaryLo", "salaryLo", "number", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((s$2)=>{
+            var s = $as_T(s$2);
+            var salaryLo = $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__parseNumber__T__I(this, s);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSalaryLo(salaryLo);
+        }));
+        var $x_8 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("salaryHi", "salaryHi", "number", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((s$2$1)=>{
+            var s$1 = $as_T(s$2$1);
+            var salaryHi = $p_Lcom_rockthejvm_jobsboard_pages_PostJobPage__parseNumber__T__I(this, s$1);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSalaryHi(salaryHi);
+        }));
+        var $x_7 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Currency", "currency", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$7$2)=>{
+            var _$7 = $as_T(_$7$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCurrency(_$7);
+        }));
+        var $x_6 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Country", "country", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$8$2)=>{
+            var _$8 = $as_T(_$8$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateCountry(_$8);
+        }));
+        var $x_5 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Tags", "tags", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$9$2)=>{
+            var _$9 = $as_T(_$9$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateTags(_$9);
+        }));
+        var $x_4 = this.renderImageUploadInput__T__T__s_Option__F1__Ltyrian_Html("Logo", "logo", this.Lcom_rockthejvm_jobsboard_pages_PostJobPage__f_image, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$10$2)=>{
+            var _$10 = $as_s_Option(_$10$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateImageFile(_$10);
+        }));
+        var $x_3 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Seniority", "seniority", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$11$2)=>{
+            var _$11 = $as_T(_$11$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateSeniority(_$11);
+        }));
+        var $x_2 = this.renderInput__T__T__T__Z__F1__Ltyrian_Html("Other", "other", "text", false, new $c_sr_AbstractFunction1_$$Lambda$7afc3dd0acc1681fb022ef921c83979087aaa919((_$12$2)=>{
+            var _$12 = $as_T(_$12$2);
+            return new $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$UpdateOther(_$12);
+        }));
+        var this$34 = $m_Ltyrian_Html$();
+        var this$31 = $m_sjsr_package$();
+        var $x_1 = $n($m_Ltyrian_Html$().Ltyrian_Html$__f_$u0060type$u0060$minusString).$colon$eq__T__Ltyrian_Attribute("button");
+        var this$30 = $m_Ltyrian_Html$();
+        var msg = $m_Lcom_rockthejvm_jobsboard_pages_PostJobPage$AttemptPostJob$();
+        var xs = new ($d_Ltyrian_Attr.getArrayOf()).constr([
+            $x_1,
+            $f_Ltyrian_HtmlAttributes__onClick__O__Ltyrian_Attr(this$30, msg)
+        ]);
+        var array = this$31.refArrayToJSArray__AO__sjs_js_Array(xs);
+        var attributes = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array);
+        var xs$1 = new ($d_Ltyrian_Html.getArrayOf()).constr([
+            $x_15,
+            $x_14,
+            $x_13,
+            $x_12,
+            $x_11,
+            $x_10,
+            $x_9,
+            $x_8,
+            $x_7,
+            $x_6,
+            $x_5,
+            $x_4,
+            $x_3,
+            $x_2,
+            $f_Ltyrian_HtmlTags__button$minusrepeated$minuslist$minusplaintext__sci_Seq__T__Ltyrian_Html(this$34, attributes, "Post Job")
+        ]);
+        var array$1 = this$35.refArrayToJSArray__AO__sjs_js_Array(xs$1);
+        var elems = $ct_sjsr_WrappedVarArgs__sjs_js_Array__(new $c_sjsr_WrappedVarArgs(), array$1);
+        return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+    }
 };
 $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage.prototype.setErrorStatus__T__Lcom_rockthejvm_jobsboard_pages_Page = function(message) {
     $m_Lcom_rockthejvm_jobsboard_pages_Page$Status$();
@@ -131291,10 +131377,10 @@ var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage = new $TypeData().initClass($
     s_Product: 1,
     Ljava_io_Serializable: 1
 });
-/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2() {
-    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemLabels = null;
-    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncoders$lzy1 = null;
-    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncodersbitmap$1 = false;
+/** @constructor */ function $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3() {
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemLabels = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncoders$lzy1 = null;
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncodersbitmap$1 = false;
     var this$1 = $m_sci_Nil$();
     var this$2 = new $c_sci_$colon$colon("other", this$1);
     var this$3 = new $c_sci_$colon$colon("seniority", this$2);
@@ -131327,20 +131413,20 @@ var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage = new $TypeData().initClass($
         jsElems.push(unboxedElem);
     }
     var elemRuntimeClass = elementClass === $d_V.getClassOf() ? $d_jl_Void.getClassOf() : elementClass === $d_sr_Null$.getClassOf() || elementClass === $d_sr_Nothing$.getClassOf() ? $d_O.getClassOf() : elementClass;
-    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemLabels = $asArrayOf_T($m_scm_ArrayBuilder$().scala$collection$mutable$ArrayBuilder$$$genericArrayBuilderResult__jl_Class__sjs_js_Array__O(elemRuntimeClass, jsElems), 1);
+    this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemLabels = $asArrayOf_T($m_scm_ArrayBuilder$().scala$collection$mutable$ArrayBuilder$$$genericArrayBuilderResult__jl_Class__sjs_js_Array__O(elemRuntimeClass, jsElems), 1);
 }
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype = new $h_O();
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2;
-/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2() {}
-$h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype;
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.elemLabels__AT = function() {
-    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemLabels;
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype = new $h_O();
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.constructor = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3;
+/** @constructor */ function $h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3() {}
+$h_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype = $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype;
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.elemLabels__AT = function() {
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemLabels;
 };
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.apply__O__Lio_circe_Json = function(a) {
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.apply__O__Lio_circe_Json = function(a) {
     return $f_Lio_circe_Encoder$AsObject__apply__O__Lio_circe_Json(this, a);
 };
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.elemEncoders__ALio_circe_Encoder = function() {
-    if (!this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncodersbitmap$1) {
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.elemEncoders__ALio_circe_Encoder = function() {
+    if (!this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncodersbitmap$1) {
         var encodeA = $m_Lio_circe_Encoder$().Lio_circe_Encoder$__f_encodeString;
         var encodeA$2 = $m_Lio_circe_Encoder$().Lio_circe_Encoder$__f_encodeString;
         var encodeA$3 = $m_Lio_circe_Encoder$().Lio_circe_Encoder$__f_encodeString;
@@ -131396,20 +131482,20 @@ $c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.elemEn
             jsElems.push(unboxedElem);
         }
         var elemRuntimeClass = elementClass === $d_V.getClassOf() ? $d_jl_Void.getClassOf() : elementClass === $d_sr_Null$.getClassOf() || elementClass === $d_sr_Nothing$.getClassOf() ? $d_O.getClassOf() : elementClass;
-        this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncoders$lzy1 = $asArrayOf_Lio_circe_Encoder($m_scm_ArrayBuilder$().scala$collection$mutable$ArrayBuilder$$$genericArrayBuilderResult__jl_Class__sjs_js_Array__O(elemRuntimeClass, jsElems), 1);
-        this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncodersbitmap$1 = true;
+        this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncoders$lzy1 = $asArrayOf_Lio_circe_Encoder($m_scm_ArrayBuilder$().scala$collection$mutable$ArrayBuilder$$$genericArrayBuilderResult__jl_Class__sjs_js_Array__O(elemRuntimeClass, jsElems), 1);
+        this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncodersbitmap$1 = true;
     }
-    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2__f_elemEncoders$lzy1;
+    return this.Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3__f_elemEncoders$lzy1;
 };
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.encodeObject__Lcom_rockthejvm_jobsboard_domain_job$JobInfo__Lio_circe_JsonObject = function(a) {
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.encodeObject__Lcom_rockthejvm_jobsboard_domain_job$JobInfo__Lio_circe_JsonObject = function(a) {
     $m_Lcom_rockthejvm_jobsboard_domain_job$JobInfo$();
     return $m_Lio_circe_JsonObject$().fromIterable__sc_Iterable__Lio_circe_JsonObject(new $c_Lio_circe_DerivedEncoder$$anon$1(a, this));
 };
-$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2.prototype.encodeObject__O__Lio_circe_JsonObject = function(a) {
+$c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3.prototype.encodeObject__O__Lio_circe_JsonObject = function(a) {
     return this.encodeObject__Lcom_rockthejvm_jobsboard_domain_job$JobInfo__Lio_circe_JsonObject($as_Lcom_rockthejvm_jobsboard_domain_job$JobInfo(a));
 };
-var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2 = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2, "com.rockthejvm.jobsboard.pages.PostJobPage$Commands$$anon$2", {
-    Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$2: 1,
+var $d_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3 = new $TypeData().initClass($c_Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3, "com.rockthejvm.jobsboard.pages.PostJobPage$Commands$$anon$3", {
+    Lcom_rockthejvm_jobsboard_pages_PostJobPage$Commands$$anon$3: 1,
     Lio_circe_DerivedInstance: 1,
     Ljava_io_Serializable: 1,
     Lio_circe_Encoder: 1,

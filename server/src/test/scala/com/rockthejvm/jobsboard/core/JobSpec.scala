@@ -57,11 +57,24 @@ class JobSpec
             }
         }
 
-        "should create a job" in {
+        "should create a job, initially inactive" in {
             transactor.use { xa =>
                 val program = for {
                     jobs <- LiveJobs[IO](xa)
                     jobId <- jobs.create("mailer@mailer.com", RockTheJvmNewJob)
+                    maybeJob <- jobs.find(jobId) 
+                } yield maybeJob
+
+                program.asserting(_.map(_.jobInfo) shouldBe None)
+            }
+        }
+
+        "should activate a new a job" in {
+            transactor.use { xa =>
+                val program = for {
+                    jobs <- LiveJobs[IO](xa)
+                    jobId <- jobs.create("mailer@mailer.com", RockTheJvmNewJob)
+                    _ <- jobs.activate(jobId)
                     maybeJob <- jobs.find(jobId) 
                 } yield maybeJob
 
@@ -74,7 +87,6 @@ class JobSpec
                 val program = for {
                     jobs <- LiveJobs[IO](xa)
                     maybeUpdateJob <- jobs.update(AwesomeJobUuid, UpdatedAwesomeJob.jobInfo)
-                    maybeUpdateJob <- jobs.find(AwesomeJobUuid) 
                 } yield maybeUpdateJob
 
                 program.asserting(_ shouldBe Some(UpdatedAwesomeJob))

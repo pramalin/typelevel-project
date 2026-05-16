@@ -3,6 +3,8 @@ import tyrian.*
 import cats.effect.IO
 import fs2.dom.History
 
+import org.scalajs.dom.window
+
 import com.rockthejvm.jobsboard.*
 
 case class Router private (location: String, history: History[IO, String]) {
@@ -17,13 +19,21 @@ case class Router private (location: String, history: History[IO, String]) {
                     else goto(newLocation)         // manual action, need to push location
                 (this.copy(location = newLocation), historyCmd)
             }
-        case _ => (this, Cmd.None) // TODO to check external redirects as well
+        case ExternalRedirect(location) =>
+            window.location.href = maybeCleanUrl(location)
+            (this, Cmd.None)
     }
 
     def goto[M](location: String): Cmd[IO, M] =
         Cmd.SideEffect[IO] {
             history.pushState(location, location)
         }
+
+    // private
+    private def maybeCleanUrl(url: String) =
+        if(url.startsWith("\""))
+          url.substring(1, url.length() - 1)
+        else url
 }
 
 object Router {

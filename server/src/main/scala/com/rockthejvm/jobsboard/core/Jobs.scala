@@ -117,6 +117,7 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
         other,
         active
       from jobs
+      where active = true
     """
     .query[Job]
     .to[List]
@@ -155,7 +156,8 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
           Fragments.or(tags.map(tag => fr"$tag=any(tags)").toList*)
         ),
         filter.maxSalary.map(salary => fr"salaryHi > $salary"),
-        filter.remote.some.filter(identity).map(remote => fr"remote = $remote")
+        filter.remote.some.filter(identity).map(remote => fr"remote = $remote"),
+        fr"active = true".some
     )
     val paginationFragment: Fragment =
       fr"order by id limit ${pagination.limit} offset ${pagination.offset}"
@@ -192,7 +194,8 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
         other,
         active
       from jobs
-      where id = $id
+      where id = $id and
+        active = true
     """
     .query[Job]
     .option
@@ -238,11 +241,11 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
   override def possibleFilters(): F[JobFilter] = {
     sql"""
     select
-      array(select distinct(company) from jobs) as companies,
-      array(select distinct(location) from jobs) as locations,
-      array(select distinct(country) from jobs where country is not null) as countries,
-      array(select distinct(seniority) from jobs where seniority is not null) as seniorities,
-      array(select distinct(unnest(tags)) from jobs) as tags,
+      array(select distinct(company) from jobs where active = true) as companies,
+      array(select distinct(location) from jobs where active = true) as locations,
+      array(select distinct(country) from jobs where country is not null and active = true) as countries,
+      array(select distinct(seniority) from jobs where seniority is not null and active = true) as seniorities,
+      array(select distinct(unnest(tags)) from jobs where active = true) as tags,
       max(salaryHi),
       false from jobs
     """
