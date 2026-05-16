@@ -15,6 +15,7 @@ import com.rockthejvm.jobsboard.logging.syntax.*
 import com.rockthejvm.jobsboard.domain.job.*
 import com.rockthejvm.jobsboard.domain.pagination.*
 import doobie.util.fragment.Fragment
+import java.{util => ju}
 
 trait Jobs[F[_]] {
   // "Algebra"
@@ -24,6 +25,7 @@ trait Jobs[F[_]] {
   def all(filter: JobFilter, pagination: Pagination): F[List[Job]]
   def find(id: UUID): F[Option[Job]]
   def update(id: UUID, jobInfo: JobInfo): F[Option[Job]]
+  def activate(id: UUID): F[Int]
   def delete(id: UUID): F[Int]
   def possibleFilters(): F[JobFilter]
 }
@@ -221,7 +223,9 @@ class LiveJobs[F[_]: MonadCancelThrow: Logger] private (xa: Transactor[F]) exten
     .transact(xa)
     .flatMap(_ => find(id)) // return the updated job
 
-
+  override def activate(id: UUID): F[Int] =
+    sql"Update jobs set active=true where id=$id".update.run.transact(xa)
+    
   override def delete(id: UUID): F[Int] = 
     sql"""
       delete from jobs

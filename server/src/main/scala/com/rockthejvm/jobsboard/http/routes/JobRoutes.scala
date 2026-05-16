@@ -13,6 +13,9 @@ import org.typelevel.log4cats.Logger
 import tsec.authentication.asAuthed
 import tsec.authentication.SecuredRequestHandler
 
+import org.typelevel.ci.CIStringSyntax
+import org.http4s.headers.Authorization
+
 import scala.collection.mutable
 import scala.language.implicitConversions
 
@@ -93,20 +96,41 @@ class JobRoutes[F[_]: Concurrent: Logger: SecuredHandler] private (jobs: Jobs[F]
   // Stripe Endpoints
 
   // POST /jobs/promoted { jobInfo }
-  private val promotedJobRoute: HttpRoutes[F] = HttpRoutes.of[F] {
-    case req @ POST -> Root / "promoted" =>
-      req.validate[JobInfo] { jobInfo =>
+  private val promotedJobRoute: AuthRoute[F] = {
+    case req @ POST -> Root / "promoted" asAuthed user =>
+      req.request.validate[JobInfo] { jobInfo =>
         for {
-          jobId   <- jobs.create("todo@rockthejvm.com", jobInfo)
-          session <- stripe.createCheckoutSession(jobId.toString, "todo@rockthejvm.com")
+          jobId   <- jobs.create(user.email, jobInfo)
+          session <- stripe.createCheckoutSession(jobId.toString, user.email)
           resp <- session.map(sess => Ok(sess.getUrl())).getOrElse(NotFound())
         } yield resp
       }
   }
 
-  val unautheredRoutes =  promotedJobRoute <+> allFiltersRoute <+> allJobRoute <+> findJobRoute
+  private val promotedJobWebhook: HttpRoutes[F] = HttpRoutes.of[F] {
+    case req @ POST -> Root / "webhook" =>
+      val stripeSigHeader = req.headers.get(ci"Stripe-Signature").flatMap(_.toList.headOption).map(_.value)
+      stripeSigHeader match {
+        case Some(signature) =>
+          for {
+            payload <- req.bodyText.compile.string
+            handled <- stripe.handleWebhookEvent(
+              payload,
+              signature,
+              jobId => jobs.activate(UUID.fromString(jobId))
+            )
+            resp <- if (handled.nonEmpty) Ok() else NoContent()
+          } yield resp
+        case None =>
+          Logger[F].info("Got webhook event with no Stripe signature") *>
+          Forbidden("No Stripe signature")
+      }
+  }  
+
+  val unautheredRoutes =  allFiltersRoute <+> allJobRoute <+> findJobRoute <+> promotedJobWebhook 
   val authedRoutes = SecuredHandler[F].liftService(
-    createJobRoute.restrictedTo(allRoles) |+|
+    createJobRoute.restrictedTo(adminOnly) |+|
+    promotedJobRoute.restrictedTo(allRoles) |+|
       updateJobRoute.restrictedTo(allRoles) |+|
       deleteJobRoute.restrictedTo(allRoles)
   )
