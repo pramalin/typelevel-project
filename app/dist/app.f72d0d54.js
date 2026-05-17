@@ -182119,7 +182119,7 @@ exports.RockTheJvmApp = function() {
     return new $c_Lcom_rockthejvm_jobsboard_App();
 }; //# sourceMappingURL=app-fastopt.js.map
 
-},{"f58d368cfe11bbe7":"euskh","2d42b5ef9c603f9c":"kty5A","2e7522ea266998c9":"9VzpL","c77f3ad299b99f60":"eoH60","36bbaad1a8315dec":"kwm2q"}],"euskh":[function(require,module,exports,__globalThis) {
+},{"f58d368cfe11bbe7":"euskh","2d42b5ef9c603f9c":"kty5A","2e7522ea266998c9":"9VzpL","36bbaad1a8315dec":"kwm2q","c77f3ad299b99f60":"eoH60"}],"euskh":[function(require,module,exports,__globalThis) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -186022,11 +186022,11 @@ process.umask = function() {
 },{}],"9VzpL":[function(require,module,exports,__globalThis) {
 module.exports = module.bundle.resolve("logo.884625b1.png") + "?" + Date.now();
 
-},{}],"eoH60":[function(require,module,exports,__globalThis) {
-"use strict";
-
 },{}],"kwm2q":[function(require,module,exports,__globalThis) {
 module.exports = module.bundle.resolve("resume.c372a038.png") + "?" + Date.now();
+
+},{}],"eoH60":[function(require,module,exports,__globalThis) {
+"use strict";
 
 },{}]},["aj62f","4ZGjQ"], "4ZGjQ", "parcelRequire94c2", {}, "./", "/")
 
