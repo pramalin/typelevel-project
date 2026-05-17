@@ -2,12 +2,54 @@
 
 /* CUSROM CSS */
 
+/* app */
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 10px 0;
+    margin-top: auto;
+}
+
+.section-1 {
+    margin-bottom: 10px;
+}
+
+
+
 .home-logo {
     height: 50px;
 }
 
 .aux-link {
     display: block;
+}
+
+/* job list page */
+.job-list-hero {
+    display: flex;
+    align-items: center;
+    flex-direction: center;
+    height: 200px;
+    background-size: 300%;
+    background-image:
+        linear-gradient(
+            -45deg, black 0%, rgb(30, 145, 207) 25%, rgb(43, 51, 100) 50%, rgb(153, 67, 67) 100%);
+    animation: animateBG 20s ease infinite;
+    max-width: 100%;
+}
+
+.job-list-title {
+ color: white;
+ margin: auto;
 }
 
 .job-container {
@@ -189,10 +231,20 @@ textarea.form-control {
     font-weight: 500;
 }
 
-.form-errors {
+.page-status-errors {
     border: 1px solid red;
-    padding: 10px;
     border-radius: 5px; 
+    color: red;
+    padding: 10px;
+    margin: 10px;
+}
+
+.page-status-success{
+    border: 1px solid green;
+    border-radius: 5px; 
+    color: green;
+    padding: 10px;
+    margin: 10px;
 }
 
 .top-section {
@@ -205,6 +257,11 @@ textarea.form-control {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-bottom: 20px; 
 }
 
 @keyframes animateBG {

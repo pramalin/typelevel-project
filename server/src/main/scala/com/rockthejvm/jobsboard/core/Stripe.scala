@@ -64,7 +64,7 @@ class LiveStripe[F[_]: MonadThrow : Logger](
 
     override def handleWebhookEvent[A](payload: String, signature: String, action: String => F[A]): F[Option[A]] =
         MonadThrow[F]
-        .fromTry(Try(Webhook.constructEvent(payload, signature, webhookSecret))) // todo pass from config
+        .fromTry(Try(Webhook.constructEvent(payload, signature, webhookSecret)))
         .logError(e => "Stripe security verification failed - possibly faking attempt")
         .flatMap { event =>
             event.getType() match {

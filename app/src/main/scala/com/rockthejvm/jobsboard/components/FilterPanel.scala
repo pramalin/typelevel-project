@@ -116,7 +116,7 @@ final case class FilterPanel(
 
     private def maybeRenderError() =
         maybeError.map { e =>
-            div(`class` := "filter-panel-error")(e)
+            div(`class` := "page-status-errors")(e)
         }.getOrElse(div())
 
     private def renderSalaryFilter() = 

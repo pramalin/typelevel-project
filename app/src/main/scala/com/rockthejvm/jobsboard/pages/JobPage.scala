@@ -58,11 +58,7 @@ final case class JobPage(id: String, maybeJob: Option[Job] = None, status: Page.
         div(`class` := "row jvm-jobs-details-top-card")(
           div(`class` := "col-md-12 p-0")(
             div(`class` := "jvm-jobs-details-card-profile-img")(
-                img(
-                `class` := "img-fluid",
-                src     := job.jobInfo.image.getOrElse(""),
-                alt     := job.jobInfo.title
-                )
+                JobComponents.renderJobPicture(job)
             ),
             div(`class` := "jvm-jobs-details-card-profile-title")(
                 h1(s"${job.jobInfo.company} - ${job.jobInfo.title}"),

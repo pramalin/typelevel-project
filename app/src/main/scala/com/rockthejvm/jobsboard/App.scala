@@ -8,7 +8,7 @@ import org.scalajs.dom.window
 import scala.concurrent.duration.*
 
 import core.*
-import components.Header
+import components.*
 
 import com.rockthejvm.jobsboard.pages.*
 
@@ -66,11 +66,12 @@ class App extends TyrianApp[App.Msg, App.Model] {
 
     // view triggered whenever model changes
     override def view(model: Model): Html[Msg] =
-        div(
+        div(`class` := "app")(
             Header.view(),
             div(`class` := "container-fluid")(
               model.page.view()
-            )
+            ),
+            Footer.view()
         )
 }
  
